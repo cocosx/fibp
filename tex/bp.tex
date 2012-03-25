@@ -1,0 +1,60 @@
+\documentclass[11pt,draft,oneside]{fithesis}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[plainpages=false, pdfpagelabels]{hyperref}
+\thesistitle{Design and implementation of a social network for making acquaintances}
+\thesissubtitle{Bachelor thesis}
+\thesisstudent{Marek Bryša}
+\thesiswoman{false}
+\thesisfaculty{fi}
+\thesislang{en}
+\thesisyear{jaro 2012}
+\thesisadvisor{doc. Ing. Michal Brandejs, CSc.}
+
+\begin{document}
+\FrontMatter
+\ThesisTitlePage
+
+\begin{ThesisDeclaration}
+\DeclarationText
+\AdvisorName
+\end{ThesisDeclaration}
+
+\begin{ThesisThanks}
+Zde bude uvedeno... 
+\end{ThesisThanks}
+
+Obdobně jako poděkování se mohou vysadit shrnutí a klíčová 
+slova pomocí prostředí Thesisacti a ThesisKeyWordsi.
+
+\MainMatter
+\tableofcontents
+\chapter*{Introduction}
+\chapter{Design}
+\section{Existing social networks for making acquaintances}
+\section{User data privacy}
+\section{Conclusion}
+
+\chapter{Implementation}
+\section{Technologies}
+\section{Basic functionality}
+	\subsection{User registration}
+	\subsection{Profile photo upload}
+	\subsection{Acquantaince selection}
+	\subsection{Notifications}
+	\subsection{Chat}
+\section{Implementation in detail}
+	\subsection{Security}
+	\subsection{I18n}
+	\subsection{Geolocation}
+	\subsection{Graphical design}
+\chapter{Conclusion}
+
+% Následují další kapitoly a podkapitoly, popřípadě závěr, dodatky, 
+% seznam literatury či použitých obrázků nebo tabulek.
+
+\bibliographystyle{plain}  % bibliografický styl 
+\bibliography{bp.bib} % soubor s citovanými
+                           % položkami bibliografie 
+
+\end{document}
