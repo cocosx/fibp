@@ -4,8 +4,8 @@
 \contentsline {subsection}{\numberline {1.1.2}\rmfamily Match.com}{3}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}\rmfamily OkCupid}{3}{subsection.1.1.3}
 \contentsline {subsection}{\numberline {1.1.4}\rmfamily eHarmony}{4}{subsection.1.1.4}
-\contentsline {section}{\numberline {1.2}\slshape User data privacy}{4}{section.1.2}
-\contentsline {section}{\numberline {1.3}\slshape Conclusion}{5}{section.1.3}
+\contentsline {section}{\numberline {1.2}\slshape User data protection}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}\slshape The idea}{5}{section.1.3}
 \contentsline {chapter}{\numberline {2}\bfseries Implementation}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}\slshape Technologies}{6}{section.2.1}
 \contentsline {section}{\numberline {2.2}\slshape Basic functionality}{6}{section.2.2}
