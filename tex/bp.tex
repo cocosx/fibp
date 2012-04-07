@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[IL2]{fontenc}
 \usepackage[plainpages=false, pdfpagelabels]{hyperref}
+\usepackage{paralist}
 %\usepackage{url}
 \thesistitle{Design and implementation of a social network for making acquaintances}
 \thesissubtitle{Bachelor thesis}
@@ -66,7 +67,8 @@ abstract
 	It goes almost without saying that the servers must be well protected from hacker attacks, especially when they contain this kind of sensitive data. A successful attack would not only harm the users, but probably mark the end for the website. Ideally there should be a regular security audit that the users can review.
 
 \section{The idea}
-	
+	TODO:
+	\cite{Finkel01012012}
 	From the research of existing social networks for making acquaintances we can conclude the following points and issues:
 	\begin{itemize}
 		\item The target audience are single people from their late 20's to about 60 years old.
@@ -87,7 +89,28 @@ abstract
 	
 	However this also brings some new issues. Because the marking of others is essentially only based on their looks, the target audience is going to be reduced to users for whom it is an important criteria. That means mostly younger people seeking fun rather than a serious relationship.
 \chapter{Implementation}
+
 \section{Technologies}
+	It is very important to choose the right technology for the implementation of a project. I have devised the following criteria for the evaluation of available technologies.
+	\begin{itemize}
+		\item \textbf{Availability for commercial use free of charge}\\
+			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
+		\item \textbf{General suitability for the project}\\
+			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. There must be an easy way of making HTTP push communication to enable real-time chat. 
+		\item \textbf{Runtime speed, resource intensity and stability}\\
+			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. The framework should have a good track record of runtime stability and error recovery.
+		\item \textbf{Scalability}\\
+			The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently.
+		\item \textbf{Ease of development and developer community size}
+			It should be easy to implement the project and good documentation is welcome. The framework should have a good community with which a developer can try to solve issues.
+		\item \textbf{Code stability}\\
+			The technologies should be past their rapid development phases and the core APIs should be stable. This minimizes the effort needed to transition the project to a newer version of the framework. 
+		\item \textbf{Innovation factor}\\
+			Younger technologies are preffered as theier use can lead to innovation and discovery of new approaches to problems.
+	\end{itemize}
+	\subsection{PHP + MySQL}
+	\subsection{Ruby on Rails}
+	\subsection{Node.js + Redis}
 http://www.okcupid.com/about/technology
 \section{Basic functionality}
 	\subsection{User registration}
