@@ -34,7 +34,7 @@ abstract
 \chapter{Design}
 \section{Existing social networks for making acquaintances}
 	\subsection{PlentyofFish}
-		PlentyofFish (\url{http://www.plentyoffish.com/}) was founded in 2003 in Canada. It generates most of it's revenue through advertising and some premium services. Unfortunately, it currently only serves users from Canada, UK, US, Australia, Ireland, New Zealand, Spain, France, Italy and Germany so I could not sign up at all.
+		PlentyofFish (\url{http://www.plentyoffish.com/}) was founded in 2003 in Canada. It generates most of it's revenue through advertising and some premium services. Unfortunately, it currently only serves users from Canada, UK, US, Australia, Ireland, New Zealand, Spain, France, Italy and Germany so the author could not sign up at all.
 		
 		From the publicly available information, it allows users to create a profile, search for others, message and chat with others. A 'Chemisty test' and some other methods of finding a match are offered, but without exlaining precisely how they work.\cite{website:pof}
 		\subsection{Match.com}
@@ -43,7 +43,7 @@ abstract
 		After signing up, the user is asked to upload a profile photo and fill in a detailed questionnaire about his or her character, interests, activities and relationships and preferences. Based on this information, the system tries to find the best matching partner. The user can then add the match to his or her favourites, follow their profile and message them. There is a special option to 'wink' at them, which can be used to quickly bring attention of the match and wait for their response to quickly assess their general interest without the need to send a message.\cite{website:match}
 		
 		\subsection{OkCupid}
-		OkCupid (\url{http://www.okcupid.com}) started in 2004. I claims to be the fastest growing site. TODO: use dating???\\
+		OkCupid (\url{http://www.okcupid.com}) started in 2004. It claims to be the fastest growing site. TODO: use dating???\\
 		It is ad-supported and the essential features are free to use. A paid subscription called 'A-list' is also available for 14.95USD/month. It removes the ads, allows for advaced search, changing of username etc.
 		
 		Matches can be found through search using general criteria or by filling out questionnaires. A user can also create a his own questions, set their importance and expected answers. When another user fills them in, the system calculates a match percentage. This process is probably unique to OkCupid.\cite{website:okcupid}
@@ -78,7 +78,7 @@ abstract
 		\item All offer a method to quickly find a matching partner, but then require an action from one of the users to make a first contact. Some users might have trouble finding courage to do so.
 	\end{itemize}
 
-	To solve most of these issues, I have come up with this idea for the new social network:
+	To solve most of these issues, the author has come up with this idea for the new social network:
 	\begin{itemize}
 		\item The users will provide only general information: e-mail address, gender, year of birth, approximate location (county level), interest in men or women and a single profile photo.
 		\item Based on simple search criteria such as age range, relative location to them (i.e. same county, neighbouring counties, etc.), they will browse profile pictures of other users one by one and mark the ones they like.
@@ -91,12 +91,13 @@ abstract
 \chapter{Implementation}
 
 \section{Technologies}
-	It is very important to choose the right technology for the implementation of a project. I have devised the following criteria for the evaluation of available technologies.
+%http://www.okcupid.com/about/technology
+	It is very important to choose the right technology for the implementation of a project. The author has devised the following criteria for the evaluation of available technologies:
 	\begin{itemize}
 		\item \textbf{Availability for commercial use free of charge}\\
 			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
 		\item \textbf{General suitability for the project}\\
-			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. There must be an easy way of making HTTP push communication to enable real-time chat. 
+			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. The data model will be quite simple. There must be an easy way of making HTTP push\footnote{"HTTP server push (also known as HTTP streaming) is a mechanism for sending data from a web server to a web browser." \url{http://en.wikipedia.org/wiki/HTTP_push}, {2012-08-04}} communication to enable real-time chat. 
 		\item \textbf{Runtime speed, resource intensity and stability}\\
 			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. The framework should have a good track record of runtime stability and error recovery.
 		\item \textbf{Scalability}\\
@@ -108,10 +109,25 @@ abstract
 		\item \textbf{Innovation factor}\\
 			Younger technologies are preffered as theier use can lead to innovation and discovery of new approaches to problems.
 	\end{itemize}
-	\subsection{PHP + MySQL}
-	\subsection{Ruby on Rails}
-	\subsection{Node.js + Redis}
-http://www.okcupid.com/about/technology
+	Because of the first criterion, our interest shall only be in open source frameworks.
+	\subsection{General suitability for the project}
+		Because the author is skilled in JavaScript, PHP, Python and Ruby, we will further examine frameworks based on those languages. All have been used for HTTP server programming for a long time, except for JavaScript, which has emerged in recent years in the Node.js platform.\\
+		\begin{table}[htb]
+		\begin{tabular}{|r||p{2.2cm}|p{2.2cm}|p{2.1cm}|p{2.2cm}|}
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} & Node.js & PHP & Python & Ruby \\ 
+			\hline\hline
+			\rule[-1ex]{0pt}{2.5ex} Simple & Express.js & plain PHP & CherryPy & Sinatra, Camping \\ 
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} Full MVC & Locomotive, Railway.js & Zend, CakePHP & Dajngo, web2py & Ruby on Rails \\ 
+			\hline 
+		\end{tabular}
+		\caption{Classification of web frameworks}
+		\label{table:wf}
+		\end{table}
+	
+		Table \ref{table:wf} shows a basic classification of selected web frameworks by programming language and complexity of features they provide. Simple frameworks generally only provide a way to route HTTP requests to methods, parse HTTP headers and to send a response. Other features can be added on using plugins or modules. Full MVC\footnote{Model-View-Controller} frameworks also have an ORM\footnote{Object-Relational Mapping} engine for models and generate HTML views using a templating engine.
+		
 \section{Basic functionality}
 	\subsection{User registration}
 	\subsection{Profile photo upload}

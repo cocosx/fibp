@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  7 APR 2012 13:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  8 APR 2012 15:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -599,37 +599,67 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
 Chapter 2.
 [7
 
-] [8]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+[]\IL2/ppl/m/n/10.95 Sinatra,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]\IL2/ppl/m/n/10.95 Locomotive,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]\IL2/ppl/m/n/10.95 Zend,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]\IL2/ppl/m/n/10.95 Dajngo,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+[]\IL2/ppl/m/n/10.95 Ruby on
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+[9]
 Chapter 3.
-(./bp.bbl [9
+(./bp.bbl [10
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
- [10
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+ [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 135.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 150.
  ) 
 Here is how much of TeX's memory you used:
- 6088 strings out of 493629
- 87058 string characters out of 3148778
- 165137 words of memory out of 3000000
- 9253 multiletter control sequences out of 15000+200000
- 26521 words of font info for 53 fonts, out of 3000000 for 9000
+ 6126 strings out of 493629
+ 87599 string characters out of 3148778
+ 166195 words of memory out of 3000000
+ 9273 multiletter control sequences out of 15000+200000
+ 34256 words of font info for 73 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,7n,23p,614b,321s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,10n,23p,614b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8a.enc} <./fi-logo.514pk></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
-/fonts/type1/public/cs/cstt10.pfb></usr/share/texmf-dist/fonts/type1/urw/palati
-no/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
-share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (14 pages, 110417 bytes).
+/fonts/type1/public/cs/cstt10.pfb></usr/share/texmf-dist/fonts/type1/public/cs/
+cstt9.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/shar
+e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/t
+ype1/urw/palatino/uplri8a.pfb>
+Output written on bp.pdf (15 pages, 117471 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
