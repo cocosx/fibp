@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{website:redis}
+{Citrusbyte}.
+\newblock {Redis}.
+\newblock \url{http://redis.io/}, 2012.
+\newblock [Online; accessed 10-April-2012].
+
 \bibitem{website:eharmony}
 {eHarmony, Inc.}
 \newblock {Why eHarmony?}
@@ -30,5 +36,19 @@ Eli~J. Finkel, Paul~W. Eastwick, Benjamin~R. Karney, Harry~T. Reis, and Susan
 \newblock Plenty of {FAQ}.
 \newblock \url{http://www.pof.com/faq.aspx}, 2012.
 \newblock [Online; accessed 27-March-2012].
+
+\bibitem{Ruflin2011}
+Nicolas Ruflin, Helmar Burkhart, and Sven Rizzotti.
+\newblock Social-data storage-systems.
+\newblock In {\em Databases and Social Networks}, DBSocial '11, pages 7--12,
+  New York, NY, USA, 2011. ACM.
+
+\bibitem{website:ruturaj}
+Ruturaj.
+\newblock {Redis, Memcached, Tokyo Tyrant and MySQL comparision}.
+\newblock
+  \url{http://www.ruturaj.net/redis-memcached-tokyo-tyrant-and-mysql-comparision/},
+  2009.
+\newblock [Online; accessed 10-April-2012].
 
 \end{thebibliography}

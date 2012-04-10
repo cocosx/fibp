@@ -9,6 +9,8 @@
 \contentsline {chapter}{\numberline {2}\bfseries Implementation}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}\slshape Technologies}{7}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}\rmfamily General suitability for the project}{8}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}\rmfamily Runtime speed, resource intensity and stability}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\rmfamily Data store}{9}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}\slshape Basic functionality}{9}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily User registration}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}\rmfamily Profile photo upload}{9}{subsection.2.2.2}

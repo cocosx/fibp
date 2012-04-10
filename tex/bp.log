@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  8 APR 2012 15:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  10 APR 2012 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -600,11 +600,6 @@ Chapter 2.
 [7
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-[]\IL2/ppl/m/n/10.95 Sinatra,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 122--122
 []\IL2/ppl/m/n/10.95 Locomotive,
  []
@@ -624,29 +619,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--123
 []\IL2/ppl/m/n/10.95 Ruby on
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-[9]
+[8] [9]
 Chapter 3.
 (./bp.bbl [10
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+]
+Underfull \hbox (badness 10000) in paragraph at lines 47--53
+[]\IL2/ppl/m/n/10.95 Ruturaj.  Re-dis, Mem-cached, Tokyo Tyrant and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--53
+\IL2/ppl/m/n/10.95 MySQL com-par-i-sion.  $\IL2/cmtt/m/n/10.95 http : / / www .
+ ruturaj . net /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--53
+\IL2/cmtt/m/n/10.95 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparis
+ion/$\IL2/ppl/m/n/10.95 , 2009.
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
  [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 150.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
- 6126 strings out of 493629
- 87599 string characters out of 3148778
- 166195 words of memory out of 3000000
- 9273 multiletter control sequences out of 15000+200000
+ 6129 strings out of 493629
+ 87643 string characters out of 3148778
+ 166299 words of memory out of 3000000
+ 9276 multiletter control sequences out of 15000+200000
  34256 words of font info for 73 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  44i,10n,23p,614b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -656,7 +664,7 @@ are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
 cstt9.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/shar
 e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (15 pages, 117471 bytes).
+Output written on bp.pdf (15 pages, 120467 bytes).
 PDF statistics:
  139 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream

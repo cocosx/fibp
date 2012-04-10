@@ -92,7 +92,7 @@ abstract
 
 \section{Technologies}
 %http://www.okcupid.com/about/technology
-	It is very important to choose the right technology for the implementation of a project. The author has devised the following criteria for the evaluation of available technologies:
+	It is very important to choose the right technology for the implementation of a project. We need to find the most suitable web application framework and a data store, if one is not hard-wired into the framework. The author has devised the following criteria for the evaluation of available technologies:
 	\begin{itemize}
 		\item \textbf{Availability for commercial use free of charge}\\
 			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
@@ -107,17 +107,17 @@ abstract
 		\item \textbf{Code stability}\\
 			The technologies should be past their rapid development phases and the core APIs should be stable. This minimizes the effort needed to transition the project to a newer version of the framework. 
 		\item \textbf{Innovation factor}\\
-			Younger technologies are preffered as theier use can lead to innovation and discovery of new approaches to problems.
+			Younger technologies are preffered as their use can lead to innovation and discovery of new approaches to problems.
 	\end{itemize}
 	Because of the first criterion, our interest shall only be in open source frameworks.
 	\subsection{General suitability for the project}
-		Because the author is skilled in JavaScript, PHP, Python and Ruby, we will further examine frameworks based on those languages. All have been used for HTTP server programming for a long time, except for JavaScript, which has emerged in recent years in the Node.js platform.\\
+		The author is skilled in JavaScript, PHP, Python and Ruby, so we will further examine frameworks based on those languages. All have been used for HTTP server programming for a long time, except for JavaScript, which has emerged in recent years in the Node.js platform.\\
 		\begin{table}[htb]
 		\begin{tabular}{|r||p{2.2cm}|p{2.2cm}|p{2.1cm}|p{2.2cm}|}
 			\hline 
 			\rule[-1ex]{0pt}{2.5ex} & Node.js & PHP & Python & Ruby \\ 
 			\hline\hline
-			\rule[-1ex]{0pt}{2.5ex} Simple & Express.js & plain PHP & CherryPy & Sinatra, Camping \\ 
+			\rule[-1ex]{0pt}{2.5ex} Simple & Express.js & plain PHP & CherryPy & Sinatra \\ 
 			\hline 
 			\rule[-1ex]{0pt}{2.5ex} Full MVC & Locomotive, Railway.js & Zend, CakePHP & Dajngo, web2py & Ruby on Rails \\ 
 			\hline 
@@ -128,6 +128,20 @@ abstract
 	
 		Table \ref{table:wf} shows a basic classification of selected web frameworks by programming language and complexity of features they provide. Simple frameworks generally only provide a way to route HTTP requests to methods, parse HTTP headers and to send a response. Other features can be added on using plugins or modules. Full MVC\footnote{Model-View-Controller} frameworks also have an ORM\footnote{Object-Relational Mapping} engine for models and generate HTML views using a templating engine.
 		
+		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, i.e. Express.js, plain PHP, CherryPy and Sinatra.
+		
+	\subsection{Runtime speed, resource intensity and stability}
+	In this section we will benchmark the platforms still left in the comparison to determine their speed. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM.
+	
+	
+	\subsection{Data store}		
+		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
+		
+		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keep the entire storage in memory with optional regualar harddisk snapshots, which allows for very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times af fast as MySQL when it comes to simple operations.
+		
+		One of the drawbacks is that Redis mostly has simple commands so complex operations are difficult to program.
+		
+		The innovation factor is high because Redis is usually not used as a single storage for all the data. As a bonus, Redis contains a simple publisher-subscriber functionality, which will come handy when implementing the real-time chat.
 \section{Basic functionality}
 	\subsection{User registration}
 	\subsection{Profile photo upload}
