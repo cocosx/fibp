@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  10 APR 2012 17:02
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  11 APR 2012 21:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -109,8 +109,8 @@ LaTeX Font Info:    Try loading font information for T1+qpl on input line 100.
 
 (/usr/share/texmf-dist/tex/latex/tex-gyre/t1qpl.fd
 File: t1qpl.fd 2009/09/25 v1.2 font definition file for T1/qpl
-)<<t1.cmap>>) (./fit11.clo
-File: fit11.clo 2008/12/15 fithesis2 (size option)
+)<<t1.cmap>>) (./fit12.clo
+File: fit12.clo 2008/12/15 fithesis2 (size option)
 ))
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
@@ -399,7 +399,6 @@ Now handling font encoding PD1 ...
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `draft' set `true' on input line 3925.
 Package hyperref Info: Option `plainpages' set `false' on input line 3925.
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 3925.
 Package hyperref Info: Hyper figures OFF on input line 4046.
@@ -457,28 +456,28 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 ) (./bp.aux)
 \openout1 = `bp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 16.
-LaTeX Font Info:    Try loading font information for IL2+cmr on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 18.
+LaTeX Font Info:    Try loading font information for IL2+cmr on input line 18.
 
 (/usr/share/texmf-dist/tex/latex/cslatex/il2cmr.fd
 File: il2cmr.fd 1997/02/06 CSLaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Try loading font information for IL2+ppl on input line 16.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for IL2+ppl on input line 18.
 
 (/usr/share/texmf-dist/tex/cslatex/base/il2ppl.fd
 File: il2ppl.fd 1998/12/27 CS Palatino
@@ -518,11 +517,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box27
+Package hyperref Info: Link coloring OFF on input line 18.
 
-
-Package hyperref Warning: Draft mode on.
-
-Package hyperref Info: Link coloring OFF on input line 16.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -531,19 +527,24 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count105
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
+ (./bp.out)
+(./bp.out)
+\@outlinefile=\write3
+\openout3 = `bp.out'.
+
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] [3
 
-] [4] (./bp.toc
+]
+[4] (./bp.toc
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 1.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )<<ot1.cmap>>
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 1.
@@ -567,12 +568,12 @@ LaTeX Font Info:    Try loading font information for OT1+zplm on input line 1.
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 
-LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <10.95> not available
+LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <12> not available
 (Font)              Font shape `IL2/ppl/m/it' tried instead on input line 2.
 
 )
-\tf@toc=\write3
-\openout3 = `bp.toc'.
+\tf@toc=\write4
+\openout4 = `bp.toc'.
 
  [1
 
@@ -581,93 +582,111 @@ LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <10.95> not available
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 37.
+LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 39.
 
 (/usr/share/texmf-dist/tex/latex/cslatex/il2cmtt.fd
 File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
 ) [3
 
 ] [4]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 74.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 76.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
  [5] [6]
 Chapter 2.
+
+Overfull \hbox (0.8459pt too wide) in paragraph at lines 109--111
+\IL2/ppl/m/n/12 The tech-nolo-gies should be past their rapid de-vel-op-ment ph
+ases
+ []
+
 [7
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-[]\IL2/ppl/m/n/10.95 Locomotive,
+Overfull \hbox (3.24799pt too wide) in paragraph at lines 124--124
+[]\IL2/ppl/m/n/12 Locomotive,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-[]\IL2/ppl/m/n/10.95 Zend,
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+[]\IL2/ppl/m/n/12 Zend,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-[]\IL2/ppl/m/n/10.95 Dajngo,
+Underfull \hbox (badness 10000) in paragraph at lines 124--124
+[]\IL2/ppl/m/n/12 Dajngo,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
-[]\IL2/ppl/m/n/10.95 Ruby on
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+[]\IL2/ppl/m/n/12 Ruby on
  []
 
-[8] [9]
+
+Overfull \hbox (3.60484pt too wide) in paragraph at lines 118--127
+[][] 
+ []
+
+[8] <bench2.png, id=221, 481.8pt x 301.125pt>
+File: bench2.png Graphic file (type png)
+ <use bench2.png>
+Package pdftex.def Info: bench2.png used on input line 140.
+(pdftex.def)             Requested size: 252.94388pt x 158.0884pt.
+ [9 <./bench2.png>] [10]
 Chapter 3.
-(./bp.bbl [10
+(./bp.bbl [11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 47--53
-[]\IL2/ppl/m/n/10.95 Ruturaj.  Re-dis, Mem-cached, Tokyo Tyrant and
+Underfull \hbox (badness 10000) in paragraph at lines 53--59
+[]\IL2/ppl/m/n/12 Ruturaj.  Re-dis, Mem-cached, Tokyo Tyrant and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--53
-\IL2/ppl/m/n/10.95 MySQL com-par-i-sion.  $\IL2/cmtt/m/n/10.95 http : / / www .
- ruturaj . net /
+Underfull \hbox (badness 10000) in paragraph at lines 53--59
+\IL2/ppl/m/n/12 MySQL com-par-i-sion.  []$\IL2/cmtt/m/n/12 http : / / www . rut
+uraj . net /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--53
-\IL2/cmtt/m/n/10.95 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparis
-ion/$\IL2/ppl/m/n/10.95 , 2009.
+Underfull \hbox (badness 10000) in paragraph at lines 53--59
+\IL2/cmtt/m/n/12 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparision
+/$[]\IL2/ppl/m/n/12 ,
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
- [11
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+ [12
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
+Package rerunfilecheck Info: File `bp.out' has not changed.
+(rerunfilecheck)             Checksum: 1E4E07216CC3DF96F021BDCEC868EC4C;1672.
  ) 
 Here is how much of TeX's memory you used:
- 6129 strings out of 493629
- 87643 string characters out of 3148778
- 166299 words of memory out of 3000000
- 9276 multiletter control sequences out of 15000+200000
- 34256 words of font info for 73 fonts, out of 3000000 for 9000
+ 6228 strings out of 493629
+ 88873 string characters out of 3148778
+ 167584 words of memory out of 3000000
+ 9306 multiletter control sequences out of 15000+200000
+ 34258 words of font info for 73 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,10n,23p,614b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,10n,28p,617b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8a.enc} <./fi-logo.514pk></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
 /fonts/type1/public/cs/cstt10.pfb></usr/share/texmf-dist/fonts/type1/public/cs/
-cstt9.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/shar
-e/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/t
-ype1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (15 pages, 120467 bytes).
+cstt12.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/sha
+re/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/
+type1/urw/palatino/uplri8a.pfb>
+Output written on bp.pdf (16 pages, 133102 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

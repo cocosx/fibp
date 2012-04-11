@@ -1,8 +1,10 @@
-\documentclass[11pt,draft,oneside]{fithesis}
+\documentclass[12pt,oneside]{fithesis}
+%\documentclass[12pt,draft,oneside]{fithesis}
 \usepackage[utf8]{inputenc}
 \usepackage[IL2]{fontenc}
 \usepackage[plainpages=false, pdfpagelabels]{hyperref}
 \usepackage{paralist}
+\usepackage{graphicx}
 %\usepackage{url}
 \thesistitle{Design and implementation of a social network for making acquaintances}
 \thesissubtitle{Bachelor thesis}
@@ -102,7 +104,7 @@ abstract
 			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. The framework should have a good track record of runtime stability and error recovery.
 		\item \textbf{Scalability}\\
 			The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently.
-		\item \textbf{Ease of development and developer community size}
+		\item \textbf{Ease of development and developer community size}\\
 			It should be easy to implement the project and good documentation is welcome. The framework should have a good community with which a developer can try to solve issues.
 		\item \textbf{Code stability}\\
 			The technologies should be past their rapid development phases and the core APIs should be stable. This minimizes the effort needed to transition the project to a newer version of the framework. 
@@ -131,13 +133,24 @@ abstract
 		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, i.e. Express.js, plain PHP, CherryPy and Sinatra.
 		
 	\subsection{Runtime speed, resource intensity and stability}
-	In this section we will benchmark the platforms still left in the comparison to determine their speed. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM.
+		Let us first compare speed of the languages and their virtual machines themselves. We can use results from \emph{The Computer Language Benchmarks Game} \cite{website:bench}. It uses several algorithms written in different programming languages to measure their speed.
+		
+		\begin{figure}[htb]
+	  \centering
+	    \includegraphics[width=0.7\textwidth]{bench2.png}
+		  \caption{Language benchmark of V8 Engine, Python 3, Ruby 1.9 and PHP 5.4.0}
+		  \label{fig:bench1}
+		\end{figure}
+		
+		A box plot of the benchmark is shown in figure \ref{fig:bench1}. The vertical axis means how many times the language is slower than the fastest one (Intel Fortran 12.1). Out of the languages under consideration, Node.js on average 6 times faster than the rest\footnote{Node.js uses the V8 Engine internally}. 
+		
+		In this section we will benchmark the platforms still left in the comparison to determine their speed. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM.
 	
 	
 	\subsection{Data store}		
 		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
 		
-		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keep the entire storage in memory with optional regualar harddisk snapshots, which allows for very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times af fast as MySQL when it comes to simple operations.
+		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keep the entire database in memory with optional regular persistent storage snapshots, which allows for very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times af fast as MySQL when it comes to simple operations.
 		
 		One of the drawbacks is that Redis mostly has simple commands so complex operations are difficult to program.
 		

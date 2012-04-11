@@ -1,0 +1,2 @@
+http://www.matt-knight.co.uk/2011/node-js-vs-php-performance-maths/
+http://shootout.alioth.debian.org/u64/which-programming-languages-are-fastest.php?v8=on&python3=on&yarv=on&php=on&calc=chart
