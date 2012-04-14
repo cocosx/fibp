@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  11 APR 2012 21:36
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  14 APR 2012 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -453,31 +453,85 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \plitemsep=\skip46
 \plparsep=\skip47
 \pl@lab=\toks17
+)
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf-dist/tex/latex/bera/beramono.sty
+Package: beramono 2004/01/31 (WaS)
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count99
+\lst@gtempboxa=\box26
+\lst@token=\toks18
+\lst@length=\count100
+\lst@currlwidth=\dimen110
+\lst@column=\count101
+\lst@pos=\count102
+\lst@lostspace=\dimen111
+\lst@width=\dimen112
+\lst@newlines=\count103
+\lst@lineno=\count104
+\lst@maxwidth=\dimen113
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count105
+\lst@skipnumbers=\count106
+\lst@framebox=\box27
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count107
+\float@exts=\toks19
+\float@box=\box28
+\@float@everytoks=\toks20
+\@floatcapt=\box29
+)
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks21
+\c@algorithm=\count108
 ) (./bp.aux)
 \openout1 = `bp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 18.
-LaTeX Font Info:    Try loading font information for IL2+cmr on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 31.
+LaTeX Font Info:    Try loading font information for IL2+cmr on input line 31.
 
 (/usr/share/texmf-dist/tex/latex/cslatex/il2cmr.fd
 File: il2cmr.fd 1997/02/06 CSLaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Try loading font information for IL2+ppl on input line 18.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Try loading font information for IL2+ppl on input line 31.
 
 (/usr/share/texmf-dist/tex/cslatex/base/il2ppl.fd
 File: il2ppl.fd 1998/12/27 CS Palatino
@@ -486,21 +540,21 @@ LaTeX Font Info:    (C) Z. Wagner,1998/12/27 on input line 3.
 LaTeX Font Info:    Created by CsPsFont utility v.1.0f (C) Z. Wagner, 1998/12/2
 7 on input line 4.
 )
-\big@size=\dimen110
+\big@size=\dimen114
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen111
-\scratchbox=\box26
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen112
-\MPnumerator=\count103
-\makeMPintoPDFobject=\count104
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count109
+\scratchdimen=\dimen115
+\scratchbox=\box30
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen116
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -516,8 +570,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 18.
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 31.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -525,16 +579,17 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count105
+\c@section@level=\count115
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
  (./bp.out)
 (./bp.out)
 \@outlinefile=\write3
 \openout3 = `bp.out'.
 
+\c@lstlisting=\count116
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
@@ -582,24 +637,31 @@ LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <12> not available
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 39.
+LaTeX Font Info:    Try loading font information for IL2+fvm on input line 52.
+LaTeX Font Info:    No file IL2fvm.fd. on input line 52.
 
-(/usr/share/texmf-dist/tex/latex/cslatex/il2cmtt.fd
-File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
-) [3
+LaTeX Font Warning: Font shape `IL2/fvm/m/n' undefined
+(Font)              using `IL2/cmr/m/n' instead on input line 52.
+
+
+Overfull \hbox (1.19395pt too wide) in paragraph at lines 52--53
+\IL2/ppl/m/n/12 from Canada, UK, US, Aus-tralia, Ire-land, New Zealand, Spain, 
+France,
+ []
+
+[3
 
 ] [4]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 76.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 89.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
  [5] [6]
 Chapter 2.
 
-Overfull \hbox (0.8459pt too wide) in paragraph at lines 109--111
+Overfull \hbox (0.8459pt too wide) in paragraph at lines 122--124
 \IL2/ppl/m/n/12 The tech-nolo-gies should be past their rapid de-vel-op-ment ph
 ases
  []
@@ -607,38 +669,71 @@ ases
 [7
 
 ]
-Overfull \hbox (3.24799pt too wide) in paragraph at lines 124--124
+Overfull \hbox (3.24799pt too wide) in paragraph at lines 137--137
 []\IL2/ppl/m/n/12 Locomotive,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 []\IL2/ppl/m/n/12 Zend,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 []\IL2/ppl/m/n/12 Dajngo,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 []\IL2/ppl/m/n/12 Ruby on
  []
 
 
-Overfull \hbox (3.60484pt too wide) in paragraph at lines 118--127
-[][] 
+Overfull \hbox (3.60484pt too wide) in paragraph at lines 131--140
+[][]
  []
 
-[8] <bench2.png, id=221, 481.8pt x 301.125pt>
+
+Overfull \vbox (1.98859pt too high) has occurred while \output is active []
+
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{table.2.1})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.147 
+      ] <bench2.png, id=221, 481.8pt x 301.125pt>
 File: bench2.png Graphic file (type png)
  <use bench2.png>
-Package pdftex.def Info: bench2.png used on input line 140.
+Package pdftex.def Info: bench2.png used on input line 153.
 (pdftex.def)             Requested size: 252.94388pt x 158.0884pt.
- [9 <./bench2.png>] [10]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 164.
+
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+
+Overfull \hbox (113.85484pt too wide) in paragraph at lines 167--168
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.174 
+       <./bench2.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+[11]
 Chapter 3.
-(./bp.bbl [11
+(./bp.bbl [12
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
@@ -647,46 +742,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--59
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
-\IL2/ppl/m/n/12 MySQL com-par-i-sion.  []$\IL2/cmtt/m/n/12 http : / / www . rut
-uraj . net /
+\IL2/ppl/m/n/12 MySQL com-par-i-sion.  []$\IL2/fvm/m/n/12 http : / / www . rutu
+raj . net /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
-\IL2/cmtt/m/n/12 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparision
-/$[]\IL2/ppl/m/n/12 ,
+\IL2/fvm/m/n/12 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparision/
+$[]\IL2/ppl/m/n/12 , 2009.
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
- [12
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+ [13
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `bp.out' has not changed.
 (rerunfilecheck)             Checksum: 1E4E07216CC3DF96F021BDCEC868EC4C;1672.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
  ) 
 Here is how much of TeX's memory you used:
- 6228 strings out of 493629
- 88873 string characters out of 3148778
- 167584 words of memory out of 3000000
- 9306 multiletter control sequences out of 15000+200000
- 34258 words of font info for 73 fonts, out of 3000000 for 9000
+ 8105 strings out of 493629
+ 113262 string characters out of 3148778
+ 213936 words of memory out of 3000000
+ 11145 multiletter control sequences out of 15000+200000
+ 34803 words of font info for 73 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,10n,28p,617b,393s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,11n,42p,617b,1303s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8a.enc} <./fi-logo.514pk></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
-/fonts/type1/public/cs/cstt10.pfb></usr/share/texmf-dist/fonts/type1/public/cs/
-cstt12.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/sha
-re/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/
-type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (16 pages, 133102 bytes).
+/fonts/type1/public/cs/csr10.pfb></usr/share/texmf-dist/fonts/type1/public/cs/c
+sr12.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share
+/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/ty
+pe1/urw/palatino/uplri8a.pfb>
+Output written on bp.pdf (17 pages, 134855 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 276 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
  226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,7 +5,20 @@
 \usepackage[plainpages=false, pdfpagelabels]{hyperref}
 \usepackage{paralist}
 \usepackage{graphicx}
-%\usepackage{url}
+\usepackage{color}
+
+\usepackage[scaled]{beramono} % Or some other package that provides a fixed width font. q.v.
+                      % http://www.tug.dk/FontCatalogue/typewriterfonts.html
+\usepackage{listings} 
+%\lstset{                 % A rudimentary config that shows off some features.
+%   basicstyle=\ttfamily\footnotesize % Without beramono, we'd get cmtt, the teletype font.
+%}
+%\newcommand\Small{\fontsize{9}{9.2}\selectfont}
+%\newcommand*\LSTfont{\Small\ttfamily\SetTracking{encoding=*}{-60}\lsstyle}
+
+
+\usepackage{algorithm}
+
 \thesistitle{Design and implementation of a social network for making acquaintances}
 \thesissubtitle{Bachelor thesis}
 \thesisstudent{Marek Bryša}
@@ -146,7 +159,16 @@ abstract
 		
 		In this section we will benchmark the platforms still left in the comparison to determine their speed. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM.
 	
-	
+
+\begin{algorithm}
+\caption{your caption for this algorithm}
+\label{alg}
+\begin{lstlisting}[language=Java]
+public final int ourAnswer() { return 42; /* Our final answer */ }
+\end{lstlisting} 
+\end{algorithm}
+
+
 	\subsection{Data store}		
 		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
 		
