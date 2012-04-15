@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  15 APR 2012 12:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  15 APR 2012 18:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -762,30 +762,51 @@ runsystem(rm bp.out.pyg)...executed.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.179 
-       <./bench2.png>] [10]
+l.178 		T
+         he \texttt{sleep} method has one paramater \texttt{ms}. Execution i...
+ <./bench2.png>] [10]
 Overfull \hbox (6.2099pt too wide) in paragraph at lines 180--181
 \IL2/ppl/m/n/12 use a thread pool to serve re-quests, Node.js and Thin use the 
 \IL2/pcr/m/n/12 libevent
  []
 
-\openout4 = `bp.pyg'.
-
-runsystem(pygmentize -l bash -f latex -F tokenmerge             -P "verboptions
-= " -o bp.out.pyg bp.pyg)...executed.
-
-(./bp.out.pyg)
-runsystem(rm bp.out.pyg)...executed.
-
-runsystem(rm bp.pyg)...executed.
+<plot_add.pdf, id=242, 361.35pt x 176.66pt>
+File: plot_add.pdf Graphic file (type pdf)
+ <use plot_add.pdf>
+Package pdftex.def Info: plot_add.pdf used on input line 204.
+(pdftex.def)             Requested size: 361.34999pt x 176.66225pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<plot_sleep.pdf, id=243, 361.35pt x 176.66pt>
+File: plot_sleep.pdf Graphic file (type pdf)
+ <use plot_sleep.pdf>
+Package pdftex.def Info: plot_sleep.pdf used on input line 210.
+(pdftex.def)             Requested size: 361.34999pt x 176.66225pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11] [12pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.2.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.225 		T
+         he innovation factor is high because Redis is usually not used as a...
+ <./plot_add.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-[12]
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.237 \chapter
+              {Conclusion} <./plot_sleep.pdf>] [14]
 Chapter 3.
-(./bp.bbl [13
+(./bp.bbl [15
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
@@ -805,22 +826,29 @@ $[]\IL2/ppl/m/n/12 ,
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 212.
- [14
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 246.
+ [16
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 212.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 246.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 212.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 212.
-Package rerunfilecheck Info: File `bp.out' has not changed.
-(rerunfilecheck)             Checksum: 1E4E07216CC3DF96F021BDCEC868EC4C;1672.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 246.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 246.
+
+
+Package rerunfilecheck Warning: File `bp.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `bp.out':
+(rerunfilecheck)             Before: DE32DFAE5CB977920653E06EF26B4794;1636
+(rerunfilecheck)             After:  4E3318D020FDEC7302037A7B1E414180;1716.
  ) 
 Here is how much of TeX's memory you used:
- 7567 strings out of 493629
- 106910 string characters out of 3148778
- 192823 words of memory out of 3000000
- 10584 multiletter control sequences out of 15000+200000
+ 7579 strings out of 493629
+ 107117 string characters out of 3148778
+ 192962 words of memory out of 3000000
+ 10591 multiletter control sequences out of 15000+200000
  35332 words of font info for 77 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  44i,11n,37p,617b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -830,10 +858,10 @@ are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
 ier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr
 /share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fo
 nts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (18 pages, 146667 bytes).
+Output written on bp.pdf (20 pages, 160011 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 395 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 

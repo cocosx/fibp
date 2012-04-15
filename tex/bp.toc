@@ -9,17 +9,18 @@
 \contentsline {chapter}{\numberline {2}\bfseries Implementation}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}\slshape Technologies}{7}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}\rmfamily General suitability for the project}{8}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}\rmfamily Runtime speed, resource intensity and stability}{9}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}\rmfamily Data store}{11}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}\slshape Basic functionality}{12}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}\rmfamily User registration}{12}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}\rmfamily Profile photo upload}{12}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}\rmfamily Acquaintance selection}{12}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}\rmfamily Notifications}{12}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}\rmfamily Chat}{12}{subsection.2.2.5}
-\contentsline {section}{\numberline {2.3}\slshape Implementation in detail}{12}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}\rmfamily Security}{12}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}\rmfamily I18n}{12}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}\rmfamily Geolocation}{12}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}\rmfamily Graphical design}{12}{subsection.2.3.4}
-\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{13}{chapter.3}
+\contentsline {subsection}{\numberline {2.1.2}\rmfamily Performance}{9}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\rmfamily Stability and scalability}{12}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}\rmfamily Data store}{12}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}\slshape Basic functionality}{14}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\rmfamily User registration}{14}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}\rmfamily Profile photo upload}{14}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}\rmfamily Acquaintance selection}{14}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}\rmfamily Notifications}{14}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}\rmfamily Chat}{14}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}\slshape Implementation in detail}{14}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\rmfamily Security}{14}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}\rmfamily I18n}{14}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\rmfamily Geolocation}{14}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}\rmfamily Graphical design}{14}{subsection.2.3.4}
+\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{15}{chapter.3}

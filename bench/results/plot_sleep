@@ -1,0 +1,26 @@
+set terminal postscript eps color lw 4 "Helvetica" 12
+set out 'plot_sleep.eps'
+
+set xlabel "Concurrent requests"
+set ylabel "Requests per second"
+set xrange [-20:1020]
+set size 1,0.7
+#set key right bottom
+#set logscale y 1.01
+
+
+plot \
+  "nodejs_sleep.dat" using 1:2:3 with yerrorbars lt 1 notitle,\
+  "nodejs_sleep.dat" using 1:2 with lines lt 1 title "Node.js",\
+  "php_sleep.dat" using 1:2:3 with yerrorbars lt 2 notitle,\
+  "php_sleep.dat" using 1:2 with lines lt 2 title "PHP",\
+  "sinatra_sleep.dat" using 1:2:3 with yerrorbars lt 3 notitle,\
+  "sinatra_sleep.dat" using 1:2 with lines lt 3 title "Sinatra",\
+  "cherrypy_sleep.dat" using 1:2:3 with yerrorbars lt 4 notitle,\
+  "cherrypy_sleep.dat" using 1:2 with lines lt 4 title "CherryPy"
+
+set term pop
+replot
+
+pause -1
+

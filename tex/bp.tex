@@ -114,11 +114,11 @@ abstract
 		\item \textbf{Availability for commercial use free of charge}\\
 			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
 		\item \textbf{General suitability for the project}\\
-			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. The data model will be quite simple. There must be an easy way of making HTTP push\footnote{"HTTP server push (also known as HTTP streaming) is a mechanism for sending data from a web server to a web browser." \url{http://en.wikipedia.org/wiki/HTTP_push}, {2012-08-04}} communication to enable real-time chat. 
-		\item \textbf{Runtime speed, resource intensity and stability}\\
-			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. The framework should have a good track record of runtime stability and error recovery.
-		\item \textbf{Scalability}\\
-			The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently.
+			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. The data model will be quite simple. There must be an easy way of making HTTP push\footnote{"HTTP server push (also known as HTTP streaming) is a mechanism for sending data from a web server to a web browser." \url{http://en.wikipedia.org/wiki/HTTP_push}, {2012-04-08}} communication to enable real-time chat. 
+		\item \textbf{Performance}\\
+			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. 
+		\item \textbf{Stability and scalability}\\
+			The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently. The framework should have a good track record of runtime stability.
 		\item \textbf{Ease of development and developer community size}\\
 			It should be easy to implement the project and good documentation is welcome. The framework should have a good community with which a developer can try to solve issues.
 		\item \textbf{Code stability}\\
@@ -147,19 +147,19 @@ abstract
 		
 		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, i.e. Express.js, plain PHP, CherryPy and Sinatra.
 		
-	\subsection{Runtime speed, resource intensity and stability}
-		Let us first compare speed of the languages and their virtual machines themselves. We can use results from \emph{The Computer Language Benchmarks Game} \cite{website:bench}. It uses several algorithms written in different programming languages to measure their speed.
+	\subsection{Performance}
+		Let us first compare performance of the languages and their virtual machines themselves. We can use results from \emph{The Computer Language Benchmarks Game} \cite{website:bench}. It uses several algorithms written in different programming languages to measure their speed.
 		
 		\begin{figure}[htb]
 	  \centering
 	    \includegraphics[width=0.7\textwidth]{bench2.png}
-		  \caption{Language benchmark of V8 Engine, Python 3, Ruby 1.9 and PHP 5.4.0}
+		  \caption{Language benchmark of V8 Engine, Python 3, Ruby 1.9 and PHP 5.4.0. Lower means faster.}
 		  \label{fig:bench1}
 		\end{figure}
 		
 		A box plot of the benchmark is shown in figure \ref{fig:bench1}. The vertical axis means how many times the language is slower than the fastest one (Intel Fortran 12.1). Out of the languages under consideration, Node.js on average 6 times faster than the rest\footnote{Node.js uses the V8 Engine internally}. 
 		
-		Next we will benchmark the speed of the HTTP handling of the frameworks. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM. We will use the Apache HTTP server benchmarking tool. Source codes for Sinatra and Node.js are in listings \ref{code:sinatra} and \ref{code:nodejs}, the other two for PHP and CherryPy are on the attached CD.
+		Next we will benchmark the performance of the HTTP handling of the frameworks. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM. We will use the Apache HTTP server benchmarking tool (\texttt{ab}). Source codes for Sinatra and Node.js are in listings \ref{code:sinatra} and \ref{code:nodejs}, the other two for PHP and CherryPy are on the attached CD.
 
 		\begin{program}
 		\caption{Benchmark for Sinatra in Ruby}
@@ -175,18 +175,52 @@ abstract
 
 		The \texttt{add} method has two parameters \texttt{a} and \texttt{b} and simply returns their sum. It will simulate simple \texttt{GET} parameter parsing and response.
 		
-		The \texttt{sleep} method has one paramater \texttt{ms}. Execution is suspended for \texttt{ms} miliseconds and a simple response is sent. This is intended to simulate a database query that takes given time.
+		The \texttt{sleep} method has one paramater \texttt{ms}. Execution is suspended for \texttt{ms} miliseconds and a simple response is sent. This is intended to simulate a database query that takes given time. We will use a 20ms delay.
 		
 		Node.js uses its internal HTTP server, Sinatra uses the Thin server, CherryPy uses its internal WSGI server and PHP is hosted through \texttt{mod\_php} on the Apache server. Unlinke CherryPy and Apache which use a thread pool to serve requests, Node.js and Thin use the \texttt{libevent} that utilizes \texttt{epoll} on Linux and \texttt{kqueue} on FreeBDS theoretically allowing for better concurrency. Node.js is also strictly single-threaded.
 	
+		Here is a list of versions and parameters used:
+		\begin{compactitem}
+			\item Node.js 0.6.13
+			\item PHP 5.3.10, Apache 2.2.22
+			\item Python 3.2.2, CherryPy 3.2.2, 100 threads in the pool
+			\item Ruby 1.9.3p125, Sinatra 1.2.7, Thin 1.3.3
+			\item All logging including access is disabled.
+			\item 5000 request per test
+			\item Concurrency in set (1,10,30,50,100,200,300,500,700,1000)
+			\item \texttt{ab} is run 10 times for each parameter set and a mean is calculated.
+			\item \texttt{/proc/sys/net/ipv4/tcp\_tw\_reuse} set to 1. This allows for reuse of sockets in the \texttt{TIME\_WAIT} state. This is a recommanded setting for high concurrency web servers. 
+			\item 2 seconds wait time between each run of \texttt{ab}
+			\item In case one of the runs fails (i.e. any of the 5000 requests fails), a score of 0 request per second is awarded for the run.
+			\item Source code of the Python script used to perform the benchmark can be found in attached file \texttt{bench.py}.
+		\end{compactitem}
 		
-		\mint{bash}|ab -n 10000 -c 10 "http://127.0.0.1:3000/add?a=3&b=5"|
+		Graph \ref{fig:bench_add} shows the results of the \texttt{add} benchmark. We can see that PHP keeps up with Node.js until the 100 concurrent requests mark, but then declines sharply. Node.js is able to serve about 4700 request per second regardless of concurrency.
+		
+		Graph \ref{fig:bench_sleep} shows the results of the \texttt{sleep} benchmark. Node.js is again the clear winner with about 4700 request per second regardless of concurrency. This is because Node.js's \texttt{setTimeout} is non-blocking. This applies also to any database query. Once the query is made, Node.js moves to serve other requests.
+		
+		\begin{figure}[h]
+	  \centering
+	    \includegraphics[width=1.0\textwidth]{plot_add.pdf}
+		  \caption{Benchmark of the \texttt{add} method. Error bars denote standard deviation.}
+		  \label{fig:bench_add}
+		\end{figure}		
+		\begin{figure}[h]
+	  \centering
+	    \includegraphics[width=1.0\textwidth]{plot_sleep.pdf}
+		  \caption{Benchmark of the \texttt{sleep} method. Error bars denote standard deviation.}
+		  \label{fig:bench_sleep}
+		\end{figure}
+		
+		In conclusion, Node.js performs the best as both a language and a HTTP server framework. PHP and Sinatra split the second place.
+		
+	\subsection{Stability and scalability}
 	\subsection{Data store}		
 		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
 		
-		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keep the entire database in memory with optional regular persistent storage snapshots, which allows for very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times af fast as MySQL when it comes to simple operations.
+		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keeps the entire database in memory with optional regular persistent storage snapshots, which allows for very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times af fast as MySQL when it comes to simple operations.
 		
-		One of the drawbacks is that Redis mostly has simple commands so complex operations are difficult to program.
+		One of the drawbacks is that Redis mostly has simple commands so even moderately complex operations are difficult to program.
 		
 		The innovation factor is high because Redis is usually not used as a single storage for all the data. As a bonus, Redis contains a simple publisher-subscriber functionality, which will come handy when implementing the real-time chat.
 \section{Basic functionality}
