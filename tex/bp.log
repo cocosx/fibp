@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  14 APR 2012 23:41
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  15 APR 2012 12:10
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **bp.tex
 (./bp.tex
@@ -462,76 +462,113 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(/usr/share/texmf-dist/tex/latex/bera/beramono.sty
-Package: beramono 2004/01/31 (WaS)
+(/usr/share/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-(/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count99
-\lst@gtempboxa=\box26
-\lst@token=\toks18
-\lst@length=\count100
-\lst@currlwidth=\dimen110
-\lst@column=\count101
-\lst@pos=\count102
-\lst@lostspace=\dimen111
-\lst@width=\dimen112
-\lst@newlines=\count103
-\lst@lineno=\count104
-\lst@maxwidth=\dimen113
+(/usr/share/texmf/tex/latex/minted/minted.sty
+Package: minted 2011/09/17 v1.7 Yet another Pygments shim for LaTeX
 
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count105
-\lst@skipnumbers=\count106
-\lst@framebox=\box27
+(/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count99
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count100
+\FV@StepNumber=\count101
+\FV@OutFile=\write3
+) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
-))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
-
-(/usr/share/texmf-dist/tex/latex/algorithms/algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
-nment
-
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count107
-\float@exts=\toks19
-\float@box=\box28
-\@float@everytoks=\toks20
-\@floatcapt=\box29
+\c@float@type=\count102
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
 )
 (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks21
-\c@algorithm=\count108
-) (./bp.aux)
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count103
+\calc@Bcount=\count104
+\calc@Adimen=\dimen110
+\calc@Bdimen=\dimen111
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count105
+\calc@Cskip=\skip50
+)
+(/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catches the contents of a file (HO)
+)
+runsystem(uname -s > "bp.w18")...executed.
+
+ (./bp.w18)
+runsystem(rm -- "bp.w18")...executed.
+
+)
+\minted@bgbox=\box29
+\minted@code=\write4
+\@float@every@listing=\toks20
+\c@listing=\count106
+)
+runsystem(which pygmentize && touch bp.aex)...executed.
+
+runsystem(rm bp.aex)...executed.
+
+\@float@every@program=\toks21
+\c@program=\count107
+
+(./bp.aux)
 \openout1 = `bp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 31.
-LaTeX Font Info:    Try loading font information for IL2+cmr on input line 31.
-
-(/usr/share/texmf-dist/tex/latex/cslatex/il2cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for IL2+cmr on input line 33.
+ (/usr/share/texmf-dist/tex/latex/cslatex/il2cmr.fd
 File: il2cmr.fd 1997/02/06 CSLaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for IL2+ppl on input line 31.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for IL2+ppl on input line 33.
 
 (/usr/share/texmf-dist/tex/cslatex/base/il2ppl.fd
 File: il2ppl.fd 1998/12/27 CS Palatino
@@ -540,20 +577,20 @@ LaTeX Font Info:    (C) Z. Wagner,1998/12/27 on input line 3.
 LaTeX Font Info:    Created by CsPsFont utility v.1.0f (C) Z. Wagner, 1998/12/2
 7 on input line 4.
 )
-\big@size=\dimen114
+\big@size=\dimen112
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
-\scratchdimen=\dimen115
+\scratchcounter=\count108
+\scratchdimen=\dimen113
 \scratchbox=\box30
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen116
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen114
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks23
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -571,7 +608,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 33.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -579,32 +616,32 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count115
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
  (./bp.out)
 (./bp.out)
-\@outlinefile=\write3
-\openout3 = `bp.out'.
+\@outlinefile=\write5
+\openout5 = `bp.out'.
 
-\c@lstlisting=\count116
- [1
+runsystem(pygmentize -S default -f latex > bp.pyg)...executed.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+ (./bp.pyg) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+[2
 
 ] [3
 
-]
-[4] (./bp.toc
+] [4] (./bp.toc
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 1.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )<<ot1.cmap>>
 LaTeX Font Info:    Try loading font information for OML+zplm on input line 1.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
+ (/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )<<oml.cmap>>
 LaTeX Font Info:    Try loading font information for OMS+zplm on input line 1.
@@ -627,8 +664,8 @@ LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <12> not available
 (Font)              Font shape `IL2/ppl/m/it' tried instead on input line 2.
 
 )
-\tf@toc=\write4
-\openout4 = `bp.toc'.
+\tf@toc=\write6
+\openout6 = `bp.toc'.
 
  [1
 
@@ -637,31 +674,27 @@ LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <12> not available
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for IL2+fvm on input line 52.
-LaTeX Font Info:    No file IL2fvm.fd. on input line 52.
-
-LaTeX Font Warning: Font shape `IL2/fvm/m/n' undefined
-(Font)              using `IL2/cmr/m/n' instead on input line 52.
-
-
-Overfull \hbox (1.19395pt too wide) in paragraph at lines 52--53
-\IL2/ppl/m/n/12 from Canada, UK, US, Aus-tralia, Ire-land, New Zealand, Spain, 
-France,
- []
-
-[3
+LaTeX Font Info:    Try loading font information for IL2+pcr on input line 54.
+(/usr/share/texmf-dist/tex/cslatex/base/il2pcr.fd
+File: il2pcr.fd 1998/12/27 CS Courier
+LaTeX Font Info:     CS Courier on input line 2.
+LaTeX Font Info:    (C) Z. Wagner,1998/12/27 on input line 3.
+LaTeX Font Info:    Created by CsPsFont utility v.1.0f (C) Z. Wagner, 1998/12/2
+7 on input line 4.
+) [3
 
 ] [4]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 89.
- (/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 91.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
  [5] [6]
 Chapter 2.
 
-Overfull \hbox (0.8459pt too wide) in paragraph at lines 122--124
+Overfull \hbox (0.8459pt too wide) in paragraph at lines 124--126
 \IL2/ppl/m/n/12 The tech-nolo-gies should be past their rapid de-vel-op-ment ph
 ases
  []
@@ -669,27 +702,27 @@ ases
 [7
 
 ]
-Overfull \hbox (3.24799pt too wide) in paragraph at lines 137--137
+Overfull \hbox (3.24799pt too wide) in paragraph at lines 139--139
 []\IL2/ppl/m/n/12 Locomotive,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 []\IL2/ppl/m/n/12 Zend,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
 []\IL2/ppl/m/n/12 Dajngo,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 []\IL2/ppl/m/n/12 Ruby on
  []
 
 
-Overfull \hbox (3.60484pt too wide) in paragraph at lines 131--140
+Overfull \hbox (3.60484pt too wide) in paragraph at lines 133--142
 [][]
  []
 
@@ -702,38 +735,57 @@ Overfull \vbox (1.98859pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.147 
-      ] <bench2.png, id=221, 481.8pt x 301.125pt>
+l.149 
+      ] <bench2.png, id=220, 481.8pt x 301.125pt>
 File: bench2.png Graphic file (type png)
  <use bench2.png>
-Package pdftex.def Info: bench2.png used on input line 153.
+Package pdftex.def Info: bench2.png used on input line 155.
 (pdftex.def)             Requested size: 252.94388pt x 158.0884pt.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 164.
+Package hyperref Info: bookmark level for unknown program defaults to 0 on inpu
+t line 165.
+runsystem(pygmentize -l ruby -f latex -F tokenmerge             -P "verboptions
+= ,fontsize=\footnotesize " -o bp.out.pyg ../bench/sinatra/app.rb)...executed.
 
-(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
 
-Overfull \hbox (113.85484pt too wide) in paragraph at lines 167--168
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+(./bp.out.pyg)
+runsystem(rm bp.out.pyg)...executed.
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
-) has been already used, duplicate ignored
+runsystem(pygmentize -l javascript -f latex -F tokenmerge             -P "verbo
+ptions= ,fontsize=\footnotesize " -o bp.out.pyg ../bench/nodejs/app.js)...execu
+ted.
+
+ (./bp.out.pyg)
+runsystem(rm bp.out.pyg)...executed.
+
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.174 
-       <./bench2.png>]
+l.179 
+       <./bench2.png>] [10]
+Overfull \hbox (6.2099pt too wide) in paragraph at lines 180--181
+\IL2/ppl/m/n/12 use a thread pool to serve re-quests, Node.js and Thin use the 
+\IL2/pcr/m/n/12 libevent
+ []
+
+\openout4 = `bp.pyg'.
+
+runsystem(pygmentize -l bash -f latex -F tokenmerge             -P "verboptions
+= " -o bp.out.pyg bp.pyg)...executed.
+
+(./bp.out.pyg)
+runsystem(rm bp.out.pyg)...executed.
+
+runsystem(rm bp.pyg)...executed.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-[11]
+ [11]
+[12]
 Chapter 3.
-(./bp.bbl [12
+(./bp.bbl [13
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
@@ -742,50 +794,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--59
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
-\IL2/ppl/m/n/12 MySQL com-par-i-sion.  []$\IL2/fvm/m/n/12 http : / / www . rutu
+\IL2/ppl/m/n/12 MySQL com-par-i-sion.  []$\IL2/pcr/m/n/12 http : / / www . rutu
 raj . net /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--59
-\IL2/fvm/m/n/12 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparision/
-$[]\IL2/ppl/m/n/12 , 2009.
+Overfull \hbox (31.84186pt too wide) in paragraph at lines 53--59
+\IL2/pcr/m/n/12 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparision/
+$[]\IL2/ppl/m/n/12 ,
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
- [13
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 212.
+ [14
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 212.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 212.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 212.
 Package rerunfilecheck Info: File `bp.out' has not changed.
 (rerunfilecheck)             Checksum: 1E4E07216CC3DF96F021BDCEC868EC4C;1672.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
  ) 
 Here is how much of TeX's memory you used:
- 8105 strings out of 493629
- 113262 string characters out of 3148778
- 213936 words of memory out of 3000000
- 11145 multiletter control sequences out of 15000+200000
- 34803 words of font info for 73 fonts, out of 3000000 for 9000
+ 7567 strings out of 493629
+ 106910 string characters out of 3148778
+ 192823 words of memory out of 3000000
+ 10584 multiletter control sequences out of 15000+200000
+ 35332 words of font info for 77 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,11n,42p,617b,1303s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,11n,37p,617b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8a.enc} <./fi-logo.514pk></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
-/fonts/type1/public/cs/csr10.pfb></usr/share/texmf-dist/fonts/type1/public/cs/c
-sr12.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share
-/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/ty
-pe1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (17 pages, 134855 bytes).
+/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/cour
+ier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr
+/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fo
+nts/type1/urw/palatino/uplri8a.pfb>
+Output written on bp.pdf (18 pages, 146667 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
+ 367 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
  66 named destinations out of 1000 (max. 500000)
  226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

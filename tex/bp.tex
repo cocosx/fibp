@@ -6,18 +6,20 @@
 \usepackage{paralist}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{courier}
 
-\usepackage[scaled]{beramono} % Or some other package that provides a fixed width font. q.v.
-                      % http://www.tug.dk/FontCatalogue/typewriterfonts.html
-\usepackage{listings} 
-%\lstset{                 % A rudimentary config that shows off some features.
-%   basicstyle=\ttfamily\footnotesize % Without beramono, we'd get cmtt, the teletype font.
-%}
-%\newcommand\Small{\fontsize{9}{9.2}\selectfont}
-%\newcommand*\LSTfont{\Small\ttfamily\SetTracking{encoding=*}{-60}\lsstyle}
+\usepackage{minted}
+%\usemintedstyle{bw}
 
+%\usepackage{fontspec}
+%\setsansfont{Calibri}
+%\setmonofont{Consolas}
 
-\usepackage{algorithm}
+\usepackage{float}
+\floatstyle{ruled}
+\newfloat{program}{thp}{lop}
+\floatname{program}{Listing}
+
 
 \thesistitle{Design and implementation of a social network for making acquaintances}
 \thesissubtitle{Bachelor thesis}
@@ -157,18 +159,28 @@ abstract
 		
 		A box plot of the benchmark is shown in figure \ref{fig:bench1}. The vertical axis means how many times the language is slower than the fastest one (Intel Fortran 12.1). Out of the languages under consideration, Node.js on average 6 times faster than the rest\footnote{Node.js uses the V8 Engine internally}. 
 		
-		In this section we will benchmark the platforms still left in the comparison to determine their speed. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM.
+		Next we will benchmark the speed of the HTTP handling of the frameworks. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM. We will use the Apache HTTP server benchmarking tool. Source codes for Sinatra and Node.js are in listings \ref{code:sinatra} and \ref{code:nodejs}, the other two for PHP and CherryPy are on the attached CD.
+
+		\begin{program}
+		\caption{Benchmark for Sinatra in Ruby}
+		\label{code:sinatra}
+		\inputminted[fontsize=\footnotesize]{ruby}{../bench/sinatra/app.rb} 
+		\end{program}
+		
+		\begin{program}
+		\caption{Benchmark for Node.js in JavaScript}
+		\label{code:nodejs}
+		\inputminted[fontsize=\footnotesize]{javascript}{../bench/nodejs/app.js}
+		\end{program}
+
+		The \texttt{add} method has two parameters \texttt{a} and \texttt{b} and simply returns their sum. It will simulate simple \texttt{GET} parameter parsing and response.
+		
+		The \texttt{sleep} method has one paramater \texttt{ms}. Execution is suspended for \texttt{ms} miliseconds and a simple response is sent. This is intended to simulate a database query that takes given time.
+		
+		Node.js uses its internal HTTP server, Sinatra uses the Thin server, CherryPy uses its internal WSGI server and PHP is hosted through \texttt{mod\_php} on the Apache server. Unlinke CherryPy and Apache which use a thread pool to serve requests, Node.js and Thin use the \texttt{libevent} that utilizes \texttt{epoll} on Linux and \texttt{kqueue} on FreeBDS theoretically allowing for better concurrency. Node.js is also strictly single-threaded.
 	
-
-\begin{algorithm}
-\caption{your caption for this algorithm}
-\label{alg}
-\begin{lstlisting}[language=Java]
-public final int ourAnswer() { return 42; /* Our final answer */ }
-\end{lstlisting} 
-\end{algorithm}
-
-
+		
+		\mint{bash}|ab -n 10000 -c 10 "http://127.0.0.1:3000/add?a=3&b=5"|
 	\subsection{Data store}		
 		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
 		

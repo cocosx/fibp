@@ -1,10 +1,17 @@
 import cherrypy
 from cherrypy import wsgiserver
+import time
 
 class HelloWorld(object):
-  def index(self, a=None, b=None):
+  def add(self, a=None, b=None):
     return str(int(a)+int(b))
-  index.exposed = True
+  add.exposed = True
+
+  def sleep(self, ms=None):
+    ms=int(ms)
+    time.sleep(ms/1000.0)
+    return "Slept {} miliseconds.".format(ms)
+  sleep.exposed = True
 
 #cherrypy.quickstart(HelloWorld())
 cherrypy.config.update({'log.screen': False})
