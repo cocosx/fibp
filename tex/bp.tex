@@ -115,13 +115,11 @@ abstract
 			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
 		\item \textbf{General suitability for the project}\\
 			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. The data model will be quite simple. There must be an easy way of making HTTP push\footnote{"HTTP server push (also known as HTTP streaming) is a mechanism for sending data from a web server to a web browser." \url{http://en.wikipedia.org/wiki/HTTP_push}, {2012-04-08}} communication to enable real-time chat. 
-		\item \textbf{Performance}\\
-			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. 
-		\item \textbf{Stability and scalability}\\
-			The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently. The framework should have a good track record of runtime stability.
+		\item \textbf{Performance, scalability and stability}\\
+			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently. The framework should have a good track record of runtime stability.
 		\item \textbf{Ease of development and developer community size}\\
 			It should be easy to implement the project and good documentation is welcome. The framework should have a good community with which a developer can try to solve issues.
-		\item \textbf{Code stability}\\
+		\item \textbf{Codebase stability}\\
 			The technologies should be past their rapid development phases and the core APIs should be stable. This minimizes the effort needed to transition the project to a newer version of the framework. 
 		\item \textbf{Innovation factor}\\
 			Younger technologies are preffered as their use can lead to innovation and discovery of new approaches to problems.
@@ -147,13 +145,13 @@ abstract
 		
 		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, i.e. Express.js, plain PHP, CherryPy and Sinatra.
 		
-	\subsection{Performance}
+	\subsection{Performance, scalability and stability}
 		Let us first compare performance of the languages and their virtual machines themselves. We can use results from \emph{The Computer Language Benchmarks Game} \cite{website:bench}. It uses several algorithms written in different programming languages to measure their speed.
 		
 		\begin{figure}[htb]
 	  \centering
 	    \includegraphics[width=0.7\textwidth]{bench2.png}
-		  \caption{Language benchmark of V8 Engine, Python 3, Ruby 1.9 and PHP 5.4.0. Lower means faster.}
+		  \caption{Language benchmark of V8 Engine, Python 3, Ruby 1.9 and PHP 5.4.0. Lower means faster. Source: \cite{website:bench}}
 		  \label{fig:bench1}
 		\end{figure}
 		
@@ -212,9 +210,31 @@ abstract
 		  \label{fig:bench_sleep}
 		\end{figure}
 		
-		In conclusion, Node.js performs the best as both a language and a HTTP server framework. PHP and Sinatra split the second place.
+		Node.js and Sinatra on Thin are the only framework to remain stable with increasing load. PHP and CherryPy have started dropping requests at concurrency levels of 300 and 30 respectively.
+				
+		In conclusion, Node.js performs the best as both a language and a HTTP server framework and remains stable under any load. Sinatra is also stable, however it is slower, which could be partially solved by the use of clustering. Under low loads PHP on Apache is just as fast as Node.js, but it's stability is hardly acceptable. CherryPy is eliminated.
 		
-	\subsection{Stability and scalability}
+	\subsection{Ease of development and developer community size}
+		All the frameworks in the comparison provide very similar levels of functionality. From the author's experience, Ruby allows for shortest code at the slight expense of readability. Javascript on the other hand requires the longest code and can be a little tricky. See aganin listings \ref{code:sinatra} and \ref{code:nodejs}.
+		
+		PHP is arguably the most used framework for web programming, hence it has the biggest developer community. It is well documented in many languages. Countless modules, snippets and add-on libraries are available.
+		
+		Node.js and Sinatra have a smaller but very active community. Thousands of modules and add-on are available through their package managers such as npm for Node.js and RubyGems for Sinatra. Both are adequately documented if not deeply. 
+		
+	\subsection{Codebase stability}
+		PHP's codebase is the most stable. It is the oldest framework in the comparison, laguage and API changes are almost non-existen and don't break backwards compatibility.
+		
+		Sinatra and Node.js split the second place. There have still been some changes to the Ruby language from version 1.8 to 1.9 that could break backwards compatibility. Node.js is still under active development, however the API tends to only grow and not change.
+		
+	\subsection{Innovation factor}
+		Node.js is the clear winner in this criterion. It is the most innovative in that it uses JavaScript on the server side, event-based polling and non-blocking API.
+		
+		Sinatra comes in the second place. It utilizes Ruby's advanced language constructions allowing for tidy coding. PHP finishes last because of its age and lack of modern approaches.
+		
+	\subsection{The overall winner: Node.js}
+		The author has chosen Node.js for the implementation of this project. It is just as suitable as other frameworks and clearly wins performance, scalability and stability tests. It is also the most innovative framework of recent years with growing developer community support.
+		
+		There are two drawback to using Node.js. Firstly it is still relatively immature and bigger API chages could still happen. Secondly the use of JavaScript and non-blocking function calls can lead to poorly readable code. The author however believes that the advantages greatly outweigh this.
 	\subsection{Data store}		
 		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
 		
@@ -223,6 +243,7 @@ abstract
 		One of the drawbacks is that Redis mostly has simple commands so even moderately complex operations are difficult to program.
 		
 		The innovation factor is high because Redis is usually not used as a single storage for all the data. As a bonus, Redis contains a simple publisher-subscriber functionality, which will come handy when implementing the real-time chat.
+\section{Data model}
 \section{Basic functionality}
 	\subsection{User registration}
 	\subsection{Profile photo upload}
