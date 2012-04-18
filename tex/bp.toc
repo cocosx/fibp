@@ -15,16 +15,16 @@
 \contentsline {subsection}{\numberline {2.1.5}\rmfamily Innovation factor}{13}{subsection.2.1.5}
 \contentsline {subsection}{\numberline {2.1.6}\rmfamily The overall winner: Node.js}{14}{subsection.2.1.6}
 \contentsline {subsection}{\numberline {2.1.7}\rmfamily Data store}{14}{subsection.2.1.7}
-\contentsline {section}{\numberline {2.2}\slshape Data model}{15}{section.2.2}
-\contentsline {section}{\numberline {2.3}\slshape Basic functionality}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}\rmfamily User registration}{15}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}\rmfamily Profile photo upload}{15}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}\rmfamily Acquaintance selection}{15}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}\rmfamily Notifications}{15}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}\rmfamily Chat}{15}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{15}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}\rmfamily Security}{15}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}\rmfamily I18n}{15}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}\rmfamily Geolocation}{15}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}\rmfamily Graphical design}{15}{subsection.2.4.4}
-\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{16}{chapter.3}
+\contentsline {subsection}{\numberline {2.1.8}\rmfamily Modules and libraries used}{15}{subsection.2.1.8}
+\contentsline {section}{\numberline {2.2}\slshape Basic functionality}{16}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\rmfamily User registration}{16}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}\rmfamily Profile photo upload}{16}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}\rmfamily Acquaintance selection}{16}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}\rmfamily Notifications}{16}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}\rmfamily Chat}{16}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}\slshape Implementation in detail}{16}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\rmfamily Security}{16}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}\rmfamily I18n}{16}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\rmfamily Geolocation}{16}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}\rmfamily Graphical design}{16}{subsection.2.3.4}
+\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{17}{chapter.3}

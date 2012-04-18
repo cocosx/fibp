@@ -243,9 +243,26 @@ abstract
 		One of the drawbacks is that Redis mostly has simple commands so even moderately complex operations are difficult to program.
 		
 		The innovation factor is high because Redis is usually not used as a single storage for all the data. As a bonus, Redis contains a simple publisher-subscriber functionality, which will come handy when implementing the real-time chat.
-\section{Data model}
+	\subsection{Modules and libraries used}
+		The following libraries and modules will be used to simplify implementation of the project:
+		\begin{itemize}
+			\item[\textbf{Underscore.js}] "A utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects." \footnote{\url{http://documentcloud.github.com/underscore/} 2012-04-18} It will be used in both client and server JavaScript code. 
+			\item[\textbf{Express.js}] A simple web framework on top of Node.js. Allows for easy routing, GET and POST method parameter parsing and response sending. Uses the common \emph{Connect} architecture, therefore  is also a base for other modules.  \url{http://expressjs.com/}
+			\item[\textbf{node-jade}] A library for the Jade HTML templating engine. \url{http://jade-lang.com/}
+			\item[\textbf{redis}] A Node.js Redis client. Performance can be enhanced using the \emph{hiredis} native backend. \url{https://github.com/visionmedia/connect-redis}
+			\item[\textbf{connect-redis}] A \emph{Connect} module for saving of user session data to the Redis data store. Uses a signed cookie for client identification. \url{https://github.com/visionmedia/connect-redis}
+			\item[\textbf{node-sechash}] A library for calculation of cryptographically secure hashes to be used to store passwords. Automatically adds salt. \url{https://github.com/kbjr/node-sechash}
+			\item[\textbf{formaline}] An advanced HTTP POST request parser. Especially useful to handle file uploads. \url{https://github.com/rootslab/formaline}
+			\item[\textbf{node-gm}] A Node.js GraphicsMagick library. Facilitates image manipulation such as resizing, cropping and format coversion. \url{http://aheckmann.github.com/gm/}
+			\item[\textbf{i18n-node}] A simple internationalization library. \url{https://github.com/mashpie/i18n-node}
+			\item[\textbf{async}] A library to simplify asynchronous function calls on arrays of data, typically in series or parallely. \url{https://github.com/caolan/async}
+			\item[\textbf{RedBack}] "A fast, high-level Redis library for Node.JS that exposes an accessible and extensible interface to the Redis data types." \footnote{\url{http://redbackjs.com/} 2012-04-18} Its \emph{RateLimit} class will be used for spam protection. 
+			\item[\textbf{node-recaptcha}] A Node.js reCaptcha service client. Used for spam prevention. \url{https://github.com/mirhampt/node-recaptcha}
+		\end{itemize}
+%\section{Data model}
 \section{Basic functionality}
 	\subsection{User registration}
+	
 	\subsection{Profile photo upload}
 	\subsection{Acquaintance selection}
 	\subsection{Notifications}

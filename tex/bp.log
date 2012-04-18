@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  16 APR 2012 11:02
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  18 APR 2012 21:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -803,9 +803,32 @@ l.236
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
+Overfull \hbox (10.3259pt too wide) in paragraph at lines 252--253
+\IL2/ppl/m/it/12 hire-dis \IL2/ppl/m/n/12 na-tive back-end. []$\IL2/pcr/m/n/12 
+https : / / github . com / visionmedia /
+ []
+
+
+Overfull \hbox (3.3899pt too wide) in paragraph at lines 255--256
+\IL2/ppl/m/n/12 ful to han-dle file up-loads. []$\IL2/pcr/m/n/12 https : / / gi
+thub . com / rootslab /
+ []
+
+
+Overfull \hbox (1.63678pt too wide) in paragraph at lines 257--258
+[]\IL2/ppl/m/n/12 A sim-ple in-ter-na-tion-al-iza-tion li-brary. []$\IL2/pcr/m/
+n/12 https : / / github .
+ []
+
 [15]
+Overfull \hbox (34.28584pt too wide) in paragraph at lines 260--261
+\IL2/ppl/m/n/12 pre-ven-tion. []$\IL2/pcr/m/n/12 https : / / github . com / mir
+hampt / node-[]recaptcha$[] 
+ []
+
+[16]
 Chapter 3.
-(./bp.bbl [16
+(./bp.bbl [17
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 53--59
@@ -825,20 +848,20 @@ $[]\IL2/ppl/m/n/12 ,
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
- [17
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
+ [18
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
 Package rerunfilecheck Info: File `bp.out' has not changed.
-(rerunfilecheck)             Checksum: 7FEDC81648DC2E8C02B3B08D00804BA9;2051.
+(rerunfilecheck)             Checksum: E9F7B43BE5A00F99EE58D33EC61620AE;2074.
  ) 
 Here is how much of TeX's memory you used:
- 7589 strings out of 493629
- 107268 string characters out of 3148778
+ 7592 strings out of 493629
+ 107307 string characters out of 3148778
  195043 words of memory out of 3000000
  10596 multiletter control sequences out of 15000+200000
  35332 words of font info for 77 fonts, out of 3000000 for 9000
@@ -850,10 +873,10 @@ are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
 ier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr
 /share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fo
 nts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (21 pages, 163908 bytes).
+Output written on bp.pdf (22 pages, 168273 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
+ 457 PDF objects out of 1000 (max. 8388607)
+ 360 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
  276 words of extra memory for PDF output out of 10000 (max. 10000000)
 
