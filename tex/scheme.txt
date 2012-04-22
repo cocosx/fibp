@@ -1,0 +1,82 @@
+user:
+  sets:
+    email - registered e-mail addresses
+    id
+    enabled
+    geo:<state/county/country woeid>
+    gender:0
+    gender:1
+    lf:0
+    lf:1
+    yob:<yob>
+  hashes:
+    email2id
+  counters:
+    id
+  *<id>:
+    email
+    sechash
+    activated
+    gender 1-female 0-male
+    yob
+    vercode
+    cwoeid - country
+    swoeid - state
+    owoeid - county
+    enabled - boolean
+    userPhoto json:
+      cropped - boolean
+      cropCoords - [x1,y1,x2,y2]
+      uploaded
+    searchDefaults json:
+      ageFrom
+      ageTo
+      area 1-county 2-neigh counties 3-state 4-n states 5-country
+    locale
+    helpMode boolean
+    refid
+  <id>:yes
+  <id>:no
+  <id>:maybe
+  <id>:visited !cached union yes,no,maybe,me
+  <id>:yes_t ZSET time
+  <id>:no_t
+  <id>:maybe_t
+  <id>:yesFrom
+  <id>:noFrom
+  <id>:maybeFrom
+  <id>:match ZSET time userId
+  <id>:match_q ZSET time userId
+  <id>:ref_count
+  <id>:unread:*<id> unread count from
+  zsets:
+    ping time id
+    match_pending count id
+    photo_change time id
+global:
+  chat:<id1>:<id2> id1<id2 ZSET t message-json:
+    from,to,body,time,seq
+  chat_q ZSET time userId
+  email_q ZSET time userId
+  limit:
+    signup - redback rateLimit
+worker:
+  email:
+    p1 list - ses json
+    p2
+log:
+  signup ZSET t  json id,ip,email
+geo:
+  sets:
+    countries - set woeids
+    states
+    counties
+    adjo:<county woeid> - adj counties
+    adjs:<state woeid> - adj states
+    child:<country,state woied> - child states,counties
+  json:
+    countries - json (name,woeid)
+    states:<country woeid> - json (name,woeid)
+    counties:*<state woeid> - json (name,woeid)
+    name:<county woeid> - json (oname,sname,cname)
+    oparent:*<owoeid> - json [cwoeid,swoeid]

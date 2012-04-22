@@ -247,22 +247,58 @@ abstract
 		The following libraries and modules will be used to simplify implementation of the project:
 		\begin{itemize}
 			\item[\textbf{Underscore.js}] "A utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects." \footnote{\url{http://documentcloud.github.com/underscore/} 2012-04-18} It will be used in both client and server JavaScript code. 
-			\item[\textbf{Express.js}] A simple web framework on top of Node.js. Allows for easy routing, GET and POST method parameter parsing and response sending. Uses the common \emph{Connect} architecture, therefore  is also a base for other modules.  \url{http://expressjs.com/}
+			\item[\textbf{Express.js}] A simple web framework on top of Node.js. Allows for easy routing, GET and POST method parameter parsing and response sending. Uses the common \texttt{Connect} architecture, therefore  is also a base for other modules.  \url{http://expressjs.com/}
 			\item[\textbf{node-jade}] A library for the Jade HTML templating engine. \url{http://jade-lang.com/}
-			\item[\textbf{redis}] A Node.js Redis client. Performance can be enhanced using the \emph{hiredis} native backend. \url{https://github.com/visionmedia/connect-redis}
-			\item[\textbf{connect-redis}] A \emph{Connect} module for saving of user session data to the Redis data store. Uses a signed cookie for client identification. \url{https://github.com/visionmedia/connect-redis}
+			\item[\textbf{redis}] A Node.js Redis client. Performance can be enhanced using the \texttt{hiredis} native backend. \url{https://github.com/visionmedia/connect-redis}
+			\item[\textbf{connect-redis}] A \texttt{Connect} module for saving of user session data to the Redis data store. Uses a signed cookie for client identification. \url{https://github.com/visionmedia/connect-redis}
 			\item[\textbf{node-sechash}] A library for calculation of cryptographically secure hashes to be used to store passwords. Automatically adds salt. \url{https://github.com/kbjr/node-sechash}
 			\item[\textbf{formaline}] An advanced HTTP POST request parser. Especially useful to handle file uploads. \url{https://github.com/rootslab/formaline}
 			\item[\textbf{node-gm}] A Node.js GraphicsMagick library. Facilitates image manipulation such as resizing, cropping and format coversion. \url{http://aheckmann.github.com/gm/}
 			\item[\textbf{i18n-node}] A simple internationalization library. \url{https://github.com/mashpie/i18n-node}
 			\item[\textbf{async}] A library to simplify asynchronous function calls on arrays of data, typically in series or parallely. \url{https://github.com/caolan/async}
-			\item[\textbf{RedBack}] "A fast, high-level Redis library for Node.JS that exposes an accessible and extensible interface to the Redis data types." \footnote{\url{http://redbackjs.com/} 2012-04-18} Its \emph{RateLimit} class will be used for spam protection. 
+			\item[\textbf{RedBack}] "A fast, high-level Redis library for Node.JS that exposes an accessible and extensible interface to the Redis data types." \footnote{\url{http://redbackjs.com/} 2012-04-18} Its \texttt{RateLimit} class will be used for spam protection. 
 			\item[\textbf{node-recaptcha}] A Node.js reCaptcha service client. Used for spam prevention. \url{https://github.com/mirhampt/node-recaptcha}
+			\item[\textbf{socket.io}] WebSocket and HTTP push library. \url{http://socket.io/}
+			\item[\textbf{jQuery}] HTML DOM and CSS manipulation library for JavaScript. \url{http://jquery.com/}
+			\item[\textbf{jquery.validate}] jQuery plugin for HTML form validation. \url{http://bassistance.de/jquery-plugins/jquery-plugin-validation/}
 		\end{itemize}
-%\section{Data model}
-\section{Basic functionality}
-	\subsection{User registration}
+\section{Data model}
+	Redis is a key-value storage, therefore there is no fixed schema for the database and no hierarchy per se.  As a convention, a colon character is used to divide key names into logical subgroups, e.g. \texttt{user:1234:email}. 
 	
+	A complete plan of the structure of the database is included in appendix \ref{appendix:scheme}.
+	\subsection{Basics of Redis work-flow}
+	Simple user parameters are stored as a Redis hash in order to reduce the total number of top-level keys, which can have an impact on the performance. For example to access the e-mail address of user with \texttt{id} 1234, one has to issue Redis command \mint{text}|HGET user:1234 email| insted of \mint{text}|GET user:1234:email|
+	
+	
+	An introduction to the data types and basic commands of Redis is available at \url{http://redis.io/topics/data-types}.
+	
+	There is a way to search all key names for a given pattern using the \texttt{KEYS} command, but it is very slow compared to other commands. Therefore to keep track of the objects it the database, a set of their ids must be kept. For instance to create a new user one has to execute the sequence from listing \ref{code:ex-user}.
+	
+	First a user id is generated by increasing the counter. Then a \texttt{multi} command is started. This guarantees that everything will be process at once. Since Redis is single-threaded, it is atomic by default.
+	
+	Also note the use of asynchronous function calls --- one of the defining characteristics of Node.js.
+	\begin{program}[h!]
+	\caption{A snippet of user creation code}
+	\label{code:ex-user}
+	\inputminted[fontsize=\footnotesize, linenos=true]{javascript}{ex-user.js}
+	\end{program}
+	
+	
+\section{Basic functionality}
+	\subsection{User registration}	
+	  \begin{figure}[h]
+	  \centering
+	    \includegraphics[width=1.0\textwidth]{screen-signup.png}
+		  \caption{Sign up form.}
+		  \label{fig:screen-signup}
+	  \end{figure}
+		The user is presented with a registration form on the homepage. There are three fields: e-mail address, password and password confirmation. A minimum of 6 characters is required for the password. When the user clicks the Sign up button, the values are validated with the jquery.validate plugin and errors are highlighted, see figure \ref{fig:screen-signup}. The pluing prevents the form from being submitted with errors.
+		
+		If there have been more than three registrations from a given IP address within the last 12 hours, a reCaptcha is displayed to prevent automated malicious user registrations. The \texttt{RateLimit} class of the RedBack module is used to efficiently store the number of registrations.
+		
+		When the form is posted to \texttt{/signup}, all values and the reCaptcha are once again validated on the server side. This is indeed necessary, since it is very easy to circumvent any client side validation.
+		
+		
 	\subsection{Profile photo upload}
 	\subsection{Acquaintance selection}
 	\subsection{Notifications}
@@ -273,6 +309,13 @@ abstract
 	\subsection{Geolocation}
 	\subsection{Graphical design}
 \chapter{Conclusion}
+
+\appendix
+\chapter{Structure of the storage}
+\label{appendix:scheme}
+\texttt{<id>} --- mutable parameter\\
+\texttt{*} --- stored as hash
+\inputminted[fontsize=\footnotesize]{yaml}{scheme.txt}
 
 % Následují další kapitoly a podkapitoly, popřípadě závěr, dodatky, 
 % seznam literatury či použitých obrázků nebo tabulek.
