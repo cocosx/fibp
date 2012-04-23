@@ -60,7 +60,8 @@ abstract
 		After signing up, the user is asked to upload a profile photo and fill in a detailed questionnaire about his or her character, interests, activities and relationships and preferences. Based on this information, the system tries to find the best matching partner. The user can then add the match to his or her favourites, follow their profile and message them. There is a special option to 'wink' at them, which can be used to quickly bring attention of the match and wait for their response to quickly assess their general interest without the need to send a message.\cite{website:match}
 		
 		\subsection{OkCupid}
-		OkCupid (\url{http://www.okcupid.com}) started in 2004. It claims to be the fastest growing site. TODO: use dating???\\
+		OkCupid (\url{http://www.okcupid.com}) started in 2004. It claims to be the fastest growing site.
+		%TODO use dating???\\
 		It is ad-supported and the essential features are free to use. A paid subscription called 'A-list' is also available for 14.95USD/month. It removes the ads, allows for advaced search, changing of username etc.
 		
 		Matches can be found through search using general criteria or by filling out questionnaires. A user can also create a his own questions, set their importance and expected answers. When another user fills them in, the system calculates a match percentage. This process is probably unique to OkCupid.\cite{website:okcupid}
@@ -108,6 +109,7 @@ abstract
 \chapter{Implementation}
 
 \section{Technologies}
+%TODO HTML5
 %http://www.okcupid.com/about/technology
 	It is very important to choose the right technology for the implementation of a project. We need to find the most suitable web application framework and a data store, if one is not hard-wired into the framework. The author has devised the following criteria for the evaluation of available technologies:
 	\begin{itemize}
@@ -261,12 +263,14 @@ abstract
 			\item[\textbf{socket.io}] WebSocket and HTTP push library. \url{http://socket.io/}
 			\item[\textbf{jQuery}] HTML DOM and CSS manipulation library for JavaScript. \url{http://jquery.com/}
 			\item[\textbf{jquery.validate}] jQuery plugin for HTML form validation. \url{http://bassistance.de/jquery-plugins/jquery-plugin-validation/}
+			\item[\textbf{jquery.Jcrop}] jQuery plugin for image cropping. \url{http://deepliquid.com/content/Jcrop.html}
+			
 		\end{itemize}
 \section{Data model}
 	Redis is a key-value storage, therefore there is no fixed schema for the database and no hierarchy per se.  As a convention, a colon character is used to divide key names into logical subgroups, e.g. \texttt{user:1234:email}. 
 	
 	A complete plan of the structure of the database is included in appendix \ref{appendix:scheme}.
-	\subsection{Basics of Redis work-flow}
+	\subsection{Redis work-flow}
 	Simple user parameters are stored as a Redis hash in order to reduce the total number of top-level keys, which can have an impact on the performance. For example to access the e-mail address of user with \texttt{id} 1234, one has to issue Redis command \mint{text}|HGET user:1234 email| insted of \mint{text}|GET user:1234:email|
 	
 	
@@ -280,7 +284,7 @@ abstract
 	\begin{program}[h!]
 	\caption{A snippet of user creation code}
 	\label{code:ex-user}
-	\inputminted[fontsize=\footnotesize, linenos=true]{javascript}{ex-user.js}
+	\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-user.js}
 	\end{program}
 	
 	
@@ -292,22 +296,59 @@ abstract
 		  \caption{Sign up form.}
 		  \label{fig:screen-signup}
 	  \end{figure}
-		The user is presented with a registration form on the homepage. There are three fields: e-mail address, password and password confirmation. A minimum of 6 characters is required for the password. When the user clicks the Sign up button, the values are validated with the jquery.validate plugin and errors are highlighted, see figure \ref{fig:screen-signup}. The pluing prevents the form from being submitted with errors.
+		The user is presented with a registration form on the homepage. There are three fields: e-mail address, password and password confirmation. The e-mail field uses the HTML5 \texttt{email} type, which causes supporting browsers to simplify input, for instance by displaying the \texttt{@} character on a virtual keyboard on touch input devices. A minimum of 6 characters is required for the password. When the user clicks the Sign up button, the values are validated with the jquery.validate plugin and errors are highlighted, see figure \ref{fig:screen-signup}. The pluing prevents the form from being submitted with errors.
 		
 		If there have been more than three registrations from a given IP address within the last 12 hours, a reCaptcha is displayed to prevent automated malicious user registrations. The \texttt{RateLimit} class of the RedBack module is used to efficiently store the number of registrations.
 		
-		When the form is posted to \texttt{/signup}, all values and the reCaptcha are once again validated on the server side. This is indeed necessary, since it is very easy to circumvent any client side validation.
+		When the form is posted to \texttt{/signup}, all values and the reCaptcha are once again validated on the server side. This is indeed necessary, since it is very easy to circumvent any client side validation. User attributes are added to the database. The password is stored using the \texttt{sechash}, which makes it more diffucult to get users' passwords even if the database is hacked.
 		
+		An e-mail is sent to the user's address, containing a welcome message and a verification code, see section \ref{section:email}. Then the user is redirected to the second phase of the registration.
 		
-	\subsection{Profile photo upload}
+		\begin{figure}[h]
+	  \centering
+	    \includegraphics[width=0.7\textwidth]{screen-signup1.png}
+		  \caption{Second phase of signup.}
+		  \label{fig:screen-signup1}
+	  \end{figure}
+	  There the user is asked to enter his or her gender, year of birth and the verification code. It is a random number in the range $\left[ 100,999\right)$. This is intended to make it simple for the user to remember it for the few seconds while switching windows. On the other hand would also make it simple to quickly guess the right one, circumventing the e-mail verification. There is however a hard limit of 3 wrong attempts. An option to resend the verification code is also given, with a limit of 3 per 12 hours.
+	  
+		\begin{figure}[h]
+	  \centering
+	    \includegraphics[width=0.9\textwidth]{screen-profile.png}
+		  \caption{Profile and settigs page. (Author of the penguin photo: Hannes Grobe/AWI)}
+		  \label{fig:screen-profile}
+	  \end{figure}	  
+	  
+	  After that, the user is redirected to his or her profile page, where his or her approximate location must be entered and a profile photo uploaded in order to fully enable the account (see figure \ref{fig:screen-profile}). More on geolocation in section \ref{section:geo}.
+	\subsection{Photo upload and manipulation}
+		A user can upload the photo through a \texttt{type="file"} field in a HTTP \texttt{POST} form using \texttt{enctype="multipart/form-data"} to \texttt{/me/newphoto}.
+		
+		The \texttt{POST} data are passed to the \texttt{formaline} module. It makes sure that the file is no bigger than 4MB, saves it to a temporary directory and runs the callback function on completion. The size limit is necessary primarirly for security reasons, as processing of a bigger file could slow the server down.
+		
+		Then a GraphicsMagick command is executed on the file:
+		\mint{bash}|gm identify -ping -format "%m %w %h" filename|
+		It tries to identify the format, width and height of the image. The \texttt{-ping} option means, that only the important parts of the file are read, ensuring a quick execution. Only photos in \texttt{JPEG} or \texttt{PNG} format are passed through.
+		
+		The original file is then saved to a directory named in the following scheme: 
+		\mint{bash}|photos/ID-ID%10000/ID%10000/|
+		e.g. for a user with ID 23456 the directory will be \texttt{photos/20000/3456}. Because user IDs are increased by a random number in the range $\left[1,50\right]$ with expected value 25, there will be approximately 400 folders in every 10000 level folder. This structure is necessary because most UNIX filesystems get slow when there are more than 1000 objects in a directory. In case the user base grows significantly and with it the potential of monetization, a commercial cloud based storage such as Amazon S3 would be a better choice.
+		
+		After that two \texttt{JPEG} thumbnails in maximum sizes $480\times 380$ and $80\times 80$ are created using GraphicsMagick, keeping the aspect and stripping any metadata, e.g. EXIF from a JPEG. Note that the \texttt{gm} command is always executed asynchronously in a separate process, so that it doesn't slow the HTTP server down.
+		
+		The user also has the ability crop the uploaded picture directly on the website. A modified version of the \texttt{jquery.Jcrop} plugin facilitates the client UI and GraphicsMagick processing on the server side.
+		
 	\subsection{Acquaintance selection}
 	\subsection{Notifications}
 	\subsection{Chat}
 \section{Implementation in detail}
+	\subsection{E-mail sending}
+	\label{section:email}
 	\subsection{Security}
 	\subsection{I18n}
 	\subsection{Geolocation}
-	\subsection{Graphical design}
+	\label{section:geo}
+	\subsection{Deployment and performance tuning}
+	\subsection{Graphical design and user experience}
 \chapter{Conclusion}
 
 \appendix

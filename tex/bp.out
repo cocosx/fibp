@@ -17,17 +17,19 @@
 \BOOKMARK [2][-]{subsection.2.1.7}{ Data store}{section.2.1}% 17
 \BOOKMARK [2][-]{subsection.2.1.8}{ Modules and libraries used}{section.2.1}% 18
 \BOOKMARK [1][-]{section.2.2}{ Data model}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.1}{ Basics of Redis work-flow}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.1}{ Redis work-flow}{section.2.2}% 20
 \BOOKMARK [1][-]{section.2.3}{ Basic functionality}{chapter.2}% 21
 \BOOKMARK [2][-]{subsection.2.3.1}{ User registration}{section.2.3}% 22
-\BOOKMARK [2][-]{subsection.2.3.2}{ Profile photo upload}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.2}{ Photo upload and manipulation}{section.2.3}% 23
 \BOOKMARK [2][-]{subsection.2.3.3}{ Acquaintance selection}{section.2.3}% 24
 \BOOKMARK [2][-]{subsection.2.3.4}{ Notifications}{section.2.3}% 25
 \BOOKMARK [2][-]{subsection.2.3.5}{ Chat}{section.2.3}% 26
 \BOOKMARK [1][-]{section.2.4}{ Implementation in detail}{chapter.2}% 27
-\BOOKMARK [2][-]{subsection.2.4.1}{ Security}{section.2.4}% 28
-\BOOKMARK [2][-]{subsection.2.4.2}{ I18n}{section.2.4}% 29
-\BOOKMARK [2][-]{subsection.2.4.3}{ Geolocation}{section.2.4}% 30
-\BOOKMARK [2][-]{subsection.2.4.4}{ Graphical design}{section.2.4}% 31
-\BOOKMARK [0][-]{chapter.3}{Conclusion}{}% 32
-\BOOKMARK [0][-]{appendix.A}{Structure of the storage}{}% 33
+\BOOKMARK [2][-]{subsection.2.4.1}{ E-mail sending}{section.2.4}% 28
+\BOOKMARK [2][-]{subsection.2.4.2}{ Security}{section.2.4}% 29
+\BOOKMARK [2][-]{subsection.2.4.3}{ I18n}{section.2.4}% 30
+\BOOKMARK [2][-]{subsection.2.4.4}{ Geolocation}{section.2.4}% 31
+\BOOKMARK [2][-]{subsection.2.4.5}{ Deployment and performance tuning}{section.2.4}% 32
+\BOOKMARK [2][-]{subsection.2.4.6}{ Graphical design and user experience}{section.2.4}% 33
+\BOOKMARK [0][-]{chapter.3}{Conclusion}{}% 34
+\BOOKMARK [0][-]{appendix.A}{Structure of the storage}{}% 35
