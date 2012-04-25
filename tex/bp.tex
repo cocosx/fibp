@@ -315,7 +315,7 @@ abstract
 		\begin{figure}[h]
 	  \centering
 	    \includegraphics[width=0.9\textwidth]{screen-profile.png}
-		  \caption{Profile and settigs page. (Author of the penguin photo: Hannes Grobe/AWI)}
+		  \caption{Profile and settigs page. (Author of the penguin photo: Hannes Grobe/AWI, CC-BY-SA 3.0)}
 		  \label{fig:screen-profile}
 	  \end{figure}	  
 	  
@@ -333,11 +333,47 @@ abstract
 		\mint{bash}|photos/ID-ID%10000/ID%10000/|
 		e.g. for a user with ID 23456 the directory will be \texttt{photos/20000/3456}. Because user IDs are increased by a random number in the range $\left[1,50\right]$ with expected value 25, there will be approximately 400 folders in every 10000 level folder. This structure is necessary because most UNIX filesystems get slow when there are more than 1000 objects in a directory. In case the user base grows significantly and with it the potential of monetization, a commercial cloud based storage such as Amazon S3 would be a better choice.
 		
-		After that two \texttt{JPEG} thumbnails in maximum sizes $480\times 380$ and $80\times 80$ are created using GraphicsMagick, keeping the aspect and stripping any metadata, e.g. EXIF from a JPEG. Note that the \texttt{gm} command is always executed asynchronously in a separate process, so that it doesn't slow the HTTP server down.
+		After that, two \texttt{JPEG} thumbnails in maximum sizes $480\times 380$ and $80\times 80$ are created using GraphicsMagick, keeping the aspect and stripping any metadata, e.g. EXIF from a JPEG. Note that the \texttt{gm} command is always executed asynchronously in a separate process, so that it doesn't slow the HTTP server down.
 		
 		The user also has the ability crop the uploaded picture directly on the website. A modified version of the \texttt{jquery.Jcrop} plugin facilitates the client UI and GraphicsMagick processing on the server side.
 		
 	\subsection{Acquaintance selection}
+		The user has the ability to search for others using age and location criteria --- gender can be chosen in the profile and setting page. The location is one of these options: user's county, neighbouring counties, user's state, neighbouring states and user's country. Layout of the page is shown in figure \ref{fig:screen-search}.
+		\begin{figure}[h]
+	  \centering
+	    \includegraphics[width=0.8\textwidth]{screen-search.png}
+		  \caption{Search and selection screen. (Author of the penguin photo: Samuel Blanc, CC-BY-SA 3.0)}
+		  \label{fig:screen-search}
+	  \end{figure}
+	  
+		The form is asynchronously submitted to \texttt{/me/search} using HTTP \texttt{POST}. The parameters are validated on the server side and saved as a \texttt{JSON} string to the \texttt{user:<id> searchDefaults} hash. This is useful, because the client side JavaScript can use it to load the last used serach paramets directly.
+		
+		A snippet of the first phase of the search procedure is shown in listing \ref{code:ex-search}. First a union of sets of appropriate years of birth is created. It is saved in a temporary set that automatically expires in 10 seconds. Similarly a set of users is created according to the specified location.
+		
+		\begin{program}[h]
+		\caption{A snippet of the search procedure --- first phase}
+		\label{code:ex-search}
+		\inputminted[fontsize=\footnotesize, linenos=false, gobble=6]{javascript}{ex-search.js}
+		\end{program}
+
+		These two sets and, two other for gender selection and one with enabled users are then intersected and visited users are substracted, see listing \ref{code:ex-search1}. A maximum of 50 user IDs are returned as a \texttt{JSON} array.
+		
+		\begin{program}[h]
+		\caption{A snippet of the search procedure --- second phase}
+		\label{code:ex-search1}
+		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-search1.js}
+		\end{program}
+	
+		The procedure can be in short written as following set fomula:
+		\[
+			\left( \bigcup YOB_i \cap \bigcup GEO_i \cap GENDER \cap ENABLED \right) \setminus VISITED
+		\]
+		We can see that this relatively simple task is rather complex to implement in Redis. The big upside however is that from testing with a database of 200 000 users, the whole HTTP request takes about 2ms on recent server hardware and all the command used have $O(n)$ or better complexity.
+	
+		The user can then mark the resulting photos one-by-one, with more results loading automatically. The "Not user" choice is used when a photo does not correctly depick the person. When such user then changes the photo, he or she is shown once again.
+		
+		The usre also has the ability to browse through visited photos and change the decision.
+	
 	\subsection{Notifications}
 	\subsection{Chat}
 \section{Implementation in detail}
@@ -349,6 +385,7 @@ abstract
 	\label{section:geo}
 	\subsection{Deployment and performance tuning}
 	\subsection{Graphical design and user experience}
+	async
 \chapter{Conclusion}
 
 \appendix
