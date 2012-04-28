@@ -20,7 +20,7 @@ function searchAfterGeoUnion(req,res,geoUnion,yobUnion) {
   
             client.EXPIRE(mainSet, tmpExpire);
             if(mainSetCard>50) {
-              //...
+              //limit to 50 and call searchAfterTotal
             } else {
               client.SMEMBERS(mainSet, function(err9, total) {
                 searchAfterTotal(req,res,total);

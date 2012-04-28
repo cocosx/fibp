@@ -20,16 +20,16 @@
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Redis work-flow}{17}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}\slshape Basic functionality}{18}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}\rmfamily User registration}{18}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}\rmfamily Photo upload and manipulation}{20}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}\rmfamily Photo upload and manipulation}{21}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}\rmfamily Acquaintance selection}{22}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}\rmfamily Notifications}{24}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}\rmfamily Chat}{24}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{24}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}\rmfamily E-mail sending}{24}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{24}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}\rmfamily I18n}{24}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}\rmfamily Geolocation}{24}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}\rmfamily Deployment and performance tuning}{24}{subsection.2.4.5}
-\contentsline {subsection}{\numberline {2.4.6}\rmfamily Graphical design and user experience}{24}{subsection.2.4.6}
-\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{27}{chapter.3}
-\contentsline {chapter}{\numberline {A}\bfseries Structure of the storage}{28}{appendix.A}
+\contentsline {subsection}{\numberline {2.3.4}\rmfamily Notifications}{23}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}\rmfamily Chat}{25}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{25}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\rmfamily E-mail sending}{25}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{25}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}\rmfamily I18n}{25}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}\rmfamily Geolocation}{25}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}\rmfamily Deployment and performance tuning}{25}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.6}\rmfamily Graphical design and user experience}{25}{subsection.2.4.6}
+\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{28}{chapter.3}
+\contentsline {chapter}{\numberline {A}\bfseries Structure of the storage}{29}{appendix.A}

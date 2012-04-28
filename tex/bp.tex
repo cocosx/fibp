@@ -282,7 +282,7 @@ abstract
 	
 	Also note the use of asynchronous function calls --- one of the defining characteristics of Node.js.
 	\begin{program}[h!]
-	\caption{A snippet of user creation code}
+	\caption{An excerpt of user creation code}
 	\label{code:ex-user}
 	\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-user.js}
 	\end{program}
@@ -320,6 +320,8 @@ abstract
 	  \end{figure}	  
 	  
 	  After that, the user is redirected to his or her profile page, where his or her approximate location must be entered and a profile photo uploaded in order to fully enable the account (see figure \ref{fig:screen-profile}). More on geolocation in section \ref{section:geo}.
+	  
+	  Users have the ability to disable their accounts for the case they have found their acquaintance or are no longer looking for one. This causes notifications for their account to stop and they are no longer able to search for new users.
 	\subsection{Photo upload and manipulation}
 		A user can upload the photo through a \texttt{type="file"} field in a HTTP \texttt{POST} form using \texttt{enctype="multipart/form-data"} to \texttt{/me/newphoto}.
 		
@@ -348,10 +350,10 @@ abstract
 	  
 		The form is asynchronously submitted to \texttt{/me/search} using HTTP \texttt{POST}. The parameters are validated on the server side and saved as a \texttt{JSON} string to the \texttt{user:<id> searchDefaults} hash. This is useful, because the client side JavaScript can use it to load the last used serach paramets directly.
 		
-		A snippet of the first phase of the search procedure is shown in listing \ref{code:ex-search}. First a union of sets of appropriate years of birth is created. It is saved in a temporary set that automatically expires in 10 seconds. Similarly a set of users is created according to the specified location.
+		An excerpt of the first phase of the search procedure is shown in listing \ref{code:ex-search}. First a union of sets of appropriate years of birth is created. It is saved in a temporary set that automatically expires in 10 seconds. Similarly a set of users is created according to the specified location.
 		
 		\begin{program}[h]
-		\caption{A snippet of the search procedure --- first phase}
+		\caption{An excerpt of the search procedure --- first phase}
 		\label{code:ex-search}
 		\inputminted[fontsize=\footnotesize, linenos=false, gobble=6]{javascript}{ex-search.js}
 		\end{program}
@@ -359,23 +361,31 @@ abstract
 		These two sets and, two other for gender selection and one with enabled users are then intersected and visited users are substracted, see listing \ref{code:ex-search1}. A maximum of 50 user IDs are returned as a \texttt{JSON} array.
 		
 		\begin{program}[h]
-		\caption{A snippet of the search procedure --- second phase}
+		\caption{An excerpt of the search procedure --- second phase}
 		\label{code:ex-search1}
 		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-search1.js}
 		\end{program}
 	
-		The procedure can be in short written as following set fomula:
+		The procedure can be in a simplified way written as this set fomula:
 		\[
-			\left( \bigcup YOB_i \cap \bigcup GEO_i \cap GENDER \cap ENABLED \right) \setminus VISITED
+			\left( \bigcup YOB_i \cap \bigcup GEO_i \cap GENDER \cap ENABLED \right) \setminus SEEN
 		\]
 		We can see that this relatively simple task is rather complex to implement in Redis. The big upside however is that from testing with a database of 200 000 users, the whole HTTP request takes about 2ms on recent server hardware and all the command used have $O(n)$ or better complexity.
 	
-		The user can then mark the resulting photos one-by-one, with more results loading automatically. The "Not user" choice is used when a photo does not correctly depick the person. When such user then changes the photo, he or she is shown once again.
+		The user can then mark the resulting photos one-by-one, with more results loading automatically. The "Not sure" choice is used when a photo does not correctly depick the person. When such user then changes the photo, he or she is shown once again. 
 		
-		The usre also has the ability to browse through visited photos and change the decision.
+		The user also has the ability to browse through visited photos and change the decision.
 	
 	\subsection{Notifications}
+		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case to the \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets:match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
+		
+		The \texttt{notification.js} script is running as a separate background process. It is used to regularly check for notifications for both matches and chat (more on that in section \ref{section:chat}) and to send appropriate e-mails. It sets up a timer that ensures the match notifications are sent only once a day during the night. It can be gracefully quit by sending the \texttt{SIGQUIT} UNIX signal.
+		
+		The whole purpose of the rather complicated \texttt{matchNotify} function is to make sure as many as possible matches are made, but at most one new per user per day. This is the maximum bipartite matching problem. Efficient algorithms to correctly solve it exist. \ref{Galil1986} However here for the sake of simplicity a naive algorithm is used --- users with the lowest number of pending matches are handeled first, with oldest pending matched taking precedence. It works reasonably well, as the vast majority of matches are one-on-one and even in case of slight congestion, a few days waiting time for the match to be handeled is not a big problem. That said, this is something that could be improved.
+		
+		When a match is handeled, both users are notified using e-mail and are added to one another's contact lists to be able to engage in chat.
 	\subsection{Chat}
+		\label{section:chat}
 \section{Implementation in detail}
 	\subsection{E-mail sending}
 	\label{section:email}
