@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{website:redis}
 {Citrusbyte}.
@@ -24,6 +24,11 @@ Brent Fulgham.
 \newblock {The Computer Language Benchmarks Game}.
 \newblock \url{http://shootout.alioth.debian.org/}, 2012.
 \newblock [Online; accessed 10-April-2012].
+
+\bibitem{Galil1986}
+Zvi Galil.
+\newblock Efficient algorithms for finding maximum matching in graphs.
+\newblock {\em ACM Comput. Surv.}, 18(1):23--38, March 1986.
 
 \bibitem{website:okcupid}
 {Humor Rainbow, Inc.}

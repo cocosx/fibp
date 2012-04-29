@@ -264,6 +264,8 @@ abstract
 			\item[\textbf{jQuery}] HTML DOM and CSS manipulation library for JavaScript. \url{http://jquery.com/}
 			\item[\textbf{jquery.validate}] jQuery plugin for HTML form validation. \url{http://bassistance.de/jquery-plugins/jquery-plugin-validation/}
 			\item[\textbf{jquery.Jcrop}] jQuery plugin for image cropping. \url{http://deepliquid.com/content/Jcrop.html}
+			\item[\textbf{jquery.elastic}] jQuery plugin that grows textareas automatically. \url{http://unwrongest.com/projects/elastic/}
+			
 			
 		\end{itemize}
 \section{Data model}
@@ -375,17 +377,43 @@ abstract
 		The user can then mark the resulting photos one-by-one, with more results loading automatically. The "Not sure" choice is used when a photo does not correctly depick the person. When such user then changes the photo, he or she is shown once again. 
 		
 		The user also has the ability to browse through visited photos and change the decision.
-	
+		\clearpage
 	\subsection{Notifications}
 		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case to the \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets:match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
 		
 		The \texttt{notification.js} script is running as a separate background process. It is used to regularly check for notifications for both matches and chat (more on that in section \ref{section:chat}) and to send appropriate e-mails. It sets up a timer that ensures the match notifications are sent only once a day during the night. It can be gracefully quit by sending the \texttt{SIGQUIT} UNIX signal.
 		
-		The whole purpose of the rather complicated \texttt{matchNotify} function is to make sure as many as possible matches are made, but at most one new per user per day. This is the maximum bipartite matching problem. Efficient algorithms to correctly solve it exist. \ref{Galil1986} However here for the sake of simplicity a naive algorithm is used --- users with the lowest number of pending matches are handeled first, with oldest pending matched taking precedence. It works reasonably well, as the vast majority of matches are one-on-one and even in case of slight congestion, a few days waiting time for the match to be handeled is not a big problem. That said, this is something that could be improved.
+		The whole purpose of the rather complicated \texttt{matchNotify} function is to make sure as many as possible matches are made, but at most one new per user per day. This is the maximum bipartite matching problem. Efficient algorithms to correctly solve it exist. \cite{Galil1986} However here for the sake of simplicity a naive algorithm is used --- users with the lowest number of pending matches are handeled first, with oldest pending matched taking precedence. It works reasonably well, as the vast majority of matches are one-on-one and even in case of slight congestion, a few days waiting time for the match to be handeled is not a big problem. That said, this is something that could be improved.
 		
 		When a match is handeled, both users are notified using e-mail and are added to one another's contact lists to be able to engage in chat.
 	\subsection{Chat}
+		Implementation of the chat screen is shown in figure \ref{fig:screen-chat}.	Available contact are listed on the left side. Those currently online are marked with a red square in the bottom right. If there are unread messages, their count is displayed in the top left. Red border marks currently active chat session.
+		
+		Message history is displayed in the centre and smooth-scrolls as new messages arrive. Textarea for message input is place below. It automatically grows with the text length. If the box on the right of it is checked, the message is sent when the Return key is pressed, otherwise a new line is created. This allows for both quick chatting without using the mouse and writing of properly formatted messages.
+	
 		\label{section:chat}
+		\begin{figure}[h]
+	  \centering
+	    \includegraphics[width=1.0\textwidth]{screen-chat.png}
+		  \caption{Chat page}
+		  \label{fig:screen-chat}
+	  \end{figure}
+	  
+	  A timer is set on the client side that makes and asynchronous request every 2.3 minutes to \texttt{/me/ping}. The server stores the last ping time in the \texttt{user:zsets:ping} sorted set and returns list a JSON list of contacts that are online, i.e. have sent their ping in the last 2.5 minutes.
+	  
+	  All messages are asynchronously posted to \texttt{/me/sendmessage}. There it is stored as JSON object to the conversation history. If the number of messages in the history is above 100, the 10 oldest are deleted. Number of unread messages in the \texttt{user:<recipient ID>:unread <sender ID>} hash is increased. Also the \texttt{global:chat\_q} sorted set is updated with current time as the $z$-value for the recipient ID. Lastly the message is published to both sender and recipient \texttt{push:chat:<ID>} Redis subscriber channels.
+	  
+	  The \texttt{socketio.js} script is running as a separate background \texttt{socket.io} server on port 8080. All connections are authorized using the session cookie. Then it simply listens on the appropriate Redis \texttt{push:chat:<ID>} channels and pushes any new messages to the client. Currently the \texttt{xhr-polling} method is the only one enabled, since WebSocket has been disabled on most web browsers for security reasons and the protocol is going to have to be revised.
+	  
+	  The \texttt{socket.io} client listens for incoming messages. When a new one is received, it is displayed in the chat history or a visual notification is made. When the message is read, this fact is acknowledged to \texttt{/me/ackmsg/<sender ID>}. There the appropriate unread message count is reset.
+	  
+	  An e-mail notification about a new message is sent by the \texttt{notification.js} script if all of the following conditions are met (checked every minute):
+	  \begin{compactitem}
+	  	\item The message is unread and the user has not yet been notified about it.
+	    \item The user is offline for a long time --- more than 60 minutes have passed since the last ping.
+	    \item More than 3 minutes have passed since the last message addressed to the user.
+	  \end{compactitem}
+	  This ensures the user is not overwhelmed with notifications.
 \section{Implementation in detail}
 	\subsection{E-mail sending}
 	\label{section:email}
