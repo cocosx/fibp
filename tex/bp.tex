@@ -415,6 +415,7 @@ abstract
 	  This ensures the user is not overwhelmed with notifications.
 \section{Implementation in detail}
 	\subsection{E-mail sending}
+		\label{section:email}
 		Whenever the application needs to send an e-mail, it pushes the following JSON object to the \texttt{worker:email:\{p1,p2\}} Redis list, where \texttt{p2} has higher priority that \texttt{p2}.
 		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-emailobj.js}
 		
@@ -427,9 +428,21 @@ abstract
 		\end{program}
 		
 		The e-mails themselves are sent using the cloud Amazon Simple Email Service (SES -- \url{http://aws.amazon.com/ses/}). It has very favorable pricing at 0.10USD per 1,000 e-mails plus data transfer at approx. 0.10USD per 1GB. Using this service spares the resources of running and administering one's own SMTP server and gives benefits in delivery rates, becouse Amazon checks outgoing e-mails for signs of spam, which gains it a more trusted status among e-mail client's anti-spam  filters.
-	\label{section:email}
 	\subsection{Security}
+		Security of the application is essential for both users and operators. There are many attack vectors hackers could use to compromise them. \cite{paper:dd} Here is a list of those applicable attacks and measures that have been taken to prevent them:
+		\begin{itemize}
+			\item[\textbf{Parameter tampering}] 
+				Because of the nature of HTML/HTTP, it is very simple to send parameters that are not allowed by the client side of the application. Hence, before any request is processed, it is passed through a series of \texttt{connect} filters. The \texttt{limit} fitler built-in to \texttt{express} limts the size of \texttt{POST} parameters to a given amount --- here 100KB. \texttt{GET} parameters are automatically limited to 8KB by Node.js. Moreover lenghts of all fields are then checked by the custom \texttt{paramLength} filter. 
+			\item[\textbf{Cross-site scripting}] 
+				This attack is possible whenever user content is displayed to other users. In this project is basically happend at two points: the profile photo and chat. The profile photo is always checked to be of the correct format. All chat messages are properly HTML escaped before they are displayed.
+			\item[\textbf{SQL-injection}]
+				Cannot be applied directly because Redis is a NoSQL data store. All Redis commands have a fixed structure and user content is always passed as binary-safe data and no plain text queries are used, as opposed to SQL. There is one exception: key names with \texttt{id} (such as \texttt{"user:"+id+":email"}) are constructed from user data, but these parameters are always converted to integer before usage. Any such attacks are therefore impossible.
+			\item[\textbf{Authorization}] In the best case, all client-server communication should be run through a secure channel, i.e. SSL, TLS, HTTPS. This is however very demanding on the servers or requires a dedicated SSL acceleration hardware, both beign cost prohibitive for now.
+			\item[\textbf{Cookie theft}]
+				Authorization is cookie-based, so the possibility of this attack indeed exsists. However to minimaze the risk, \texttt{connect} uses cryptographically signed cookies with fingerprints (e.g. client IP address, browser \texttt{User-Agent} header etc.), so the attacker would not only need to steal the cookie, but also to emulate all there paramaters, which is close to impossible.				
+		\end{itemize}		
 	\subsection{I18n}
+		
 	\subsection{Geolocation}
 	\label{section:geo}
 	\subsection{Deployment and performance tuning}

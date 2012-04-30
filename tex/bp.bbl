@@ -36,6 +36,14 @@ Zvi Galil.
 \newblock \url{http://www.okcupid.com}, 2012.
 \newblock [Online; accessed 27-March-2012].
 
+\bibitem{paper:dd}
+{IBM Corporation}.
+\newblock The dirty dozen: preventing common application-level hack attacks.
+\newblock
+  \url{ftp://ftp.software.ibm.com/software/rational/web/whitepapers/r_wp_dirtydozen.pdf},
+  2007.
+\newblock [Online; accessed 10-April-2012].
+
 \bibitem{website:match}
 {Match.com, L.L.C.}
 \newblock Match.com.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  30 APR 2012 11:38
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  30 APR 2012 17:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -918,7 +918,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-<screen-profile.png, id=400, 704.45pt x 391.5854pt>
+<screen-profile.png, id=399, 704.45pt x 391.5854pt>
 File: screen-profile.png Graphic file (type png)
  <use screen-profile.png>
 Package pdftex.def Info: screen-profile.png used on input line 318.
@@ -974,7 +974,7 @@ Overfull \hbox (11.90878pt too wide) in paragraph at lines 337--338
 m/n/12 photos/20000/3456\IL2/ppl/m/n/12 .
  []
 
-<screen-search.png, id=415, 554.8pt x 387.89816pt>
+<screen-search.png, id=414, 554.8pt x 387.89816pt>
 File: screen-search.png Graphic file (type png)
  <use screen-search.png>
 Package pdftex.def Info: screen-search.png used on input line 347.
@@ -1045,13 +1045,13 @@ Overfull \hbox (1.15797pt too wide) in paragraph at lines 409--411
 ev-ery minute): 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 418.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 419.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 418.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 419.
 runsystem(pygmentize -l javascript -f latex -F tokenmerge             -P "verbo
 ptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-emailobj.js)...executed.
 
@@ -1059,7 +1059,7 @@ ptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-emailobj.js)...executed.
 runsystem(rm bp.out.pyg)...executed.
 
 
-Overfull \hbox (9.79787pt too wide) in paragraph at lines 421--422
+Overfull \hbox (9.79787pt too wide) in paragraph at lines 422--423
 []\IL2/ppl/m/n/12 The \IL2/pcr/m/n/12 worker-email.js \IL2/ppl/m/n/12 back-grou
 nd pro-cess uses \IL2/pcr/m/n/12 async\IL2/ppl/m/n/12 's \IL2/pcr/m/n/12 whilst
 
@@ -1076,54 +1076,63 @@ runsystem(rm bp.out.pyg)...executed.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
-[30]
+Overfull \hbox (7.31396pt too wide) in paragraph at lines 440--441
+[]\IL2/ppl/m/n/12 In the best case, all client-server com-mu-ni-ca-tion should
+ []
+
+[30] [31]
 Chapter 3.
-[31
+[32
 
 ]
 Appendix A.
 runsystem(pygmentize -l yaml -f latex -F tokenmerge             -P "verboptions
 = ,fontsize=\footnotesize " -o bp.out.pyg scheme.txt)...executed.
 
-(./bp.out.pyg [32
+(./bp.out.pyg [33
 
 ])
 runsystem(rm bp.out.pyg)...executed.
 
- (./bp.bbl [33]
-Underfull \hbox (badness 10000) in paragraph at lines 58--64
+ (./bp.bbl [34]
+Underfull \hbox (badness 10000) in paragraph at lines 40--46
+\IL2/pcr/m/n/12 com / software / rational / web / whitepapers / r _ wp _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--72
 []\IL2/ppl/m/n/12 Ruturaj.  Re-dis, Mem-cached, Tokyo Tyrant and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--64
+Underfull \hbox (badness 10000) in paragraph at lines 66--72
 \IL2/ppl/m/n/12 MySQL com-par-i-sion.  []$\IL2/pcr/m/n/12 http : / / www . rutu
 raj . net /
  []
 
 
-Overfull \hbox (37.84186pt too wide) in paragraph at lines 58--64
+Overfull \hbox (37.84186pt too wide) in paragraph at lines 66--72
 \IL2/pcr/m/n/12 redis-[]memcached-[]tokyo-[]tyrant-[]and-[]mysql-[]comparision/
 $[]\IL2/ppl/m/n/12 ,
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 454.
- [34
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 468.
+ [35
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 454.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 468.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 454.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 454.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 468.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 468.
 Package rerunfilecheck Info: File `bp.out' has not changed.
 (rerunfilecheck)             Checksum: 29C41EAFBE4BA96FAD9581BD39ED61A5;2449.
  ) 
 Here is how much of TeX's memory you used:
- 7734 strings out of 493629
- 109163 string characters out of 3148778
- 198783 words of memory out of 3000000
- 10656 multiletter control sequences out of 15000+200000
+ 7737 strings out of 493629
+ 109193 string characters out of 3148778
+ 198821 words of memory out of 3000000
+ 10657 multiletter control sequences out of 15000+200000
  43577 words of font info for 98 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  44i,11n,37p,735b,476s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1136,10 +1145,10 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/cou
 rier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></u
 sr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (38 pages, 1003271 bytes).
+Output written on bp.pdf (39 pages, 1006255 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 497 compressed objects within 5 object streams
- 111 named destinations out of 1000 (max. 500000)
+ 630 PDF objects out of 1000 (max. 8388607)
+ 505 compressed objects within 6 object streams
+ 113 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
