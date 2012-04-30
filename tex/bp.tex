@@ -261,12 +261,11 @@ abstract
 			\item[\textbf{RedBack}] "A fast, high-level Redis library for Node.JS that exposes an accessible and extensible interface to the Redis data types." \footnote{\url{http://redbackjs.com/} 2012-04-18} Its \texttt{RateLimit} class will be used for spam protection. 
 			\item[\textbf{node-recaptcha}] A Node.js reCaptcha service client. Used for spam prevention. \url{https://github.com/mirhampt/node-recaptcha}
 			\item[\textbf{socket.io}] WebSocket and HTTP push library. \url{http://socket.io/}
+			\item[\textbf{node-amazon-ses}] A Node.js module for sending e-mail using the Amazon SES cloud service. \url{https://github.com/jjenkins/node-amazon-ses}
 			\item[\textbf{jQuery}] HTML DOM and CSS manipulation library for JavaScript. \url{http://jquery.com/}
 			\item[\textbf{jquery.validate}] jQuery plugin for HTML form validation. \url{http://bassistance.de/jquery-plugins/jquery-plugin-validation/}
 			\item[\textbf{jquery.Jcrop}] jQuery plugin for image cropping. \url{http://deepliquid.com/content/Jcrop.html}
 			\item[\textbf{jquery.elastic}] jQuery plugin that grows textareas automatically. \url{http://unwrongest.com/projects/elastic/}
-			
-			
 		\end{itemize}
 \section{Data model}
 	Redis is a key-value storage, therefore there is no fixed schema for the database and no hierarchy per se.  As a convention, a colon character is used to divide key names into logical subgroups, e.g. \texttt{user:1234:email}. 
@@ -381,7 +380,7 @@ abstract
 	\subsection{Notifications}
 		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case to the \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets:match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
 		
-		The \texttt{notification.js} script is running as a separate background process. It is used to regularly check for notifications for both matches and chat (more on that in section \ref{section:chat}) and to send appropriate e-mails. It sets up a timer that ensures the match notifications are sent only once a day during the night. It can be gracefully quit by sending the \texttt{SIGQUIT} UNIX signal.
+		The \texttt{notification.js} script is running as a separate background process. It is used to regularly check for notifications for both matches and chat (more on that in section \ref{section:chat}) and to send appropriate e-mails. It sets up a timer that ensures the match notifications are sent only once a day during the night. It can be gracefully quit by sending the \texttt{SIGQUIT} UNIX signal (in a similar way to the \texttt{worker-email.js} script shown later in listing \ref{code:ex-emailworker}).
 		
 		The whole purpose of the rather complicated \texttt{matchNotify} function is to make sure as many as possible matches are made, but at most one new per user per day. This is the maximum bipartite matching problem. Efficient algorithms to correctly solve it exist. \cite{Galil1986} However here for the sake of simplicity a naive algorithm is used --- users with the lowest number of pending matches are handeled first, with oldest pending matched taking precedence. It works reasonably well, as the vast majority of matches are one-on-one and even in case of slight congestion, a few days waiting time for the match to be handeled is not a big problem. That said, this is something that could be improved.
 		
@@ -416,6 +415,18 @@ abstract
 	  This ensures the user is not overwhelmed with notifications.
 \section{Implementation in detail}
 	\subsection{E-mail sending}
+		Whenever the application needs to send an e-mail, it pushes the following JSON object to the \texttt{worker:email:\{p1,p2\}} Redis list, where \texttt{p2} has higher priority that \texttt{p2}.
+		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-emailobj.js}
+		
+		The \texttt{worker-email.js} background process uses \texttt{async}'s \texttt{whilst} function and Redis's \texttt{BLPOP} command to non-blockingly poll for new e-mails as shown in listing \ref{code:ex-emailworker}. The \texttt{BLPOP} command pops and item from the list if the list is non-empty or waits for a specified amount of seconds for a new item. If it doesn't appear it returns \texttt{null}. The process is safely killable by sending the \texttt{SIGQUIT} UNIX signal.
+		
+		\begin{program}[h]
+		\caption{The e-mail worker}
+		\label{code:ex-emailworker}
+		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-emailworker.js}
+		\end{program}
+		
+		The e-mails themselves are sent using the cloud Amazon Simple Email Service (SES -- \url{http://aws.amazon.com/ses/}). It has very favorable pricing at 0.10USD per 1,000 e-mails plus data transfer at approx. 0.10USD per 1GB. Using this service spares the resources of running and administering one's own SMTP server and gives benefits in delivery rates, becouse Amazon checks outgoing e-mails for signs of spam, which gains it a more trusted status among e-mail client's anti-spam  filters.
 	\label{section:email}
 	\subsection{Security}
 	\subsection{I18n}
