@@ -27,7 +27,7 @@
 \BOOKMARK [1][-]{section.2.4}{ Implementation in detail}{chapter.2}% 27
 \BOOKMARK [2][-]{subsection.2.4.1}{ E-mail sending}{section.2.4}% 28
 \BOOKMARK [2][-]{subsection.2.4.2}{ Security}{section.2.4}% 29
-\BOOKMARK [2][-]{subsection.2.4.3}{ I18n}{section.2.4}% 30
+\BOOKMARK [2][-]{subsection.2.4.3}{ Internationalization}{section.2.4}% 30
 \BOOKMARK [2][-]{subsection.2.4.4}{ Geolocation}{section.2.4}% 31
 \BOOKMARK [2][-]{subsection.2.4.5}{ Deployment and performance tuning}{section.2.4}% 32
 \BOOKMARK [2][-]{subsection.2.4.6}{ Graphical design and user experience}{section.2.4}% 33

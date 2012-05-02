@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  30 APR 2012 17:01
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  2 MAY 2012 15:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1117,16 +1117,16 @@ $[]\IL2/ppl/m/n/12 ,
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 468.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 475.
  [35
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 468.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 475.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 468.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 468.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 475.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 475.
 Package rerunfilecheck Info: File `bp.out' has not changed.
-(rerunfilecheck)             Checksum: 29C41EAFBE4BA96FAD9581BD39ED61A5;2449.
+(rerunfilecheck)             Checksum: 87875B0EC0E79C7280BA93BC610FE252;2465.
  ) 
 Here is how much of TeX's memory you used:
  7737 strings out of 493629
@@ -1145,7 +1145,7 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/cou
 rier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></u
 sr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (39 pages, 1006255 bytes).
+Output written on bp.pdf (39 pages, 1007187 bytes).
 PDF statistics:
  630 PDF objects out of 1000 (max. 8388607)
  505 compressed objects within 6 object streams

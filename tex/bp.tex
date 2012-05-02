@@ -441,10 +441,19 @@ abstract
 			\item[\textbf{Cookie theft}]
 				Authorization is cookie-based, so the possibility of this attack indeed exsists. However to minimaze the risk, \texttt{connect} uses cryptographically signed cookies with fingerprints (e.g. client IP address, browser \texttt{User-Agent} header etc.), so the attacker would not only need to steal the cookie, but also to emulate all there paramaters, which is close to impossible.				
 		\end{itemize}		
-	\subsection{I18n}
+	\subsection{Internationalization}
+		Server-side internationalization is facilitated by the \texttt{i18n.js} module, which is a version of the original by Marcus Spiegel extended with this functionality:
+		\begin{compactitem}
+			\item Option to set a default locale
+			\item Get locale from session automatically
+			\item Translate messages to a locale specified by parameters independently of the request (the \texttt{l\_\_} function)
+		\end{compactitem}
+		Messages are stored as a JSON object in files, e.g. \texttt{locale/en.js}.
 		
+		Because many user actions happen asychronously, client-side internationalization is also present. Messages are again stored as a JSON object (\texttt{locale/en\_client.js}) and are directly inserted in the HTML file in a \texttt{<script>} tag creating the \texttt{t} global variable. There are no parametrized messages on the client side, so this simple approach suffices. Otherwise the server-side \texttt{i18n.js} module could be easily ported to client side, since both employ JavaScript.
 	\subsection{Geolocation}
 	\label{section:geo}
+		
 	\subsection{Deployment and performance tuning}
 	\subsection{Graphical design and user experience}
 	async

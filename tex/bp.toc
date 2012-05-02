@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{28}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}\rmfamily E-mail sending}{28}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{30}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}\rmfamily I18n}{31}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}\rmfamily Internationalization}{31}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}\rmfamily Geolocation}{31}{subsection.2.4.4}
 \contentsline {subsection}{\numberline {2.4.5}\rmfamily Deployment and performance tuning}{31}{subsection.2.4.5}
 \contentsline {subsection}{\numberline {2.4.6}\rmfamily Graphical design and user experience}{31}{subsection.2.4.6}
