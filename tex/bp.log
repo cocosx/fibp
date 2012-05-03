@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  2 MAY 2012 15:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.19)  3 MAY 2012 17:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -454,6 +454,64 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \plparsep=\skip47
 \pl@lab=\toks17
 )
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip48
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen110
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen111
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen112
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip11
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks19
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks20
+\eqnshift@=\dimen113
+\alignsep@=\dimen114
+\tagshift@=\dimen115
+\tagwidth@=\dimen116
+\totwidth@=\dimen117
+\lineht@=\dimen118
+\@envbody=\toks21
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
 (/usr/share/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -473,11 +531,11 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count99
+\FV@CodeLineNo=\count111
 \FV@InFile=\read1
-\FV@TabBox=\box26
-\c@FancyVerbLine=\count100
-\FV@StepNumber=\count101
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count112
+\FV@StepNumber=\count113
 \FV@OutFile=\write3
 ) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -499,27 +557,27 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count102
-\float@exts=\toks18
-\float@box=\box27
-\@float@everytoks=\toks19
-\@floatcapt=\box28
+\c@float@type=\count114
+\float@exts=\toks23
+\float@box=\box29
+\@float@everytoks=\toks24
+\@floatcapt=\box30
 )
 (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count103
-\calc@Bcount=\count104
-\calc@Adimen=\dimen110
-\calc@Bdimen=\dimen111
-\calc@Askip=\skip48
-\calc@Bskip=\skip49
+\calc@Acount=\count115
+\calc@Bcount=\count116
+\calc@Adimen=\dimen119
+\calc@Bdimen=\dimen120
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count105
-\calc@Cskip=\skip50
+\calc@Ccount=\count117
+\calc@Cskip=\skip53
 )
 (/usr/share/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
@@ -533,42 +591,42 @@ runsystem(uname -s > "bp.w18")...executed.
 runsystem(rm -- "bp.w18")...executed.
 
 )
-\minted@bgbox=\box29
+\minted@bgbox=\box31
 \minted@code=\write4
-\@float@every@listing=\toks20
-\c@listing=\count106
+\@float@every@listing=\toks25
+\c@listing=\count118
 )
 runsystem(which pygmentize && touch bp.aex)...executed.
 
 runsystem(rm bp.aex)...executed.
 
-\@float@every@program=\toks21
-\c@program=\count107
+\@float@every@program=\toks26
+\c@program=\count119
 
 (./bp.aux)
 \openout1 = `bp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 33.
-LaTeX Font Info:    Try loading font information for IL2+cmr on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for IL2+cmr on input line 34.
  (/usr/share/texmf-dist/tex/latex/cslatex/il2cmr.fd
 File: il2cmr.fd 1997/02/06 CSLaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Try loading font information for IL2+ppl on input line 33.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Try loading font information for IL2+ppl on input line 34.
 
 (/usr/share/texmf-dist/tex/cslatex/base/il2ppl.fd
 File: il2ppl.fd 1998/12/27 CS Palatino
@@ -577,21 +635,19 @@ LaTeX Font Info:    (C) Z. Wagner,1998/12/27 on input line 3.
 LaTeX Font Info:    Created by CsPsFont utility v.1.0f (C) Z. Wagner, 1998/12/2
 7 on input line 4.
 )
-\big@size=\dimen112
-
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen113
-\scratchbox=\box30
-\nofMPsegments=\count109
-\nofMParguments=\count110
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen114
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
-\everyMPtoPDFconversion=\toks23
+\scratchcounter=\count120
+\scratchdimen=\dimen121
+\scratchbox=\box32
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen122
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks28
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -607,8 +663,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 33.
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring OFF on input line 34.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -616,11 +672,11 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count114
+\c@section@level=\count126
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 34.
+LaTeX Info: Redefining \pageref on input line 34.
+LaTeX Info: Redefining \nameref on input line 34.
  (./bp.out)
 (./bp.out)
 \@outlinefile=\write5
@@ -674,7 +730,7 @@ LaTeX Font Warning: Font shape `IL2/ppl/m/sl' in size <12> not available
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for IL2+pcr on input line 54.
+LaTeX Font Info:    Try loading font information for IL2+pcr on input line 55.
 (/usr/share/texmf-dist/tex/cslatex/base/il2pcr.fd
 File: il2pcr.fd 1998/12/27 CS Courier
 LaTeX Font Info:     CS Courier on input line 2.
@@ -684,17 +740,17 @@ LaTeX Font Info:    Created by CsPsFont utility v.1.0f (C) Z. Wagner, 1998/12/2
 ) [4
 
 ] [5]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 92.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 93.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
  [6] [7]
 Chapter 2.
 
-Overfull \hbox (0.8459pt too wide) in paragraph at lines 124--126
+Overfull \hbox (0.8459pt too wide) in paragraph at lines 125--127
 \IL2/ppl/m/n/12 The tech-nolo-gies should be past their rapid de-vel-op-ment ph
 ases
  []
@@ -702,27 +758,27 @@ ases
 [8
 
 ]
-Overfull \hbox (3.24799pt too wide) in paragraph at lines 139--139
+Overfull \hbox (3.24799pt too wide) in paragraph at lines 140--140
 []\IL2/ppl/m/n/12 Locomotive,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--139
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
 []\IL2/ppl/m/n/12 Zend,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--139
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
 []\IL2/ppl/m/n/12 Dajngo,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 []\IL2/ppl/m/n/12 Ruby on
  []
 
 
-Overfull \hbox (3.60484pt too wide) in paragraph at lines 133--142
+Overfull \hbox (3.60484pt too wide) in paragraph at lines 134--143
 [][]
  []
 
@@ -735,14 +791,14 @@ Overfull \vbox (1.98859pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.152 
+l.153 
       ] <bench2.png, id=276, 481.8pt x 301.125pt>
 File: bench2.png Graphic file (type png)
  <use bench2.png>
-Package pdftex.def Info: bench2.png used on input line 155.
+Package pdftex.def Info: bench2.png used on input line 156.
 (pdftex.def)             Requested size: 252.94388pt x 158.0884pt.
 Package hyperref Info: bookmark level for unknown program defaults to 0 on inpu
-t line 165.
+t line 166.
 runsystem(pygmentize -l ruby -f latex -F tokenmerge             -P "verboptions
 = ,fontsize=\footnotesize " -o bp.out.pyg ../bench/sinatra/app.rb)...executed.
 
@@ -762,9 +818,9 @@ runsystem(rm bp.out.pyg)...executed.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.179 
+l.180 
        <./bench2.png>] [11]
-Overfull \hbox (6.2099pt too wide) in paragraph at lines 180--181
+Overfull \hbox (6.2099pt too wide) in paragraph at lines 181--182
 \IL2/ppl/m/n/12 use a thread pool to serve re-quests, Node.js and Thin use the 
 \IL2/pcr/m/n/12 libevent
  []
@@ -772,7 +828,7 @@ Overfull \hbox (6.2099pt too wide) in paragraph at lines 180--181
 <plot_add.pdf, id=299, 361.35pt x 176.66pt>
 File: plot_add.pdf Graphic file (type pdf)
  <use plot_add.pdf>
-Package pdftex.def Info: plot_add.pdf used on input line 204.
+Package pdftex.def Info: plot_add.pdf used on input line 205.
 (pdftex.def)             Requested size: 361.34999pt x 176.66225pt.
 
 
@@ -781,7 +837,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <plot_sleep.pdf, id=300, 361.35pt x 176.66pt>
 File: plot_sleep.pdf Graphic file (type pdf)
  <use plot_sleep.pdf>
-Package pdftex.def Info: plot_sleep.pdf used on input line 210.
+Package pdftex.def Info: plot_sleep.pdf used on input line 211.
 (pdftex.def)             Requested size: 361.34999pt x 176.66225pt.
 
 
@@ -792,80 +848,77 @@ e.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.225 
+l.226 
        <./plot_add.pdf>] [14pdfTeX warning (ext4): destination with the same id
 entifier (name{figure.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.238 
+l.239 
        <./plot_sleep.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-Overfull \hbox (28.26588pt too wide) in paragraph at lines 254--255
+Overfull \hbox (28.26588pt too wide) in paragraph at lines 255--256
 \IL2/pcr/m/n/12 hiredis \IL2/ppl/m/n/12 na-tive back-end. []$\IL2/pcr/m/n/12 ht
 tps : / / github . com / visionmedia /
  []
 
 
-Overfull \hbox (11.68987pt too wide) in paragraph at lines 255--256
+Overfull \hbox (11.68987pt too wide) in paragraph at lines 256--257
 \IL2/ppl/m/n/12 tion. []$\IL2/pcr/m/n/12 https : / / github . com / visionmedia
  / connect-[]redis$[] 
  []
 
 
-Overfull \hbox (3.3899pt too wide) in paragraph at lines 257--258
+Overfull \hbox (3.3899pt too wide) in paragraph at lines 258--259
 \IL2/ppl/m/n/12 ful to han-dle file up-loads. []$\IL2/pcr/m/n/12 https : / / gi
 thub . com / rootslab /
  []
 
 
-Overfull \hbox (1.63678pt too wide) in paragraph at lines 259--260
+Overfull \hbox (1.63678pt too wide) in paragraph at lines 260--261
 []\IL2/ppl/m/n/12 A sim-ple in-ter-na-tion-al-iza-tion li-brary. []$\IL2/pcr/m/
 n/12 https : / / github .
  []
 
 [16]
-Overfull \hbox (34.28584pt too wide) in paragraph at lines 262--263
+Overfull \hbox (34.28584pt too wide) in paragraph at lines 263--264
 \IL2/ppl/m/n/12 pre-ven-tion. []$\IL2/pcr/m/n/12 https : / / github . com / mir
 hampt / node-[]recaptcha$[] 
  []
 
 
-Overfull \hbox (12.71268pt too wide) in paragraph at lines 264--265
+Overfull \hbox (12.71268pt too wide) in paragraph at lines 265--266
 \IL2/ppl/m/n/12 Ama-zon SES cloud ser-vice. []$\IL2/pcr/m/n/12 https : / / gith
 ub . com / jjenkins /
  []
 
 
-Overfull \hbox (66.14984pt too wide) in paragraph at lines 266--267
+Overfull \hbox (66.14984pt too wide) in paragraph at lines 268--269
 \IL2/pcr/m/n/12 bassistance . de / jquery-[]plugins / jquery-[]plugin-[]validat
 ion/$[] 
  []
 
 
-Overfull \hbox (20.30989pt too wide) in paragraph at lines 267--268
+Overfull \hbox (20.30989pt too wide) in paragraph at lines 269--270
 []\IL2/ppl/m/n/12 jQuery plu-gin for im-age crop-ping. []$\IL2/pcr/m/n/12 http 
 : / / deepliquid .
  []
 
 
-Overfull \hbox (10.84195pt too wide) in paragraph at lines 268--269
+Overfull \hbox (10.84195pt too wide) in paragraph at lines 270--271
 []\IL2/ppl/m/n/12 jQuery plu-gin that grows textar-eas au-to-mat-i-cally. []$\I
 L2/pcr/m/n/12 http :
  []
 
+[17]
 \openout4 = `bp.pyg'.
 
 runsystem(pygmentize -l text -f latex -F tokenmerge             -P "verboptions
 = " -o bp.out.pyg bp.pyg)...executed.
 
-(./bp.out.pyg
-Overfull \vbox (7.49553pt too high) has occurred while \output is active []
-
-
-[17])
+ (./bp.out.pyg)
 runsystem(rm bp.out.pyg)...executed.
 
 runsystem(rm bp.pyg)...executed.
@@ -895,53 +948,61 @@ runsystem(rm bp.out.pyg)...executed.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<screen-signup.png, id=382, 584.0pt x 211.64786pt>
+<screen-signup.png, id=385, 584.0pt x 211.64786pt>
 File: screen-signup.png Graphic file (type png)
  <use screen-signup.png>
-Package pdftex.def Info: screen-signup.png used on input line 296.
+Package pdftex.def Info: screen-signup.png used on input line 299.
 (pdftex.def)             Requested size: 361.34999pt x 130.96194pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18] <screen-signup1.png, id=391, 350.4pt x 210.17296pt>
-File: screen-signup1.png Graphic file (type png)
-
-<use screen-signup1.png>
-Package pdftex.def Info: screen-signup1.png used on input line 310.
-(pdftex.def)             Requested size: 252.94388pt x 151.71886pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+[18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
-<screen-profile.png, id=399, 704.45pt x 391.5854pt>
+<screen-signup1.png, id=399, 350.4pt x 210.17296pt>
+File: screen-signup1.png Graphic file (type png)
+ <use screen-signup1.png>
+Package pdftex.def Info: screen-signup1.png used on input line 313.
+(pdftex.def)             Requested size: 252.94388pt x 151.71886pt.
+
+<screen-profile.png, id=400, 704.45pt x 391.5854pt>
 File: screen-profile.png Graphic file (type png)
  <use screen-profile.png>
-Package pdftex.def Info: screen-profile.png used on input line 318.
+Package pdftex.def Info: screen-profile.png used on input line 321.
 (pdftex.def)             Requested size: 325.21278pt x 180.77678pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.326 	\subsection
-                  {Photo upload and manipulation}pdfTeX warning (ext4): destina
-tion with the same identifier (name{figure.2.5}) has been already used, duplica
-te ignored
+l.324 	  \end{figure}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.326 	\subsection
-                  {Photo upload and manipulation} <./screen-signup.png> <./scre
-en-signup1.png>]
+l.324 	  \end{figure}
+                      <./screen-signup.png> <./screen-signup1.png>]
+\openout4 = `bp.pyg'.
+
+runsystem(pygmentize -l bash -f latex -F tokenmerge             -P "verboptions
+= " -o bp.out.pyg bp.pyg)...executed.
+
+
+(./bp.out.pyg [21pdfTeX warning (ext4): destination with the same identifier (n
+ame{figure.2.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.3 \end{Verbatim}
+                   <./screen-profile.png>])
+runsystem(rm bp.out.pyg)...executed.
+
+runsystem(rm bp.pyg)...executed.
+
 \openout4 = `bp.pyg'.
 
 runsystem(pygmentize -l bash -f latex -F tokenmerge             -P "verboptions
@@ -952,42 +1013,27 @@ runsystem(rm bp.out.pyg)...executed.
 
 runsystem(rm bp.pyg)...executed.
 
-\openout4 = `bp.pyg'.
 
-runsystem(pygmentize -l bash -f latex -F tokenmerge             -P "verboptions
-= " -o bp.out.pyg bp.pyg)...executed.
-
- (./bp.out.pyg [21pdfTeX warning (ext4): destination with the same identifier (
-name{figure.2.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.3 \end{Verbatim}
-                   <./screen-profile.png>])
-runsystem(rm bp.out.pyg)...executed.
-
-runsystem(rm bp.pyg)...executed.
-
-
-Overfull \hbox (11.90878pt too wide) in paragraph at lines 337--338
+Overfull \hbox (11.90878pt too wide) in paragraph at lines 340--341
 \IL2/ppl/m/n/12 e.g. for a user with ID 23456 the di-rec-tory will be \IL2/pcr/
 m/n/12 photos/20000/3456\IL2/ppl/m/n/12 .
  []
 
-<screen-search.png, id=414, 554.8pt x 387.89816pt>
+<screen-search.png, id=418, 554.8pt x 387.89816pt>
 File: screen-search.png Graphic file (type png)
  <use screen-search.png>
-Package pdftex.def Info: screen-search.png used on input line 347.
+Package pdftex.def Info: screen-search.png used on input line 350.
 (pdftex.def)             Requested size: 289.08109pt x 202.1166pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[22]
 runsystem(pygmentize -l javascript -f latex -F tokenmerge  -F gobble:n=6       
     -P "verboptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-search.js)...ex
 ecuted.
 
-(./bp.out.pyg)
+ (./bp.out.pyg)
 runsystem(rm bp.out.pyg)...executed.
 
 
@@ -1000,7 +1046,7 @@ ptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-search1.js)...executed.
 (./bp.out.pyg)
 runsystem(rm bp.out.pyg)...executed.
 
- [22]
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1009,49 +1055,49 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.379 		\clearpage
-                   <./screen-search.png>] [24] [25]
+l.380 
+       <./screen-search.png>] [24] [25] [26]
 Overfull \vbox (3.8847pt too high) has occurred while \output is active []
 
 
-[26
+[27
 
-] <screen-chat.png, id=452, 701.53pt x 381.26112pt>
+] <screen-chat.png, id=460, 701.53pt x 381.26112pt>
 File: screen-chat.png Graphic file (type png)
  <use screen-chat.png>
-Package pdftex.def Info: screen-chat.png used on input line 396.
+Package pdftex.def Info: screen-chat.png used on input line 399.
 (pdftex.def)             Requested size: 361.34999pt x 196.38948pt.
 
-Overfull \hbox (26.5619pt too wide) in paragraph at lines 403--404
+Overfull \hbox (26.5619pt too wide) in paragraph at lines 406--407
 \IL2/pcr/m/n/12 ID>:unread <sender ID> \IL2/ppl/m/n/12 hash is in-creased. Also
  the \IL2/pcr/m/n/12 global:chat[]q
  []
 
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.8
+[28pdfTeX warning (ext4): destination with the same identifier (name{figure.2.8
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.406 
+l.409 
        <./screen-chat.png>]
-Overfull \hbox (58.84192pt too wide) in paragraph at lines 409--411
+Overfull \hbox (58.84192pt too wide) in paragraph at lines 412--414
 []\IL2/ppl/m/n/12 An e-mail no-ti-fi-ca-tion about a new mes-sage is sent by th
 e \IL2/pcr/m/n/12 notification.js
  []
 
 
-Overfull \hbox (1.15797pt too wide) in paragraph at lines 409--411
+Overfull \hbox (1.15797pt too wide) in paragraph at lines 412--414
 \IL2/ppl/m/n/12 script if all of the fol-low-ing con-di-tions are met (checked 
 ev-ery minute): 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 419.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 422.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 419.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 422.
 runsystem(pygmentize -l javascript -f latex -F tokenmerge             -P "verbo
 ptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-emailobj.js)...executed.
 
@@ -1059,13 +1105,13 @@ ptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-emailobj.js)...executed.
 runsystem(rm bp.out.pyg)...executed.
 
 
-Overfull \hbox (9.79787pt too wide) in paragraph at lines 422--423
+Overfull \hbox (9.79787pt too wide) in paragraph at lines 425--426
 []\IL2/ppl/m/n/12 The \IL2/pcr/m/n/12 worker-email.js \IL2/ppl/m/n/12 back-grou
 nd pro-cess uses \IL2/pcr/m/n/12 async\IL2/ppl/m/n/12 's \IL2/pcr/m/n/12 whilst
 
  []
 
-[28]
+[29]
 runsystem(pygmentize -l javascript -f latex -F tokenmerge             -P "verbo
 ptions= ,fontsize=\footnotesize " -o bp.out.pyg ex-emailworker.js)...executed.
 
@@ -1075,26 +1121,26 @@ runsystem(rm bp.out.pyg)...executed.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-Overfull \hbox (7.31396pt too wide) in paragraph at lines 440--441
+ [30]
+Overfull \hbox (7.31396pt too wide) in paragraph at lines 443--444
 []\IL2/ppl/m/n/12 In the best case, all client-server com-mu-ni-ca-tion should
  []
 
-[30] [31]
+[31] [32] [33]
 Chapter 3.
-[32
+[34
 
 ]
 Appendix A.
 runsystem(pygmentize -l yaml -f latex -F tokenmerge             -P "verboptions
 = ,fontsize=\footnotesize " -o bp.out.pyg scheme.txt)...executed.
 
-(./bp.out.pyg [33
+(./bp.out.pyg [35
 
 ])
 runsystem(rm bp.out.pyg)...executed.
 
- (./bp.bbl [34]
+ (./bp.bbl [36]
 Underfull \hbox (badness 10000) in paragraph at lines 40--46
 \IL2/pcr/m/n/12 com / software / rational / web / whitepapers / r _ wp _
  []
@@ -1116,26 +1162,26 @@ Overfull \hbox (37.84186pt too wide) in paragraph at lines 66--72
 $[]\IL2/ppl/m/n/12 ,
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 475.
- [35
+[37
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 475.
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 490.
+ [38]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 490.
  (./bp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 475.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 475.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 490.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 490.
 Package rerunfilecheck Info: File `bp.out' has not changed.
-(rerunfilecheck)             Checksum: 87875B0EC0E79C7280BA93BC610FE252;2465.
+(rerunfilecheck)             Checksum: 7A52DE3C5F255D0C76B25A927CF2CDAB;2450.
  ) 
 Here is how much of TeX's memory you used:
- 7737 strings out of 493629
- 109193 string characters out of 3148778
- 198821 words of memory out of 3000000
- 10657 multiletter control sequences out of 15000+200000
+ 8313 strings out of 493629
+ 115620 string characters out of 3148778
+ 208170 words of memory out of 3000000
+ 11213 multiletter control sequences out of 15000+200000
  43577 words of font info for 98 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,11n,37p,735b,476s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,11n,37p,735b,493s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf-dist/fon
 ts/enc/dvips/base/8a.enc} <./fi-logo.514pk></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
@@ -1145,10 +1191,10 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/cou
 rier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></u
 sr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (39 pages, 1007187 bytes).
+Output written on bp.pdf (42 pages, 1011080 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 505 compressed objects within 6 object streams
- 113 named destinations out of 1000 (max. 500000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 523 compressed objects within 6 object streams
+ 117 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

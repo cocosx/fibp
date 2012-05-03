@@ -79,4 +79,4 @@ geo:
     states:<country woeid> - json (name,woeid)
     counties:*<state woeid> - json (name,woeid)
     name:<county woeid> - json (oname,sname,cname)
-    oparent:*<owoeid> - json [cwoeid,swoeid]
+    oparent:*<owoeid> - county parent json [cwoeid,swoeid]

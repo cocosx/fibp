@@ -5,6 +5,7 @@
 \usepackage[plainpages=false, pdfpagelabels]{hyperref}
 \usepackage{paralist}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage{color}
 \usepackage{courier}
 
@@ -262,10 +263,12 @@ abstract
 			\item[\textbf{node-recaptcha}] A Node.js reCaptcha service client. Used for spam prevention. \url{https://github.com/mirhampt/node-recaptcha}
 			\item[\textbf{socket.io}] WebSocket and HTTP push library. \url{http://socket.io/}
 			\item[\textbf{node-amazon-ses}] A Node.js module for sending e-mail using the Amazon SES cloud service. \url{https://github.com/jjenkins/node-amazon-ses}
+			\item[\textbf{cluster}] A Node.js module for managment of multiple server instances. \url{https://github.com/LearnBoost/cluster}
 			\item[\textbf{jQuery}] HTML DOM and CSS manipulation library for JavaScript. \url{http://jquery.com/}
 			\item[\textbf{jquery.validate}] jQuery plugin for HTML form validation. \url{http://bassistance.de/jquery-plugins/jquery-plugin-validation/}
 			\item[\textbf{jquery.Jcrop}] jQuery plugin for image cropping. \url{http://deepliquid.com/content/Jcrop.html}
 			\item[\textbf{jquery.elastic}] jQuery plugin that grows textareas automatically. \url{http://unwrongest.com/projects/elastic/}
+			\item[\textbf{UglifyJS}] A JavaScript minifier and obsfucator. \url{https://github.com/mishoo/UglifyJS}
 		\end{itemize}
 \section{Data model}
 	Redis is a key-value storage, therefore there is no fixed schema for the database and no hierarchy per se.  As a convention, a colon character is used to divide key names into logical subgroups, e.g. \texttt{user:1234:email}. 
@@ -453,10 +456,21 @@ abstract
 		Because many user actions happen asychronously, client-side internationalization is also present. Messages are again stored as a JSON object (\texttt{locale/en\_client.js}) and are directly inserted in the HTML file in a \texttt{<script>} tag creating the \texttt{t} global variable. There are no parametrized messages on the client side, so this simple approach suffices. Otherwise the server-side \texttt{i18n.js} module could be easily ported to client side, since both employ JavaScript.
 	\subsection{Geolocation}
 	\label{section:geo}
+		All geolocation data used in the application comes from the Yahoo! GeoPlanet project. \cite{website:geoplanet} It provides both a web service, which allows for searching of the database, and the source data tables. Here the \texttt{places} and \texttt{adjacencies} tables are used. Every place in the database has it unique constant ID called WOEID (Where On Earth ID). 
 		
-	\subsection{Deployment and performance tuning}
+		The \texttt{places} table contains all the places available, their names, WOEIDs, types and parents' WOEIDs. The \texttt{adjacencies} table simply contains pairs of WOEIDs of the same level that are geographically adjacent.
+		
+		The \texttt{geo\_fill.py} Python script is used to fill the geolocation database of the application from the provided GeoPlanet database. Complete structure of the generated database is listed in appendix \ref{appendix:scheme} under the \texttt{geo:} prefix.
+	\subsection{Performance tuning}
+		Both Node.js and Redis are single-threaded, therefore performance can be significantly improved by runnig multiple instances of them. With Node.js this can be easily achieved by using the \texttt{cluster} module that can manage startup, zero-downtime reloading and stopping of the instances. 
+		
+		With Redis this is more complicated, because the instances have their own data. Technique called \emph{sharding} can be used to solve this. It spread keys with variable name such as \texttt{user:<ID>:email} across $n$ instances by caclutating \texttt{ID}$\mod{n}$. This is however unpractical here, because set operations are heavily used those and cannot be done when the sets are stored in different instances. So at least the session data is stored in an instance separate from the rest. Redis also features simple master-slave replication that could also be employed.
+		
+		All client-side JavaScript is combined into one file and minified using \texttt{uglify-js} to improve loading speed. For the same reason Gzip compression is utilized to serve text-based static files.
 	\subsection{Graphical design and user experience}
-	async
+		Attractive graphical design is essential for the success of any web application. The author has tried to do his best in this area. Advanced CSS3 effects such as gradients, text- and box-shadows, opacity and transitions are used as well as JavaScript animations.
+		
+		Once the user logs in, all operations are done asynchronously. Not only does this reduce server load but also greatly improves user experience and responsivness.
 \chapter{Conclusion}
 
 \appendix

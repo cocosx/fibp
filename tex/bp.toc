@@ -16,20 +16,20 @@
 \contentsline {subsection}{\numberline {2.1.6}\rmfamily The overall winner: Node.js}{15}{subsection.2.1.6}
 \contentsline {subsection}{\numberline {2.1.7}\rmfamily Data store}{15}{subsection.2.1.7}
 \contentsline {subsection}{\numberline {2.1.8}\rmfamily Modules and libraries used}{16}{subsection.2.1.8}
-\contentsline {section}{\numberline {2.2}\slshape Data model}{17}{section.2.2}
+\contentsline {section}{\numberline {2.2}\slshape Data model}{18}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Redis work-flow}{18}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}\slshape Basic functionality}{18}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}\rmfamily User registration}{18}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}\rmfamily Photo upload and manipulation}{21}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}\rmfamily Acquaintance selection}{22}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}\rmfamily Notifications}{26}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}\rmfamily Chat}{26}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{28}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}\rmfamily E-mail sending}{28}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{30}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}\rmfamily Internationalization}{31}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}\rmfamily Geolocation}{31}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}\rmfamily Deployment and performance tuning}{31}{subsection.2.4.5}
-\contentsline {subsection}{\numberline {2.4.6}\rmfamily Graphical design and user experience}{31}{subsection.2.4.6}
-\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{32}{chapter.3}
-\contentsline {chapter}{\numberline {A}\bfseries Structure of the storage}{33}{appendix.A}
+\contentsline {subsection}{\numberline {2.3.4}\rmfamily Notifications}{27}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}\rmfamily Chat}{27}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{29}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\rmfamily E-mail sending}{29}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{31}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}\rmfamily Internationalization}{32}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}\rmfamily Geolocation}{32}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}\rmfamily Performance tuning}{33}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.6}\rmfamily Graphical design and user experience}{33}{subsection.2.4.6}
+\contentsline {chapter}{\numberline {3}\bfseries Conclusion}{34}{chapter.3}
+\contentsline {chapter}{\numberline {A}\bfseries Structure of the storage}{35}{appendix.A}
