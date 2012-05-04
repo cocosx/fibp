@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.19)  3 MAY 2012 17:51
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.19)  4 MAY 2012 10:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1191,7 +1191,7 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/cou
 rier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></u
 sr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (42 pages, 1011080 bytes).
+Output written on bp.pdf (42 pages, 1011134 bytes).
 PDF statistics:
  651 PDF objects out of 1000 (max. 8388607)
  523 compressed objects within 6 object streams
