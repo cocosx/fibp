@@ -58,7 +58,7 @@ abstract
 		\subsection{Match.com}
 		Match.com (\url{http://www.match.com}) was launched in 1995 and is one of the oldest networks. It requires a paid subscription ranging from 34.90 EUR for one month  to 77.40 EUR for 6 months.
 		
-		After signing up, the user is asked to upload a profile photo and fill in a detailed questionnaire about his or her character, interests, activities, relationships and preferences. Based on this information, the system tries to find the best matching partner. The user can then add the match to his or her favourites, follow their profile and message them. There is a special option to \emph{wink} at them which can be used to quickly bring attention of the user and wait for their response to quickly assess their general interest without the need to send a message. \cite{website:match}
+		After signing up, the user is asked to upload a profile photo and fill in a detailed questionnaire about his or her character, interests, activities, relationships and preferences. Based on this information, the system tries to find the best matching partner. The user can then add the match to his or her favourites, follow their profile and message them. There is a special option to \emph{wink} at them that can be used to quickly bring attention of the user and wait for their response to quickly assess their general interest without the need to send a message. \cite{website:match}
 		
 		\subsection{OkCupid}
 		OkCupid (\url{http://www.okcupid.com}) started in 2004. It claims to be the fastest growing website for making acquaintances.
@@ -104,7 +104,7 @@ abstract
 		\item Only once two users match their 'like' mark, both will be notified, added to their contact lists and be able to engage in real-time chat. Then they can get to know each other and possibly arrange a meeting.
 	\end{itemize}
 	
-	This way only very little information is gathered in the database, which brings the user data privacy problems to a minimum, and it is not necessary to fill in any lengthy questionnaires. Users need not be shy when marking people they like, because until the mark is matched, the other person will not know about it.
+	This way only very little information is gathered in the database which brings the user data privacy problems to a minimum, and it is not necessary to fill in any lengthy questionnaires. Users need not be shy when marking people they like, because until the mark is matched, the other person will not know about it.
 	
 	However this also brings some new issues. Because the marking of others is essentially only based on their looks, the target audience is going to be reduced to users for whom it is an important criteria. That means mostly younger people seeking fun rather than a serious relationship.
 \chapter{Implementation}
@@ -112,24 +112,24 @@ abstract
 \section{Technologies}
 %TODO HTML5
 %http://www.okcupid.com/about/technology
-	It is very important to choose the right technology for the implementation of a project. We need to find the most suitable web application framework and a data store, if one is not hard-wired into the framework. The author has devised the following criteria for the evaluation of available technologies:
+	It is very important to choose the right technologies for the implementation of a project. We need to find the most suitable web application framework and a data store, if one is not hard-wired into the framework. The author has devised the following criteria for the evaluation of available technologies:
 	\begin{itemize}
 		\item \textbf{Availability for commercial use free of charge}\\
 			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
 		\item \textbf{General suitability for the project}\\
-			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little chages to the database, e.g. marking of photos a user likes. The data model will be quite simple. There must be an easy way of making HTTP push\footnote{"HTTP server push (also known as HTTP streaming) is a mechanism for sending data from a web server to a web browser." \url{http://en.wikipedia.org/wiki/HTTP_push}, {2012-04-08}} communication to enable real-time chat. 
+			It must facilitate creation of a website. It is expected that there will be a lot of HTTP requests that will make only little changes to the database, e.g. marking of photos a user likes. The data model will be quite simple. There must be an easy way of making HTTP push\footnote{"HTTP server push (also known as HTTP streaming) is a mechanism for sending data from a web server to a web browser." \url{http://en.wikipedia.org/wiki/HTTP_push}, {2012-04-08}} communication to enable real-time chat. 
 		\item \textbf{Performance, scalability and stability}\\
-			Again due to the low bugdet, the software must utilize the hardware as efficiently as possible. The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost efficiently. The framework should have a good track record of runtime stability.
+			Again due to the low budget, the software must utilize hardware as efficiently as possible. The user base could potentially grow very rapidly. It is therefore essential that all the system can match the growth cost-efficiently. The framework should have a good track record of runtime stability.
 		\item \textbf{Ease of development and developer community size}\\
-			It should be easy to implement the project and good documentation is welcome. The framework should have a good community with which a developer can try to solve issues.
+			It should be easy to implement the project and good documentation is welcome. The framework should have a sufficient community with which a developer can try to solve potential issues.
 		\item \textbf{Codebase stability}\\
 			The technologies should be past their rapid development phases and the core APIs should be stable. This minimizes the effort needed to transition the project to a newer version of the framework. 
 		\item \textbf{Innovation factor}\\
-			Younger technologies are preffered as their use can lead to innovation and discovery of new approaches to problems.
+			Younger technologies are preferred as their use can lead to innovation and discovery of new approaches to problems.
 	\end{itemize}
 	Because of the first criterion, our interest shall only be in open source frameworks.
 	\subsection{General suitability for the project}
-		The author is skilled in JavaScript, PHP, Python and Ruby, so we will further examine frameworks based on those languages. All have been used for HTTP server programming for a long time, except for JavaScript, which has emerged in recent years in the Node.js platform.\\
+		The author is skilled in JavaScript, PHP, Python and Ruby, so we will further examine frameworks based on those languages. All have been used for HTTP server programming for a long time, except for JavaScript that has emerged in recent years in the Node.js platform.\\
 		\begin{table}[htb]
 		\begin{tabular}{|r||p{2.2cm}|p{2.2cm}|p{2.1cm}|p{2.2cm}|}
 			\hline 
@@ -144,7 +144,7 @@ abstract
 		\label{table:wf}
 		\end{table}
 	
-		Table \ref{table:wf} shows a basic classification of selected web frameworks by programming language and complexity of features they provide. Simple frameworks generally only provide a way to route HTTP requests to methods, parse HTTP headers and to send a response. Other features can be added on using plugins or modules. Full MVC\footnote{Model-View-Controller} frameworks also have an ORM\footnote{Object-Relational Mapping} engine for models and generate HTML views using a templating engine.
+		Table \ref{table:wf} shows a basic classification of selected web frameworks by programming language and comprehensiveness of features they provide. Simple frameworks generally only provide a way to route HTTP requests to methods, parse HTTP headers and to send a response. Other features can be added on using plug-ins or modules. Full MVC\footnote{Model-View-Controller} frameworks also have an ORM\footnote{Object-Relational Mapping} engine for models and generate HTML views using a templating engine.
 		
 		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, i.e. Express.js, plain PHP, CherryPy and Sinatra.
 		
@@ -153,12 +153,12 @@ abstract
 		
 		\begin{figure}[htb]
 	  \centering
-	    \includegraphics[width=0.7\textwidth]{bench2.png}
+	    \includegraphics[width=0.8\textwidth]{bench2.png}
 		  \caption{Language benchmark of V8 Engine, Python 3, Ruby 1.9 and PHP 5.4.0. Lower means faster. Source: \cite{website:bench}}
 		  \label{fig:bench1}
 		\end{figure}
 		
-		A box plot of the benchmark is shown in figure \ref{fig:bench1}. The vertical axis means how many times the language is slower than the fastest one (Intel Fortran 12.1). Out of the languages under consideration, Node.js on average 6 times faster than the rest\footnote{Node.js uses the V8 Engine internally}. 
+		A box plot of the benchmark is shown in figure \ref{fig:bench1}. The vertical axis indicates how many times the language is slower than the fastest one (currently Intel Fortran 12.1). Out of the languages under consideration, Node.js on average 6 times faster than the rest\footnote{Node.js uses the V8 Engine internally}. 
 		
 		Next we will benchmark the performance of the HTTP handling of the frameworks. All the tests will be run on a dual-core i686 Linux 3.2.11 PC with 4GB of RAM. We will use the Apache HTTP server benchmarking tool (\texttt{ab}). Source codes for Sinatra and Node.js are in listings \ref{code:sinatra} and \ref{code:nodejs}, the other two for PHP and CherryPy are on the attached CD.
 
@@ -174,11 +174,11 @@ abstract
 		\inputminted[fontsize=\footnotesize]{javascript}{../bench/nodejs/app.js}
 		\end{program}
 
-		The \texttt{add} method has two parameters \texttt{a} and \texttt{b} and simply returns their sum. It will simulate simple \texttt{GET} parameter parsing and response.
+		The \texttt{add} method has two parameters \texttt{a}, \texttt{b} and simply returns their sum. It's purpose is to simulate simple \texttt{GET} parameter parsing and response.
 		
-		The \texttt{sleep} method has one paramater \texttt{ms}. Execution is suspended for \texttt{ms} miliseconds and a simple response is sent. This is intended to simulate a database query that takes given time. We will use a 20ms delay.
+		The \texttt{sleep} method has one parameter \texttt{ms}. Execution is suspended for \texttt{ms} milliseconds and a simple response is sent. This is intended to simulate a database query that takes given time. We will use a 20 ms delay.
 		
-		Node.js uses its internal HTTP server, Sinatra uses the Thin server, CherryPy uses its internal WSGI server and PHP is hosted through \texttt{mod\_php} on the Apache server. Unlinke CherryPy and Apache which use a thread pool to serve requests, Node.js and Thin use the \texttt{libevent} that utilizes \texttt{epoll} on Linux and \texttt{kqueue} on FreeBDS theoretically allowing for better concurrency. Node.js is also strictly single-threaded.
+		Node.js uses its internal HTTP server, Sinatra uses the Thin server, CherryPy uses its internal WSGI server and PHP is hosted through \texttt{mod\_php} on the Apache server. Unlike CherryPy and Apache that use a thread pool to serve requests, Node.js and Thin use the \texttt{libevent} that utilizes \texttt{epoll} on Linux and \texttt{kqueue} on FreeBDS theoretically allowing better concurrency. Node.js is also strictly single-threaded.
 	
 		Here is a list of versions and parameters used:
 		\begin{compactitem}
@@ -188,17 +188,17 @@ abstract
 			\item Ruby 1.9.3p125, Sinatra 1.2.7, Thin 1.3.3
 			\item All logging including access is disabled.
 			\item 5000 request per test
-			\item Concurrency in set (1,10,30,50,100,200,300,500,700,1000)
-			\item \texttt{ab} is run 10 times for each parameter set and a mean is calculated.
-			\item \texttt{/proc/sys/net/ipv4/tcp\_tw\_reuse} set to 1. This allows for reuse of sockets in the \texttt{TIME\_WAIT} state. This is a recommanded setting for high concurrency web servers. 
-			\item 2 seconds wait time between each run of \texttt{ab}
+			\item Concurrency $\in \lbrace 1,10,30,50,100,200,300,500,700,1000\rbrace$
+			\item \texttt{ab} is run 10 times for each parameter combination and a mean of successful requests per second is calculated.
+			\item \texttt{/proc/sys/net/ipv4/tcp\_tw\_reuse} set to 1. This allows reuse of sockets in the \texttt{TIME\_WAIT} state. This is a recommended setting for high concurrency web servers. 
+			\item 2 seconds of waiting time between each run of \texttt{ab}.
 			\item In case one of the runs fails (i.e. any of the 5000 requests fails), a score of 0 request per second is awarded for the run.
 			\item Source code of the Python script used to perform the benchmark can be found in attached file \texttt{bench.py}.
 		\end{compactitem}
 		
-		Graph \ref{fig:bench_add} shows the results of the \texttt{add} benchmark. We can see that PHP keeps up with Node.js until the 100 concurrent requests mark, but then declines sharply. Node.js is able to serve about 4700 request per second regardless of concurrency.
+		Graph \ref{fig:bench_add} shows the results of the \texttt{add} benchmark. We can see that PHP keeps up with Node.js until the 100 concurrent requests mark, then declines sharply. Node.js is able to serve about 4700 request per second regardless of concurrency.
 		
-		Graph \ref{fig:bench_sleep} shows the results of the \texttt{sleep} benchmark. Node.js is again the clear winner with about 4700 request per second regardless of concurrency. This is because Node.js's \texttt{setTimeout} is non-blocking. This applies also to any database query. Once the query is made, Node.js moves to serve other requests.
+		Graph \ref{fig:bench_sleep} shows the results of the \texttt{sleep} benchmark. Node.js is again the clear winner with about 4700 request per second regardless of concurrency. This is because Node.js's \texttt{setTimeout}, as well as any database query, is non-blocking. Once the query is made, Node.js moves to serve other requests, until the query result is received.
 		
 		\begin{figure}[h]
 	  \centering
@@ -213,57 +213,57 @@ abstract
 		  \label{fig:bench_sleep}
 		\end{figure}
 		
-		Node.js and Sinatra on Thin are the only framework to remain stable with increasing load. PHP and CherryPy have started dropping requests at concurrency levels of 300 and 30 respectively.
+		Node.js and Sinatra on Thin are the only frameworks to remain stable with increasing load. PHP and CherryPy have started dropping requests at concurrency levels of 300 and 30 respectively.
 				
-		In conclusion, Node.js performs the best as both a language and a HTTP server framework and remains stable under any load. Sinatra is also stable, however it is slower, which could be partially solved by the use of clustering. Under low loads PHP on Apache is just as fast as Node.js, but it's stability is hardly acceptable. CherryPy is eliminated.
+		In conclusion, Node.js performs the best as both a language and a HTTP server framework and remains stable under any load. Sinatra is also stable, however it is slower which could be partially solved by the use of clustering. Under low loads PHP on Apache is just as fast as Node.js, but it's stability is hardly acceptable. CherryPy is eliminated.
 		
 	\subsection{Ease of development and developer community size}
-		All the frameworks in the comparison provide very similar levels of functionality. From the author's experience, Ruby allows for shortest code at the slight expense of readability. Javascript on the other hand requires the longest code and can be a little tricky. See aganin listings \ref{code:sinatra} and \ref{code:nodejs}.
+		All the frameworks in the comparison provide very similar levels of functionality. From the author's experience, Ruby permits the code to be shortest at the slight expense of readability. JavaScript on the other hand requires the longest code and can be a little tricky. Compare again listings \ref{code:sinatra} and \ref{code:nodejs}.
 		
 		PHP is arguably the most used framework for web programming, hence it has the biggest developer community. It is well documented in many languages. Countless modules, snippets and add-on libraries are available.
 		
-		Node.js and Sinatra have a smaller but very active community. Thousands of modules and add-on are available through their package managers such as npm for Node.js and RubyGems for Sinatra. Both are adequately documented if not deeply. 
+		Node.js and Sinatra have a smaller but very active community. Thousands of modules and add-ons are available through their package managers such as npm for Node.js and RubyGems for Sinatra. Both are adequately documented if not deeply. 
 		
 	\subsection{Codebase stability}
-		PHP's codebase is the most stable. It is the oldest framework in the comparison, laguage and API changes are almost non-existen and don't break backwards compatibility.
+		PHP's codebase is the most stable. It is the oldest framework in the comparison, language and API changes are almost non-existent and don't break backwards compatibility.
 		
 		Sinatra and Node.js split the second place. There have still been some changes to the Ruby language from version 1.8 to 1.9 that could break backwards compatibility. Node.js is still under active development, however the API tends to only grow and not change.
 		
 	\subsection{Innovation factor}
 		Node.js is the clear winner in this criterion. It is the most innovative in that it uses JavaScript on the server side, event-based polling and non-blocking API.
 		
-		Sinatra comes in the second place. It utilizes Ruby's advanced language constructions allowing for tidy coding. PHP finishes last because of its age and lack of modern approaches.
+		Sinatra comes in the second place. It utilizes Ruby's advanced language constructions enabling tidy coding. PHP finishes last because of its age and lack of modern approaches.
 		
 	\subsection{The overall winner: Node.js}
 		The author has chosen Node.js for the implementation of this project. It is just as suitable as other frameworks and clearly wins performance, scalability and stability tests. It is also the most innovative framework of recent years with growing developer community support.
 		
-		There are two drawback to using Node.js. Firstly it is still relatively immature and bigger API chages could still happen. Secondly the use of JavaScript and non-blocking function calls can lead to poorly readable code. The author however believes that the advantages greatly outweigh this.
+		There are two drawback to using Node.js. Firstly it is still relatively immature and bigger API changes could still happen. Secondly the use of JavaScript and non-blocking function calls can lead to poorly readable code. The author however believes that the advantages greatly outweigh this.
 	\subsection{Data store}		
-		The decision to use simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
+		The decision to use a simple web framework gives us a free hand in choosing a separate data store. The traditional choice is an SQL database, e.g. MySQL and PostgreSQL. Lately NoSQL databases (MongoDB, CouchDB etc.) and  advanced key-value storages such as Redis have come into focus. In a recent paper \emph{Social-data storage-systems} \cite{Ruflin2011} that compares all of above, no clear winner is given.
 		
-		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keeps the entire database in memory with optional regular persistent storage snapshots, which allows for very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times af fast as MySQL when it comes to simple operations.
+		The author has chosen Redis. "Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets."\cite{website:redis} Redis keeps the entire database in operating memory with optional regular persistent storage snapshots which allows very fast read/write access and good reliability.	Benchmarks such as \cite{website:ruturaj} show that Redis is about eight times as fast as MySQL when it comes to simple operations.
 		
-		One of the drawbacks is that Redis mostly has simple commands so even moderately complex operations are difficult to program.
+		One of the drawbacks is that Redis mostly has simple commands so even moderately complicated operations are difficult to program.
 		
-		The innovation factor is high because Redis is usually not used as a single storage for all the data. As a bonus, Redis contains a simple publisher-subscriber functionality, which will come handy when implementing the real-time chat.
+		The innovation factor is high because Redis is usually not used as a single storage for all the data. As a bonus, Redis contains a simple publisher-subscriber functionality which will come handy when implementing the real-time chat functionality.
 	\subsection{Modules and libraries used}
 		The following libraries and modules will be used to simplify implementation of the project:
 		\begin{itemize}
 			\item[\textbf{Underscore.js}] "A utility-belt library for JavaScript that provides a lot of the functional programming support that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects." \footnote{\url{http://documentcloud.github.com/underscore/} 2012-04-18} It will be used in both client and server JavaScript code. 
-			\item[\textbf{Express.js}] A simple web framework on top of Node.js. Allows for easy routing, GET and POST method parameter parsing and response sending. Uses the common \texttt{Connect} architecture, therefore  is also a base for other modules.  \url{http://expressjs.com/}
+			\item[\textbf{Express.js}] A simple web framework on top of Node.js. Allows easy routing, GET and POST method parameter parsing and response sending. Uses the common \texttt{Connect} architecture, therefore  is also a baseplate for other modules.  \url{http://expressjs.com/}
 			\item[\textbf{node-jade}] A library for the Jade HTML templating engine. \url{http://jade-lang.com/}
 			\item[\textbf{redis}] A Node.js Redis client. Performance can be enhanced using the \texttt{hiredis} native backend. \url{https://github.com/visionmedia/connect-redis}
 			\item[\textbf{connect-redis}] A \texttt{Connect} module for saving of user session data to the Redis data store. Uses a signed cookie for client identification. \url{https://github.com/visionmedia/connect-redis}
 			\item[\textbf{node-sechash}] A library for calculation of cryptographically secure hashes to be used to store passwords. Automatically adds salt. \url{https://github.com/kbjr/node-sechash}
 			\item[\textbf{formaline}] An advanced HTTP POST request parser. Especially useful to handle file uploads. \url{https://github.com/rootslab/formaline}
-			\item[\textbf{node-gm}] A Node.js GraphicsMagick library. Facilitates image manipulation such as resizing, cropping and format coversion. \url{http://aheckmann.github.com/gm/}
+			\item[\textbf{node-gm}] A Node.js GraphicsMagick library. Facilitates image manipulation such as resizing, cropping and format conversion. \url{http://aheckmann.github.com/gm/}
 			\item[\textbf{i18n-node}] A simple internationalization library. \url{https://github.com/mashpie/i18n-node}
-			\item[\textbf{async}] A library to simplify asynchronous function calls on arrays of data, typically in series or parallely. \url{https://github.com/caolan/async}
-			\item[\textbf{RedBack}] "A fast, high-level Redis library for Node.JS that exposes an accessible and extensible interface to the Redis data types." \footnote{\url{http://redbackjs.com/} 2012-04-18} Its \texttt{RateLimit} class will be used for spam protection. 
-			\item[\textbf{node-recaptcha}] A Node.js reCaptcha service client. Used for spam prevention. \url{https://github.com/mirhampt/node-recaptcha}
+			\item[\textbf{async}] A library to simplify asynchronous function calls on arrays of data, typically in series or parallel. \url{https://github.com/caolan/async}
+			\item[\textbf{RedBack}] "A fast, high-level Redis library for Node.JS that exposes an accessible and extensible interface to the Redis data types." \footnote{\url{http://redbackjs.com/} 2012-04-18} Its \texttt{RateLimit} class can be used for DDoS and spam prevention. 
+			\item[\textbf{node-recaptcha}] A Node.js reCaptcha service client. Used for human verification. \url{https://github.com/mirhampt/node-recaptcha}
 			\item[\textbf{socket.io}] WebSocket and HTTP push library. \url{http://socket.io/}
-			\item[\textbf{node-amazon-ses}] A Node.js module for sending e-mail using the Amazon SES cloud service. \url{https://github.com/jjenkins/node-amazon-ses}
-			\item[\textbf{cluster}] A Node.js module for managment of multiple server instances. \url{https://github.com/LearnBoost/cluster}
+			\item[\textbf{node-amazon-ses}] A Node.js module for sending e-mails using the Amazon SES cloud service. \url{https://github.com/jjenkins/node-amazon-ses}
+			\item[\textbf{cluster}] A Node.js module for management of multiple server instances. \url{https://github.com/LearnBoost/cluster}
 			\item[\textbf{jQuery}] HTML DOM and CSS manipulation library for JavaScript. \url{http://jquery.com/}
 			\item[\textbf{jquery.validate}] jQuery plugin for HTML form validation. \url{http://bassistance.de/jquery-plugins/jquery-plugin-validation/}
 			\item[\textbf{jquery.Jcrop}] jQuery plugin for image cropping. \url{http://deepliquid.com/content/Jcrop.html}
@@ -271,18 +271,18 @@ abstract
 			\item[\textbf{UglifyJS}] A JavaScript minifier and obsfucator. \url{https://github.com/mishoo/UglifyJS}
 		\end{itemize}
 \section{Data model}
-	Redis is a key-value storage, therefore there is no fixed schema for the database and no hierarchy per se.  As a convention, a colon character is used to divide key names into logical subgroups, e.g. \texttt{user:1234:email}. 
+	Redis is a key-value storage, therefore there is no fixed schema for the database and no hierarchy per se.  As a convention, the colon character is used to divide key names into logical subgroups, e.g. \texttt{user:1234:email}. 
 	
 	A complete plan of the structure of the database is included in appendix \ref{appendix:scheme}.
 	\subsection{Redis work-flow}
-	Simple user parameters are stored as a Redis hash in order to reduce the total number of top-level keys, which can have an impact on the performance. For example to access the e-mail address of user with \texttt{id} 1234, one has to issue Redis command \mint{text}|HGET user:1234 email| insted of \mint{text}|GET user:1234:email|
+	Simple user parameters are stored as a Redis hash in order to reduce the total number of top-level keys which can have an impact on the performance. For example to access the e-mail address of user with \texttt{id} 1234, one has to execute Redis command \mint{text}|HGET user:1234 email| instead of \mint{text}|GET user:1234:email|
 	
 	
 	An introduction to the data types and basic commands of Redis is available at \url{http://redis.io/topics/data-types}.
 	
-	There is a way to search all key names for a given pattern using the \texttt{KEYS} command, but it is very slow compared to other commands. Therefore to keep track of the objects it the database, a set of their ids must be kept. For instance to create a new user one has to execute the sequence from listing \ref{code:ex-user}.
+	There is a way to search all key names for a given pattern using the \texttt{KEYS} command, but it is very slow compared to other commands. Therefore to keep track of the objects it the database, a set of their IDs must be kept. For instance to create a new user the sequence from listing \ref{code:ex-user} has to be executed.
 	
-	First a user id is generated by increasing the counter. Then a \texttt{multi} command is started. This guarantees that everything will be process at once. Since Redis is single-threaded, it is atomic by default.
+	First a user ID is generated by increasing the counter. Then a \texttt{multi} command is started. This guarantees that everything will be processed at once. Since Redis is single-threaded, it is atomic by default.
 	
 	Also note the use of asynchronous function calls --- one of the defining characteristics of Node.js.
 	\begin{program}[h!]
@@ -300,13 +300,13 @@ abstract
 		  \caption{Sign up form.}
 		  \label{fig:screen-signup}
 	  \end{figure}
-		The user is presented with a registration form on the homepage. There are three fields: e-mail address, password and password confirmation. The e-mail field uses the HTML5 \texttt{email} type, which causes supporting browsers to simplify input, for instance by displaying the \texttt{@} character on a virtual keyboard on touch input devices. A minimum of 6 characters is required for the password. When the user clicks the Sign up button, the values are validated with the jquery.validate plugin and errors are highlighted, see figure \ref{fig:screen-signup}. The pluing prevents the form from being submitted with errors.
+		The user is presented with a registration form on the homepage. There are three fields: e-mail address, password and password confirmation. The e-mail field uses the HTML5 \texttt{email} type which causes supporting browsers to make the input easier, for instance by displaying the \texttt{@} character on a virtual keyboard on touch input devices. A minimum of 6 characters is required for the password. When the user clicks the Sign up button, the values are validated with the \texttt{jquery.validate} plugin and errors are highlighted, see figure \ref{fig:screen-signup}. The pluing also prevents the form from being submitted with errors.
 		
 		If there have been more than three registrations from a given IP address within the last 12 hours, a reCaptcha is displayed to prevent automated malicious user registrations. The \texttt{RateLimit} class of the RedBack module is used to efficiently store the number of registrations.
 		
-		When the form is posted to \texttt{/signup}, all values and the reCaptcha are once again validated on the server side. This is indeed necessary, since it is very easy to circumvent any client side validation. User attributes are added to the database. The password is stored using the \texttt{sechash}, which makes it more diffucult to get users' passwords even if the database is hacked.
+		When the form is posted to \texttt{/signup}, all values and the reCaptcha are once again validated on the server side. This is indeed necessary, since it is very easy to circumvent any client side validation. User attributes are added to the database. The password is stored using the \texttt{sechash} module which makes it more difficult to guess users' passwords even if the database is hacked.
 		
-		An e-mail is sent to the user's address, containing a welcome message and a verification code, see section \ref{section:email}. Then the user is redirected to the second phase of the registration.
+		An e-mail is sent to the user's address, containing a welcome message and a verification code (for details of the implementation see section \ref{section:email}). Then the user is redirected to the second phase of the registration.
 		
 		\begin{figure}[h]
 	  \centering
@@ -314,7 +314,7 @@ abstract
 		  \caption{Second phase of signup.}
 		  \label{fig:screen-signup1}
 	  \end{figure}
-	  There the user is asked to enter his or her gender, year of birth and the verification code. It is a random number in the range $\left[ 100,999\right)$. This is intended to make it simple for the user to remember it for the few seconds while switching windows. On the other hand would also make it simple to quickly guess the right one, circumventing the e-mail verification. There is however a hard limit of 3 wrong attempts. An option to resend the verification code is also given, with a limit of 3 per 12 hours.
+	  There the user is asked to enter his or her gender, year of birth and the verification code. It is a random number in the range $\left[ 100,999\right)$. This is intended to make it simpler for the user to remember it for the few seconds while switching browser windows or tabs. On the other hand it would also enable malicious users to quickly guess the number, circumventing the e-mail verification. There is however a hard limit of 3 wrong attempts. An option to resend the verification code is also given, with a limit of 3 per 12 hours.
 	  
 		\begin{figure}[h]
 	  \centering

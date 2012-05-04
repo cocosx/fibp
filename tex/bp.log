@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.19)  4 MAY 2012 10:14
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.2.15)  4 MAY 2012 17:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -791,12 +791,12 @@ Overfull \vbox (1.98859pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.153 
+l.150 
       ] <bench2.png, id=276, 481.8pt x 301.125pt>
 File: bench2.png Graphic file (type png)
  <use bench2.png>
 Package pdftex.def Info: bench2.png used on input line 156.
-(pdftex.def)             Requested size: 252.94388pt x 158.0884pt.
+(pdftex.def)             Requested size: 289.08109pt x 180.68097pt.
 Package hyperref Info: bookmark level for unknown program defaults to 0 on inpu
 t line 166.
 runsystem(pygmentize -l ruby -f latex -F tokenmerge             -P "verboptions
@@ -818,47 +818,43 @@ runsystem(rm bp.out.pyg)...executed.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.180 
-       <./bench2.png>] [11]
-Overfull \hbox (6.2099pt too wide) in paragraph at lines 181--182
-\IL2/ppl/m/n/12 use a thread pool to serve re-quests, Node.js and Thin use the 
-\IL2/pcr/m/n/12 libevent
- []
-
-<plot_add.pdf, id=299, 361.35pt x 176.66pt>
+l.178 
+       <./bench2.png>] [11] [12] <plot_add.pdf, id=307, 361.35pt x 176.66pt>
 File: plot_add.pdf Graphic file (type pdf)
- <use plot_add.pdf>
+
+<use plot_add.pdf>
 Package pdftex.def Info: plot_add.pdf used on input line 205.
 (pdftex.def)             Requested size: 361.34999pt x 176.66225pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<plot_sleep.pdf, id=300, 361.35pt x 176.66pt>
+ <plot_sleep.pdf, id=308, 361.35pt x 176.66pt>
 File: plot_sleep.pdf Graphic file (type pdf)
- <use plot_sleep.pdf>
+
+<use plot_sleep.pdf>
 Package pdftex.def Info: plot_sleep.pdf used on input line 211.
 (pdftex.def)             Requested size: 361.34999pt x 176.66225pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.2.2}) has been already used, duplicate ignored
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.226 
+l.224 
        <./plot_add.pdf>] [14pdfTeX warning (ext4): destination with the same id
 entifier (name{figure.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.239 
-       <./plot_sleep.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+l.235 		S
+         inatra comes in the second place. It utilizes Ruby's advanced langu...
+ <./plot_sleep.pdf>] [15]
+Overfull \hbox (4.08592pt too wide) in paragraph at lines 253--254
+\IL2/ppl/m/n/12 fore is also a base-plate for other mod-ules. []$\IL2/pcr/m/n/1
+2 http : / / expressjs .
+ []
 
- [15]
+
 Overfull \hbox (28.26588pt too wide) in paragraph at lines 255--256
 \IL2/pcr/m/n/12 hiredis \IL2/ppl/m/n/12 na-tive back-end. []$\IL2/pcr/m/n/12 ht
 tps : / / github . com / visionmedia /
@@ -876,16 +872,16 @@ Overfull \hbox (3.3899pt too wide) in paragraph at lines 258--259
 thub . com / rootslab /
  []
 
-
+[16]
 Overfull \hbox (1.63678pt too wide) in paragraph at lines 260--261
 []\IL2/ppl/m/n/12 A sim-ple in-ter-na-tion-al-iza-tion li-brary. []$\IL2/pcr/m/
 n/12 https : / / github .
  []
 
-[16]
-Overfull \hbox (34.28584pt too wide) in paragraph at lines 263--264
-\IL2/ppl/m/n/12 pre-ven-tion. []$\IL2/pcr/m/n/12 https : / / github . com / mir
-hampt / node-[]recaptcha$[] 
+
+Overfull \hbox (36.63786pt too wide) in paragraph at lines 263--264
+\IL2/ppl/m/n/12 ver-i-fi-ca-tion. []$\IL2/pcr/m/n/12 https : / / github . com /
+ mirhampt / node-[]recaptcha$[] 
  []
 
 
@@ -948,7 +944,7 @@ runsystem(rm bp.out.pyg)...executed.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<screen-signup.png, id=385, 584.0pt x 211.64786pt>
+<screen-signup.png, id=386, 584.0pt x 211.64786pt>
 File: screen-signup.png Graphic file (type png)
  <use screen-signup.png>
 Package pdftex.def Info: screen-signup.png used on input line 299.
@@ -957,48 +953,48 @@ Package pdftex.def Info: screen-signup.png used on input line 299.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
-<screen-signup1.png, id=399, 350.4pt x 210.17296pt>
+Underfull \vbox (badness 2057) has occurred while \output is active []
+
+ [18]
+[19] <screen-signup1.png, id=400, 350.4pt x 210.17296pt>
 File: screen-signup1.png Graphic file (type png)
- <use screen-signup1.png>
+
+<use screen-signup1.png>
 Package pdftex.def Info: screen-signup1.png used on input line 313.
 (pdftex.def)             Requested size: 252.94388pt x 151.71886pt.
+ [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+4}) has been already used, duplicate ignored
 
-<screen-profile.png, id=400, 704.45pt x 391.5854pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.318 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.318 
+       <./screen-signup.png> <./screen-signup1.png>]
+<screen-profile.png, id=406, 704.45pt x 391.5854pt>
 File: screen-profile.png Graphic file (type png)
  <use screen-profile.png>
 Package pdftex.def Info: screen-profile.png used on input line 321.
 (pdftex.def)             Requested size: 325.21278pt x 180.77678pt.
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.324 	  \end{figure}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.2.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.324 	  \end{figure}
-                      <./screen-signup.png> <./screen-signup1.png>]
+l.333 
+       <./screen-profile.png>]
 \openout4 = `bp.pyg'.
 
 runsystem(pygmentize -l bash -f latex -F tokenmerge             -P "verboptions
 = " -o bp.out.pyg bp.pyg)...executed.
 
-
-(./bp.out.pyg [21pdfTeX warning (ext4): destination with the same identifier (n
-ame{figure.2.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.3 \end{Verbatim}
-                   <./screen-profile.png>])
+ (./bp.out.pyg)
 runsystem(rm bp.out.pyg)...executed.
 
 runsystem(rm bp.pyg)...executed.
@@ -1024,9 +1020,6 @@ File: screen-search.png Graphic file (type png)
  <use screen-search.png>
 Package pdftex.def Info: screen-search.png used on input line 350.
 (pdftex.def)             Requested size: 289.08109pt x 202.1166pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22]
 runsystem(pygmentize -l javascript -f latex -F tokenmerge  -F gobble:n=6       
@@ -1055,7 +1048,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.380 
+l.378 
        <./screen-search.png>] [24] [25] [26]
 Overfull \vbox (3.8847pt too high) has occurred while \output is active []
 
@@ -1191,7 +1184,7 @@ t/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/cou
 rier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></u
 sr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on bp.pdf (42 pages, 1011134 bytes).
+Output written on bp.pdf (42 pages, 1011615 bytes).
 PDF statistics:
  651 PDF objects out of 1000 (max. 8388607)
  523 compressed objects within 6 object streams
