@@ -325,15 +325,15 @@ abstract
 	  
 	  After that, the user is redirected to his or her profile page, where his or her approximate location must be entered and a profile photo uploaded in order to fully enable the account (see figure \ref{fig:screen-profile}). More on geolocation in section \ref{section:geo}.
 	  
-	  Users have the ability to disable their accounts for the case they have found their acquaintance or are no longer looking for one. This causes notifications for their account to stop and they are no longer able to search for new users.
+	  Users have the ability to disable their accounts for the case they have found their acquaintance or are no longer looking for one. This causes notifications for their account to stop and they are no longer able to search for new users. Complete deletion of an account is also possible after entering the user's password and clicking on a link in a verification e-mail that is sent.
 	\subsection{Photo upload and manipulation}
-		A user can upload the photo through a \texttt{type="file"} field in a HTTP \texttt{POST} form using \texttt{enctype="multipart/form-data"} to \texttt{/me/newphoto}.
+		The user can upload his or her profile photo through a \texttt{type="file"} field in a HTTP \texttt{POST} form using \texttt{enctype="multipart/form-data"} to \texttt{/me/newphoto}.
 		
-		The \texttt{POST} data are passed to the \texttt{formaline} module. It makes sure that the file is no bigger than 4MB, saves it to a temporary directory and runs the callback function on completion. The size limit is necessary primarirly for security reasons, as processing of a bigger file could slow the server down.
+		The \texttt{POST} data are passed to the \texttt{formaline} module. It makes sure that the file is no bigger than 4 MB, saves it to a temporary directory and runs the callback function on completion. The size limit is necessary primarily for security reasons, as processing of a bigger file could slow the server down.
 		
 		Then a GraphicsMagick command is executed on the file:
 		\mint{bash}|gm identify -ping -format "%m %w %h" filename|
-		It tries to identify the format, width and height of the image. The \texttt{-ping} option means, that only the important parts of the file are read, ensuring a quick execution. Only photos in \texttt{JPEG} or \texttt{PNG} format are passed through.
+		It tries to identify the format, width and height of the image. The \texttt{-ping} option means that only the important parts of the file are read, ensuring quick execution. Only photos in \texttt{JPEG} or \texttt{PNG} format are passed through.
 		
 		The original file is then saved to a directory named in the following scheme: 
 		\mint{bash}|photos/ID-ID%10000/ID%10000/|
@@ -344,7 +344,7 @@ abstract
 		The user also has the ability crop the uploaded picture directly on the website. A modified version of the \texttt{jquery.Jcrop} plugin facilitates the client UI and GraphicsMagick processing on the server side.
 		
 	\subsection{Acquaintance selection}
-		The user has the ability to search for others using age and location criteria --- gender can be chosen in the profile and setting page. The location is one of these options: user's county, neighbouring counties, user's state, neighbouring states and user's country. Layout of the page is shown in figure \ref{fig:screen-search}.
+		The user has the ability to search for others using age and location criteria --- gender can only be chosen in the profile and setting page as it stays constant for most users. The location can be one of these options: user's county, neighbouring counties, user's state, neighbouring states and user's country. Layout of the page is shown in figure \ref{fig:screen-search}.
 		\begin{figure}[h]
 	  \centering
 	    \includegraphics[width=0.8\textwidth]{screen-search.png}
@@ -352,7 +352,7 @@ abstract
 		  \label{fig:screen-search}
 	  \end{figure}
 	  
-		The form is asynchronously submitted to \texttt{/me/search} using HTTP \texttt{POST}. The parameters are validated on the server side and saved as a \texttt{JSON} string to the \texttt{user:<id> searchDefaults} hash. This is useful, because the client side JavaScript can use it to load the last used serach paramets directly.
+		The form is asynchronously submitted to \texttt{/me/search} using HTTP \texttt{POST}. The parameters are validated on the server side and saved as a \texttt{JSON} string to the \texttt{user:<id> searchDefaults} hash. This is useful, because the client side JavaScript can use it to load the last used search parameters directly.
 		
 		An excerpt of the first phase of the search procedure is shown in listing \ref{code:ex-search}. First a union of sets of appropriate years of birth is created. It is saved in a temporary set that automatically expires in 10 seconds. Similarly a set of users is created according to the specified location.
 		
@@ -362,7 +362,7 @@ abstract
 		\inputminted[fontsize=\footnotesize, linenos=false, gobble=6]{javascript}{ex-search.js}
 		\end{program}
 
-		These two sets and, two other for gender selection and one with enabled users are then intersected and visited users are substracted, see listing \ref{code:ex-search1}. A maximum of 50 user IDs are returned as a \texttt{JSON} array.
+		These two sets, two other for gender selection and one with enabled users are then intersected and already seen users are subtracted, see listing \ref{code:ex-search1}. A maximum of 50 user IDs are returned as a \texttt{JSON} array.
 		
 		\begin{program}[h]
 		\caption{An excerpt of the search procedure --- second phase}
@@ -374,24 +374,24 @@ abstract
 		\[
 			\left( \bigcup YOB_i \cap \bigcup GEO_i \cap GENDER \cap ENABLED \right) \setminus SEEN
 		\]
-		We can see that this relatively simple task is rather complex to implement in Redis. The big upside however is that from testing with a database of 200 000 users, the whole HTTP request takes about 2ms on recent server hardware and all the command used have $O(n)$ or better complexity.
+		We can see that this relatively simple task is rather complex to implement in Redis. The big upside however is that from testing with a database of 200 000 users, the whole HTTP request takes about 2 milliseconds on recent server hardware and all the command used have $O(n)$ or better complexity.
 	
-		The user can then mark the resulting photos one-by-one, with more results loading automatically. The "Not sure" choice is used when a photo does not correctly depick the person. When such user then changes the photo, he or she is shown once again. 
+		The user can then mark the resulting photos one-by-one, with more results loading automatically. The "Not sure" choice is used when a photo does not correctly depict the person. When such user then changes the photo, he or she is shown once again. 
 		
 		The user also has the ability to browse through visited photos and change the decision.
 		\clearpage
 	\subsection{Notifications}
-		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case to the \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets:match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
+		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case  both IDs are added to the respective \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets:match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
 		
 		The \texttt{notification.js} script is running as a separate background process. It is used to regularly check for notifications for both matches and chat (more on that in section \ref{section:chat}) and to send appropriate e-mails. It sets up a timer that ensures the match notifications are sent only once a day during the night. It can be gracefully quit by sending the \texttt{SIGQUIT} UNIX signal (in a similar way to the \texttt{worker-email.js} script shown later in listing \ref{code:ex-emailworker}).
 		
-		The whole purpose of the rather complicated \texttt{matchNotify} function is to make sure as many as possible matches are made, but at most one new per user per day. This is the maximum bipartite matching problem. Efficient algorithms to correctly solve it exist. \cite{Galil1986} However here for the sake of simplicity a naive algorithm is used --- users with the lowest number of pending matches are handeled first, with oldest pending matched taking precedence. It works reasonably well, as the vast majority of matches are one-on-one and even in case of slight congestion, a few days waiting time for the match to be handeled is not a big problem. That said, this is something that could be improved.
+		The whole purpose of the rather complicated \texttt{matchNotify} function is to make sure as many as possible matches are made, but at most one new per user per day. This is the maximum bipartite matching problem. Efficient algorithms to correctly solve it exist. \cite{Galil1986} However here, for the sake of simplicity, a naive algorithm is used --- users with the lowest number of pending matches are handled first, with oldest pending matches taking precedence. This approach works reasonably well, as the vast majority of matches are one-on-one and even in case of slight congestion, a few days waiting time for the match to be handled is not a big problem. That said, this is something that could be improved.
 		
-		When a match is handeled, both users are notified using e-mail and are added to one another's contact lists to be able to engage in chat.
+		When a match is handled, both users are notified using e-mail and are added to one another's contact lists to be able to engage in chat.
 	\subsection{Chat}
-		Implementation of the chat screen is shown in figure \ref{fig:screen-chat}.	Available contact are listed on the left side. Those currently online are marked with a red square in the bottom right. If there are unread messages, their count is displayed in the top left. Red border marks currently active chat session.
+		Implementation of the chat screen is shown in figure \ref{fig:screen-chat}.	Available contacts are listed on the left side. Those currently on-line are marked with a red square in the bottom right. If there are unread messages, their count is displayed in the top left. Red border marks the currently active chat session.
 		
-		Message history is displayed in the centre and smooth-scrolls as new messages arrive. Textarea for message input is place below. It automatically grows with the text length. If the box on the right of it is checked, the message is sent when the Return key is pressed, otherwise a new line is created. This allows for both quick chatting without using the mouse and writing of properly formatted messages.
+		Message history is displayed in the centre and smooth-scrolls as new messages arrive. Textarea for message input is placed below. It automatically grows with the text length. If the box on the right of it is checked, the message is sent when the Return key is pressed, otherwise a new line is created. This allows both quick chatting without using the mouse and writing of properly formatted messages.
 	
 		\label{section:chat}
 		\begin{figure}[h]
@@ -401,7 +401,7 @@ abstract
 		  \label{fig:screen-chat}
 	  \end{figure}
 	  
-	  A timer is set on the client side that makes and asynchronous request every 2.3 minutes to \texttt{/me/ping}. The server stores the last ping time in the \texttt{user:zsets:ping} sorted set and returns list a JSON list of contacts that are online, i.e. have sent their ping in the last 2.5 minutes.
+	  A timer is set on the client side that makes an asynchronous request every 2.3 minutes to \texttt{/me/ping}. The server stores the last ping time in the \texttt{user:zsets:ping} sorted set and returns list a JSON list of contacts that are on-line, i.e. have sent their ping in the last 2.5 minutes.
 	  
 	  All messages are asynchronously posted to \texttt{/me/sendmessage}. There it is stored as JSON object to the conversation history. If the number of messages in the history is above 100, the 10 oldest are deleted. Number of unread messages in the \texttt{user:<recipient ID>:unread <sender ID>} hash is increased. Also the \texttt{global:chat\_q} sorted set is updated with current time as the $z$-value for the recipient ID. Lastly the message is published to both sender and recipient \texttt{push:chat:<ID>} Redis subscriber channels.
 	  
@@ -412,7 +412,7 @@ abstract
 	  An e-mail notification about a new message is sent by the \texttt{notification.js} script if all of the following conditions are met (checked every minute):
 	  \begin{compactitem}
 	  	\item The message is unread and the user has not yet been notified about it.
-	    \item The user is offline for a long time --- more than 60 minutes have passed since the last ping.
+	    \item The user is off-line for a long time --- more than 60 minutes have passed since the last ping.
 	    \item More than 3 minutes have passed since the last message addressed to the user.
 	  \end{compactitem}
 	  This ensures the user is not overwhelmed with notifications.
@@ -422,7 +422,7 @@ abstract
 		Whenever the application needs to send an e-mail, it pushes the following JSON object to the \texttt{worker:email:\{p1,p2\}} Redis list, where \texttt{p2} has higher priority that \texttt{p2}.
 		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-emailobj.js}
 		
-		The \texttt{worker-email.js} background process uses \texttt{async}'s \texttt{whilst} function and Redis's \texttt{BLPOP} command to non-blockingly poll for new e-mails as shown in listing \ref{code:ex-emailworker}. The \texttt{BLPOP} command pops and item from the list if the list is non-empty or waits for a specified amount of seconds for a new item. If it doesn't appear it returns \texttt{null}. The process is safely killable by sending the \texttt{SIGQUIT} UNIX signal.
+		The \texttt{worker-email.js} background process uses \texttt{async}'s \texttt{whilst} function and Redis's \texttt{BLPOP} command to non-blockingly poll for new e-mails as shown in listing \ref{code:ex-emailworker}. The \texttt{BLPOP} command pops an item from the list if the list is non-empty or waits for a specified amount of seconds for a new item. If it doesn't appear it returns \texttt{null}. The process is safely killable by sending the \texttt{SIGQUIT} UNIX signal.
 		
 		\begin{program}[h]
 		\caption{The e-mail worker}
@@ -430,25 +430,25 @@ abstract
 		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-emailworker.js}
 		\end{program}
 		
-		The e-mails themselves are sent using the cloud Amazon Simple Email Service (SES -- \url{http://aws.amazon.com/ses/}). It has very favorable pricing at 0.10USD per 1,000 e-mails plus data transfer at approx. 0.10USD per 1GB. Using this service spares the resources of running and administering one's own SMTP server and gives benefits in delivery rates, becouse Amazon checks outgoing e-mails for signs of spam, which gains it a more trusted status among e-mail client's anti-spam  filters.
+		The e-mails themselves are sent using the cloud Amazon Simple Email Service (SES -- \url{http://aws.amazon.com/ses/}). It has favourable pricing at 0.10 USD per 1,000 e-mails plus data transfer at approx. 0.10 USD per 1 GB. Using this service spares the resources of running and administering one's own SMTP server and gives benefits in delivery rates, because Amazon checks outgoing e-mails for signs of spam, which gains it a more trusted status among e-mail client's anti-spam  filters.
 	\subsection{Security}
-		Security of the application is essential for both users and operators. There are many attack vectors hackers could use to compromise them. \cite{paper:dd} Here is a list of those applicable attacks and measures that have been taken to prevent them:
+		Security of the application is essential for both users and operators. There are many attack vectors hackers could use to compromise them. \cite{paper:dd} Here is a list of the attacks that apply here and measures that have been taken to prevent them:
 		\begin{itemize}
 			\item[\textbf{Parameter tampering}] 
-				Because of the nature of HTML/HTTP, it is very simple to send parameters that are not allowed by the client side of the application. Hence, before any request is processed, it is passed through a series of \texttt{connect} filters. The \texttt{limit} fitler built-in to \texttt{express} limts the size of \texttt{POST} parameters to a given amount --- here 100KB. \texttt{GET} parameters are automatically limited to 8KB by Node.js. Moreover lenghts of all fields are then checked by the custom \texttt{paramLength} filter. 
+				Because of the nature of HTML/HTTP, it is very easy to send parameters that are not allowed by the client side of the application. Hence, before any request is processed, it is passed through a series of \texttt{connect} filters. The \texttt{limit} filter built-in to \texttt{express} limits the size of \texttt{POST} parameters to a given amount --- here 100 KB. \texttt{GET} parameters are automatically limited to 8KB by Node.js. Moreover lengths of all fields are then checked by the custom \texttt{paramLength} filter. 
 			\item[\textbf{Cross-site scripting}] 
-				This attack is possible whenever user content is displayed to other users. In this project is basically happend at two points: the profile photo and chat. The profile photo is always checked to be of the correct format. All chat messages are properly HTML escaped before they are displayed.
+				This attack is possible whenever user content is displayed to other users. In this project it happens in two places: the profile photo and chat. The profile photo is always checked to be of the correct format. All chat messages are properly HTML escaped before they are displayed.
 			\item[\textbf{SQL-injection}]
-				Cannot be applied directly because Redis is a NoSQL data store. All Redis commands have a fixed structure and user content is always passed as binary-safe data and no plain text queries are used, as opposed to SQL. There is one exception: key names with \texttt{id} (such as \texttt{"user:"+id+":email"}) are constructed from user data, but these parameters are always converted to integer before usage. Any such attacks are therefore impossible.
+				Cannot be applied directly because Redis is a NoSQL data store. All Redis commands have a fixed structure and user content is always passed as binary-safe data and no plain text queries are used, as opposed to SQL. There is one exception: key names with \texttt{id} are constructed from user data (e.g. \texttt{"user:"+id+":email"}), but these parameters are always converted to integer before usage. Any such attacks are therefore impossible.
 			\item[\textbf{Authorization}] In the best case, all client-server communication should be run through a secure channel, i.e. SSL, TLS, HTTPS. This is however very demanding on the servers or requires a dedicated SSL acceleration hardware, both beign cost prohibitive for now.
 			\item[\textbf{Cookie theft}]
-				Authorization is cookie-based, so the possibility of this attack indeed exsists. However to minimaze the risk, \texttt{connect} uses cryptographically signed cookies with fingerprints (e.g. client IP address, browser \texttt{User-Agent} header etc.), so the attacker would not only need to steal the cookie, but also to emulate all there paramaters, which is close to impossible.				
+				Authorization is cookie-based, so the possibility of this attack indeed exists. However to minimize the risk, \texttt{connect} uses cryptographically signed cookies with fingerprints (e.g. client IP address, browser \texttt{User-Agent} header etc.), so the attacker would not only need to steal the cookie, but also to emulate all there parameters which is close to impossible.				
 		\end{itemize}		
 	\subsection{Internationalization}
 		Server-side internationalization is facilitated by the \texttt{i18n.js} module, which is a version of the original by Marcus Spiegel extended with this functionality:
 		\begin{compactitem}
 			\item Option to set a default locale
-			\item Get locale from session automatically
+			\item Get the locale from session automatically
 			\item Translate messages to a locale specified by parameters independently of the request (the \texttt{l\_\_} function)
 		\end{compactitem}
 		Messages are stored as a JSON object in files, e.g. \texttt{locale/en.js}.
@@ -456,19 +456,19 @@ abstract
 		Because many user actions happen asychronously, client-side internationalization is also present. Messages are again stored as a JSON object (\texttt{locale/en\_client.js}) and are directly inserted in the HTML file in a \texttt{<script>} tag creating the \texttt{t} global variable. There are no parametrized messages on the client side, so this simple approach suffices. Otherwise the server-side \texttt{i18n.js} module could be easily ported to client side, since both employ JavaScript.
 	\subsection{Geolocation}
 	\label{section:geo}
-		All geolocation data used in the application comes from the Yahoo! GeoPlanet project. \cite{website:geoplanet} It provides both a web service, which allows for searching of the database, and the source data tables. Here the \texttt{places} and \texttt{adjacencies} tables are used. Every place in the database has it unique constant ID called WOEID (Where On Earth ID). 
+		All geolocation data used in the application comes from the Yahoo! GeoPlanet project. \cite{website:geoplanet} It provides both a web service, which allows for searching of the database, and the source data tables. Here the \texttt{places} and \texttt{adjacencies} tables are used. Every place in the database has its unique constant ID called WOEID (Where On Earth ID). 
 		
 		The \texttt{places} table contains all the places available, their names, WOEIDs, types and parents' WOEIDs. The \texttt{adjacencies} table simply contains pairs of WOEIDs of the same level that are geographically adjacent.
 		
 		The \texttt{geo\_fill.py} Python script is used to fill the geolocation database of the application from the provided GeoPlanet database. Complete structure of the generated database is listed in appendix \ref{appendix:scheme} under the \texttt{geo:} prefix.
 	\subsection{Performance tuning}
-		Both Node.js and Redis are single-threaded, therefore performance can be significantly improved by runnig multiple instances of them. With Node.js this can be easily achieved by using the \texttt{cluster} module that can manage startup, zero-downtime reloading and stopping of the instances. 
+		Both Node.js and Redis are single-threaded, therefore performance can be significantly improved by running multiple instances of them. With Node.js this can be easily achieved by using the \texttt{cluster} module that can manage starting, zero-downtime reloading and stopping of the instances. 
 		
-		With Redis this is more complicated, because the instances have their own data. Technique called \emph{sharding} can be used to solve this. It spread keys with variable name such as \texttt{user:<ID>:email} across $n$ instances by caclutating \texttt{ID}$\mod{n}$. This is however unpractical here, because set operations are heavily used those and cannot be done when the sets are stored in different instances. So at least the session data is stored in an instance separate from the rest. Redis also features simple master-slave replication that could also be employed.
+		With Redis this is more complicated, because the instances have their own data. Technique called \emph{sharding} can be used to solve this. It spread keys with variable name such as \texttt{user:<ID>:email} across $n$ instances by caclutating \texttt{ID}$\mod{n}$. This is however impractical here, because set operations are heavily used and those cannot be done when the sets are stored in different instances. So at least the session data is stored in an instance separate from the rest. Redis also features simple master-slave replication that could also be employed.
 		
 		All client-side JavaScript is combined into one file and minified using \texttt{uglify-js} to improve loading speed. For the same reason Gzip compression is utilized to serve text-based static files.
 	\subsection{Graphical design and user experience}
-		Attractive graphical design is essential for the success of any web application. The author has tried to do his best in this area. Advanced CSS3 effects such as gradients, text- and box-shadows, opacity and transitions are used as well as JavaScript animations.
+		Attractive graphical design is essential for the success of any web application. The author has tried to do his best in this aspect. Advanced CSS3 effects such as gradients, text- and box-shadows, opacity and transitions are used as well as JavaScript animations.
 		
 		Once the user logs in, all operations are done asynchronously. Not only does this reduce server load but also greatly improves user experience and responsivness.
 \chapter{Conclusion}

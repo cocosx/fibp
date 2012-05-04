@@ -20,13 +20,13 @@
 \contentsline {subsection}{\numberline {2.2.1}\rmfamily Redis work-flow}{18}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}\slshape Basic functionality}{19}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}\rmfamily User registration}{19}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}\rmfamily Photo upload and manipulation}{21}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}\rmfamily Acquaintance selection}{22}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}\rmfamily Photo upload and manipulation}{22}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\rmfamily Acquaintance selection}{23}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}\rmfamily Notifications}{27}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}\rmfamily Chat}{27}{subsection.2.3.5}
 \contentsline {section}{\numberline {2.4}\slshape Implementation in detail}{29}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}\rmfamily E-mail sending}{29}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{31}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}\rmfamily Security}{30}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}\rmfamily Internationalization}{32}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}\rmfamily Geolocation}{32}{subsection.2.4.4}
 \contentsline {subsection}{\numberline {2.4.5}\rmfamily Performance tuning}{33}{subsection.2.4.5}
