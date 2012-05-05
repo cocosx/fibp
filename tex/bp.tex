@@ -50,7 +50,13 @@ abstract
 \MainMatter
 \tableofcontents
 \chapter*{Introduction}
+	The main goal of this thesis is, as its name suggests, to design and implement a web-based social network for making acquaintances. Social networks in general have been gaining a lot of popularity in the last decade, and especially in this area tough competition exists, but there is still room for improvement from both user experience and programming point of view. The result of this thesis is a social network called \emph{Pickdo} (\url{http://www.pickdo.com}).
 	
+	The first chapter is focused on the design of the new social network. Existing social network for making acquaintances  and relevant aspects of user data protection are examined and a decision to create a very simplistic new network is made.
+	
+	The second chapter is about the implementation and is divided into two main sections. In the first one we will select the best technologies for the programming itself --- Node.js as a web framework and Redis as data store. Both have comparatively low-level APIs, are very fast and innovative.
+	
+	The second section describes the implementation of the design to programming code. The primary focus is on pure performance rather than direct code reusability. This is natural given the technology choice. 
 \chapter{Design}
 	In this chapter we will decide the design of a new social network for making acquaintances. Firstly we will research existing networks in this market segment. Next we will focus on user data protection aspects relevant in this context. Lastly we will evaluate pros and cons of those networks from both user experience and data protection point of view, and  based on this we will make the design decision. 
 \section{Existing social networks for making acquaintances}
@@ -217,7 +223,7 @@ abstract
 				
 		In conclusion, Node.js performs the best as both a language and a HTTP server framework and remains stable under any load. Sinatra is also stable, however it is slower which could be partially solved by the use of clustering. Under low loads PHP on Apache is just as fast as Node.js, but it's stability is hardly acceptable. CherryPy is eliminated.
 		
-	\subsection{Ease of development and developer community size}
+	\subsection{Ease of development and community size}
 		All the frameworks in the comparison provide very similar levels of functionality. From the author's experience, Ruby permits the code to be shortest at the slight expense of readability. JavaScript on the other hand requires the longest code and can be a little tricky. Compare again listings \ref{code:sinatra} and \ref{code:nodejs}.
 		
 		PHP is arguably the most used framework for web programming, hence it has the biggest developer community. It is well documented in many languages. Countless modules, snippets and add-on libraries are available.
@@ -475,7 +481,8 @@ abstract
 		Once the user logs in, all operations are done asynchronously. Not only does this reduce server load but also greatly improves user experience and responsiveness.
 		
 		To help the user out while familiarizing with the website, \emph{help mode} can be enabled. It then displays help bubbles when the user hover mouse over UI elements.
-\chapter{Conclusion}
+	\section{Conclusion}
+		We have proven that a complete project can be implemented only using Node.js and Redis --- young and innovative technologies. The application is fast-performing and stable. Due to the low-level nature of Redis especially, techniques that are interesting on one hand but complicated on the other had to be used in some places. If the project was more complex, a combination of SQL and NoSQL storages would be preferable with a proper data and object model.
 
 \appendix
 \chapter{Structure of the storage}

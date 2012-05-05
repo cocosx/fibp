@@ -10,7 +10,7 @@
 \BOOKMARK [1][-]{section.2.1}{ Technologies}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.1.1}{ General suitability for the project}{section.2.1}% 11
 \BOOKMARK [2][-]{subsection.2.1.2}{ Performance, scalability and stability}{section.2.1}% 12
-\BOOKMARK [2][-]{subsection.2.1.3}{ Ease of development and developer community size}{section.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.3}{ Ease of development and community size}{section.2.1}% 13
 \BOOKMARK [2][-]{subsection.2.1.4}{ Codebase stability}{section.2.1}% 14
 \BOOKMARK [2][-]{subsection.2.1.5}{ Innovation factor}{section.2.1}% 15
 \BOOKMARK [2][-]{subsection.2.1.6}{ The overall winner: Node.js}{section.2.1}% 16
@@ -31,5 +31,5 @@
 \BOOKMARK [2][-]{subsection.2.4.4}{ Geolocation}{section.2.4}% 31
 \BOOKMARK [2][-]{subsection.2.4.5}{ Performance tuning}{section.2.4}% 32
 \BOOKMARK [2][-]{subsection.2.4.6}{ Graphical design and user experience}{section.2.4}% 33
-\BOOKMARK [0][-]{chapter.3}{Conclusion}{}% 34
+\BOOKMARK [1][-]{section.2.5}{ Conclusion}{chapter.2}% 34
 \BOOKMARK [0][-]{appendix.A}{Structure of the storage}{}% 35
