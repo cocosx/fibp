@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{color}
 \usepackage{courier}
+%\usepackage{natbib}
 
 \usepackage{minted}
 %\usemintedstyle{bw}
@@ -49,8 +50,11 @@ abstract
 \MainMatter
 \tableofcontents
 \chapter*{Introduction}
+	
 \chapter{Design}
+	In this chapter we will decide the design of a new social network for making acquaintances. Firstly we will research existing networks in this market segment. Next we will focus on user data protection aspects relevant in this context. Lastly we will evaluate pros and cons of those networks from both user experience and data protection point of view, and  based on this we will make the design decision. 
 \section{Existing social networks for making acquaintances}
+	According to \cite{wiki:od}, there have been more than 844 lifestyle and dating sites in 2004. We shall focus on those most visited or gaining a lot of popularity.
 	\subsection{PlentyofFish}
 		PlentyofFish (\url{http://www.plentyoffish.com/}) was founded in 2003 in Canada. It generates most of it's revenue through advertising and some premium services. Unfortunately, it currently only serves users from Canada, UK, US, Australia, Ireland, New Zealand, Spain, France, Italy and Germany, so the author could not sign up at all.
 		
@@ -85,9 +89,7 @@ abstract
 	
 	It goes almost without saying that the servers must be well protected from hacker attacks, especially when they contain this kind of sensitive data. A successful attack would not only harm the users, but probably mark the end for the website. Ideally there should be a regular security audit that the users can review.
 
-\section{The idea}
-	TODO:
-	\cite{Finkel01012012}
+\section{The design decision}
 	From the research of existing social networks for making acquaintances we can conclude the following points and issues:
 	\begin{itemize}
 		\item The target audience are single people from about 20 to 60 years old.
@@ -96,7 +98,7 @@ abstract
 		\item Therefore all collect very sensitive user data that could be potentially misused.
 		\item All offer a method to quickly find a matching partner, but then require an action from one of the users to make a first contact. Some users might have trouble finding courage to do so.
 	\end{itemize}
-
+	Finkel et al. (2012) \cite{Finkel01012012} state more psychological problems with on-line dating sites. They also claim mathematical algorithms do not prove to be especially successful.
 	To solve most of these issues, the author has come up with this idea for the new social network:
 	\begin{itemize}
 		\item The users will provide only general information: e-mail address, gender, year of birth, approximate location (county level), interest in men or women and a single profile photo.
@@ -108,11 +110,9 @@ abstract
 	
 	However this also brings some new issues. Because the marking of others is essentially only based on their looks, the target audience is going to be reduced to users for whom it is an important criteria. That means mostly younger people seeking fun rather than a serious relationship.
 \chapter{Implementation}
-
+	Here we will focus on the implementation of the social network based on the basic design from the previous chapter. First we will research and compare technologies that can be used to achieve the goal, based on specific criteria. Then we will walk through interesting parts of the implementation from both users' and programmers' point of view. Source codes of the implementation are available on the attached CD, with some parts omitted for security reasons.
 \section{Technologies}
-%TODO HTML5
-%http://www.okcupid.com/about/technology
-	It is very important to choose the right technologies for the implementation of a project. We need to find the most suitable web application framework and a data store, if one is not hard-wired into the framework. The author has devised the following criteria for the evaluation of available technologies:
+	It is very important to choose the right technologies for the implementation of a project. We need to find the most suitable HTML5 web application framework and a data store, if one is not hard-wired into the framework. With the exception of OkCupid which claims to use a proprietary C++ framework, existing social networks do not disclose technologies they use. The author has devised the following criteria for the evaluation of available technologies:
 	\begin{itemize}
 		\item \textbf{Availability for commercial use free of charge}\\
 			Because of budgetary constrains, the technology must be free for commercial use. The project may later generate revenue through the use advertising.
@@ -293,6 +293,7 @@ abstract
 	
 	
 \section{Basic functionality}
+	In this section we will cover interesting parts of the functionality that are more or less directly accessible for the user.
 	\subsection{User registration}	
 	  \begin{figure}[h]
 	  \centering
@@ -417,6 +418,7 @@ abstract
 	  \end{compactitem}
 	  This ensures the user is not overwhelmed with notifications.
 \section{Implementation in detail}
+	In this section we will focus on aspects of the implementation that are more in the background, but are nonetheless essential for successful function of the project.
 	\subsection{E-mail sending}
 		\label{section:email}
 		Whenever the application needs to send an e-mail, it pushes the following JSON object to the \texttt{worker:email:\{p1,p2\}} Redis list, where \texttt{p2} has higher priority that \texttt{p2}.
@@ -470,7 +472,9 @@ abstract
 	\subsection{Graphical design and user experience}
 		Attractive graphical design is essential for the success of any web application. The author has tried to do his best in this aspect. Advanced CSS3 effects such as gradients, text- and box-shadows, opacity and transitions are used as well as JavaScript animations.
 		
-		Once the user logs in, all operations are done asynchronously. Not only does this reduce server load but also greatly improves user experience and responsivness.
+		Once the user logs in, all operations are done asynchronously. Not only does this reduce server load but also greatly improves user experience and responsiveness.
+		
+		To help the user out while familiarizing with the website, \emph{help mode} can be enabled. It then displays help bubbles when the user hover mouse over UI elements.
 \chapter{Conclusion}
 
 \appendix
