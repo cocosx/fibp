@@ -1,4 +1,5 @@
-client.INCRBY('user:counters:id', Math.floor(Math.random()*50+1),
+client.INCRBY('user:counters:id', 
+  Math.floor(Math.random()*50+1),
   function(err,replies) {
   var id = replies;
   var multi=client.multi();

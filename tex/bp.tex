@@ -9,9 +9,11 @@
 \usepackage{color}
 \usepackage{courier}
 %\usepackage{natbib}
+%\usepackage[top=40mm, bottom=45mm, left=40mm, right=30mm]{geometry}
+%\usepackage[top=22mm, bottom=30mm, left=35mm, right=25mm]{geometry}
 
 \usepackage{minted}
-%\usemintedstyle{bw}
+\usemintedstyle{bw}
 
 %\usepackage{fontspec}
 %\setsansfont{Calibri}
@@ -42,10 +44,16 @@
 \end{ThesisDeclaration}
 
 \begin{ThesisThanks}
-Thanks
+I would like to express my gratitude to doc. Ing. Michal Brandejs, CSc. for giving me a free hand in writing this thesis.
 \end{ThesisThanks}
 
-abstract
+\section*{Abstract}
+	The main goal of this thesis was to design and implement a new social network for making acquaintances. First a research of such networks already in existence was conducted and their pros and cons were evaluated. Principles of user data protection were presented. Based on this, a new simplistic social network was designed.
+	
+	Criteria for technologies usable for the implementation were determined. The combination of Node.js as a web framework and Redis as a data store was chosen. Implementation took place with focus mainly on performance and was described from both users' and programmers' point of view. The resulting prototype is fully functioning.
+\section*{Keywords}
+social networks, making acquaintances, user data protection, key-value storage
+
 
 \MainMatter
 \tableofcontents
@@ -56,7 +64,7 @@ abstract
 	
 	The second chapter is about the implementation and is divided into two main sections. In the first one we will select the best technologies for the programming itself --- Node.js as a web framework and Redis as data store. Both have comparatively low-level APIs, are very fast and innovative.
 	
-	The second section describes the implementation of the design to programming code. The primary focus is on pure performance rather than direct code reusability. This is natural given the technology choice. 
+	The second section describes the implementation of the design to programming code. The primary focus is on performance rather than direct code reusability. This is natural given the technology choice. 
 \chapter{Design}
 	In this chapter we will decide the design of a new social network for making acquaintances. Firstly we will research existing networks in this market segment. Next we will focus on user data protection aspects relevant in this context. Lastly we will evaluate pros and cons of those networks from both user experience and data protection point of view, and  based on this we will make the design decision. 
 \section{Existing social networks for making acquaintances}
@@ -72,8 +80,7 @@ abstract
 		
 		\subsection{OkCupid}
 		OkCupid (\url{http://www.okcupid.com}) started in 2004. It claims to be the fastest growing website for making acquaintances.
-		%TODO use dating???\\
-		It is ad-supported and the essential features are free to use. A paid subscription called \emph{A-list} is also available for 14.95 USD/month. It removes the ads, allows advaced searching, changing of user name etc.
+		It is ad-supported and the essential features are free to use. A paid subscription called \emph{A-list} is also available for 14.95 USD/month. It removes the ads, allows advanced searching, changing of user name etc.
 		
 		Matches can be found through search using general criteria or by filling out questionnaires. A user can also create a his own questions, set their importance and expected answers. When another user fills them in, the system calculates a match percentage. This process is probably unique to OkCupid. \cite{website:okcupid}
 		\subsection{eHarmony}
@@ -85,7 +92,7 @@ abstract
 	
 	The data is very valuable beyond it's original intent to find the best match. It can be used for instance to precisely target advertisements, give offers to buy new products and so on. Hence it is essential that the user is made clear how the information he enters on a website is used or if it is disclosed to third parties.
 	
-	The user should also have the ability to choose what data is shared with other users. In the best case this control should be very fine, i.e. the user should not be forced to share information in blocks, should be able to deny specified users access to his profile or parts of his profile etc. There should also be a simple tool to preview one's profile in the way others can see it.
+	The user should also have the ability to choose what data is shared with other users. In the best case this control should be very fine, that is the user should not be forced to share information in blocks, should be able to deny specified users access to his profile or parts of his profile etc. There should also be a simple tool to preview one's profile in the way others can see it.
 	
 	If a user deletes any data on his profile, it should be physically deleted from all the servers as well, unless it is expressly stated otherwise (e.g. for backup purposes).
 	
@@ -152,7 +159,7 @@ abstract
 	
 		Table \ref{table:wf} shows a basic classification of selected web frameworks by programming language and comprehensiveness of features they provide. Simple frameworks generally only provide a way to route HTTP requests to methods, parse HTTP headers and to send a response. Other features can be added on using plug-ins or modules. Full MVC\footnote{Model-View-Controller} frameworks also have an ORM\footnote{Object-Relational Mapping} engine for models and generate HTML views using a templating engine.
 		
-		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, i.e. Express.js, plain PHP, CherryPy and Sinatra.
+		Because the project's uncomplicated data model would not utilize the complex feature set of full MVC frameworks and those could limit flexibility, we will further only focus on the simple ones, that is Express.js, plain PHP, CherryPy and Sinatra.
 		
 	\subsection{Performance, scalability and stability}
 		Let us first compare performance of the languages and their virtual machines themselves. We can use results from \emph{The Computer Language Benchmarks Game} \cite{website:bench}. It uses several algorithms written in different programming languages to measure their speed.
@@ -206,15 +213,15 @@ abstract
 		
 		Graph \ref{fig:bench_sleep} shows the results of the \texttt{sleep} benchmark. Node.js is again the clear winner with about 4700 request per second regardless of concurrency. This is because Node.js's \texttt{setTimeout}, as well as any database query, is non-blocking. Once the query is made, Node.js moves to serve other requests, until the query result is received.
 		
-		\begin{figure}[h]
+		\begin{figure}[h!]
 	  \centering
-	    \includegraphics[width=1.0\textwidth]{plot_add.pdf}
+	    \includegraphics[width=0.9\textwidth]{plot_add.pdf}
 		  \caption{Benchmark of the \texttt{add} method. Error bars denote standard deviation.}
 		  \label{fig:bench_add}
 		\end{figure}		
-		\begin{figure}[h]
+		\begin{figure}[h!]
 	  \centering
-	    \includegraphics[width=1.0\textwidth]{plot_sleep.pdf}
+	    \includegraphics[width=0.9\textwidth]{plot_sleep.pdf}
 		  \caption{Benchmark of the \texttt{sleep} method. Error bars denote standard deviation.}
 		  \label{fig:bench_sleep}
 		\end{figure}
@@ -304,7 +311,7 @@ abstract
 	  \begin{figure}[h]
 	  \centering
 	    \includegraphics[width=1.0\textwidth]{screen-signup.png}
-		  \caption{Sign up form.}
+		  \caption{Sign-up form.}
 		  \label{fig:screen-signup}
 	  \end{figure}
 		The user is presented with a registration form on the homepage. There are three fields: e-mail address, password and password confirmation. The e-mail field uses the HTML5 \texttt{email} type which causes supporting browsers to make the input easier, for instance by displaying the \texttt{@} character on a virtual keyboard on touch input devices. A minimum of 6 characters is required for the password. When the user clicks the Sign up button, the values are validated with the \texttt{jquery.validate} plugin and errors are highlighted, see figure \ref{fig:screen-signup}. The pluing also prevents the form from being submitted with errors.
@@ -313,12 +320,12 @@ abstract
 		
 		When the form is posted to \texttt{/signup}, all values and the reCaptcha are once again validated on the server side. This is indeed necessary, since it is very easy to circumvent any client side validation. User attributes are added to the database. The password is stored using the \texttt{sechash} module which makes it more difficult to guess users' passwords even if the database is hacked.
 		
-		An e-mail is sent to the user's address, containing a welcome message and a verification code (for details of the implementation see section \ref{section:email}). Then the user is redirected to the second phase of the registration.
+		An e-mail is sent to the user's address, containing a welcome message and a verification code (for details of the implementation see section \ref{section:email}). Then the user is redirected to the second phase of the registration (figure \ref{fig:screen-signup1}).
 		
 		\begin{figure}[h]
 	  \centering
 	    \includegraphics[width=0.7\textwidth]{screen-signup1.png}
-		  \caption{Second phase of signup.}
+		  \caption{Second phase of sign-up.}
 		  \label{fig:screen-signup1}
 	  \end{figure}
 	  There the user is asked to enter his or her gender, year of birth and the verification code. It is a random number in the range $\left[ 100,999\right)$. This is intended to make it simpler for the user to remember it for the few seconds while switching browser windows or tabs. On the other hand it would also enable malicious users to quickly guess the number, circumventing the e-mail verification. There is however a hard limit of 3 wrong attempts. An option to resend the verification code is also given, with a limit of 3 per 12 hours.
@@ -326,7 +333,7 @@ abstract
 		\begin{figure}[h]
 	  \centering
 	    \includegraphics[width=0.9\textwidth]{screen-profile.png}
-		  \caption{Profile and settigs page. (Author of the penguin photo: Hannes Grobe/AWI, CC-BY-SA 3.0)}
+		  \caption{Profile and settings page. (Author of the penguin photo: Hannes Grobe/AWI, CC-BY-SA 3.0)}
 		  \label{fig:screen-profile}
 	  \end{figure}	  
 	  
@@ -366,7 +373,7 @@ abstract
 		\begin{program}[h]
 		\caption{An excerpt of the search procedure --- first phase}
 		\label{code:ex-search}
-		\inputminted[fontsize=\footnotesize, linenos=false, gobble=6]{javascript}{ex-search.js}
+		\inputminted[fontsize=\scriptsize, linenos=false, gobble=6]{javascript}{ex-search.js}
 		\end{program}
 
 		These two sets, two other for gender selection and one with enabled users are then intersected and already seen users are subtracted, see listing \ref{code:ex-search1}. A maximum of 50 user IDs are returned as a \texttt{JSON} array.
@@ -374,7 +381,7 @@ abstract
 		\begin{program}[h]
 		\caption{An excerpt of the search procedure --- second phase}
 		\label{code:ex-search1}
-		\inputminted[fontsize=\footnotesize, linenos=false]{javascript}{ex-search1.js}
+		\inputminted[fontsize=\scriptsize, linenos=false]{javascript}{ex-search1.js}
 		\end{program}
 	
 		The procedure can be in a simplified way written as this set fomula:
@@ -388,7 +395,7 @@ abstract
 		The user also has the ability to browse through visited photos and change the decision.
 		\clearpage
 	\subsection{Notifications}
-		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case  both IDs are added to the respective \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets:match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
+		Every time a user marks someone positively, a check is made to see if the liking is mutual. In that case  both IDs are added to the respective \texttt{user:<ID1,ID2>:match\_q} sorted sets ($z$-value\footnote{$z$ is the value based on which the elements in the set are sorted.} is current time) that act as queues. The $z$-value of the sorted set \texttt{user:zsets: match\_pending} is increased by 1 for both users. Users that have disabled their accounts are no longer notified.
 		
 		The \texttt{notification.js} script is running as a separate background process. It is used to regularly check for notifications for both matches and chat (more on that in section \ref{section:chat}) and to send appropriate e-mails. It sets up a timer that ensures the match notifications are sent only once a day during the night. It can be gracefully quit by sending the \texttt{SIGQUIT} UNIX signal (in a similar way to the \texttt{worker-email.js} script shown later in listing \ref{code:ex-emailworker}).
 		
@@ -410,13 +417,13 @@ abstract
 	  
 	  A timer is set on the client side that makes an asynchronous request every 2.3 minutes to \texttt{/me/ping}. The server stores the last ping time in the \texttt{user:zsets:ping} sorted set and returns list a JSON list of contacts that are on-line, i.e. have sent their ping in the last 2.5 minutes.
 	  
-	  All messages are asynchronously posted to \texttt{/me/sendmessage}. There it is stored as JSON object to the conversation history. If the number of messages in the history is above 100, the 10 oldest are deleted. Number of unread messages in the \texttt{user:<recipient ID>:unread <sender ID>} hash is increased. Also the \texttt{global:chat\_q} sorted set is updated with current time as the $z$-value for the recipient ID. Lastly the message is published to both sender and recipient \texttt{push:chat:<ID>} Redis subscriber channels.
+	  All messages are asynchronously posted to \texttt{/me/sendmessage}. There it is stored as JSON object to the conversation history. If the number of messages in the history is above 100, the 10 oldest are deleted. Number of unread messages in the \texttt{user:<recipient ID>:unread <sender ID>} hash is increased. Also the \texttt{global: chat\_q} sorted set is updated with current time as the $z$-value for the recipient ID. Lastly the message is published to both sender and recipient \texttt{push:chat:<ID>} Redis subscriber channels.
 	  
 	  The \texttt{socketio.js} script is running as a separate background \texttt{socket.io} server on port 8080. All connections are authorized using the session cookie. Then it simply listens on the appropriate Redis \texttt{push:chat:<ID>} channels and pushes any new messages to the client. Currently the \texttt{xhr-polling} method is the only one enabled, since WebSocket has been disabled on most web browsers for security reasons and the protocol is going to have to be revised.
 	  
 	  The \texttt{socket.io} client listens for incoming messages. When a new one is received, it is displayed in the chat history or a visual notification is made. When the message is read, this fact is acknowledged to \texttt{/me/ackmsg/<sender ID>}. There the appropriate unread message count is reset.
 	  
-	  An e-mail notification about a new message is sent by the \texttt{notification.js} script if all of the following conditions are met (checked every minute):
+	  An e-mail notification about a new message is sent by the\\\texttt{notification.js} script if all of the following conditions are met (checked every minute):
 	  \begin{compactitem}
 	  	\item The message is unread and the user has not yet been notified about it.
 	    \item The user is off-line for a long time --- more than 60 minutes have passed since the last ping.
@@ -448,7 +455,7 @@ abstract
 				This attack is possible whenever user content is displayed to other users. In this project it happens in two places: the profile photo and chat. The profile photo is always checked to be of the correct format. All chat messages are properly HTML escaped before they are displayed.
 			\item[\textbf{SQL-injection}]
 				Cannot be applied directly because Redis is a NoSQL data store. All Redis commands have a fixed structure and user content is always passed as binary-safe data and no plain text queries are used, as opposed to SQL. There is one exception: key names with \texttt{id} are constructed from user data (e.g. \texttt{"user:"+id+":email"}), but these parameters are always converted to integer before usage. Any such attacks are therefore impossible.
-			\item[\textbf{Authorization}] In the best case, all client-server communication should be run through a secure channel, i.e. SSL, TLS, HTTPS. This is however very demanding on the servers or requires a dedicated SSL acceleration hardware, both beign cost prohibitive for now.
+			\item[\textbf{Authorization}] In the best case, all client-server communication should be run through a secure channel, i.e. SSL, TLS, HTTPS. This is however very demanding on the servers or requires a dedicated SSL acceleration hardware, both being cost prohibitive for now.
 			\item[\textbf{Cookie theft}]
 				Authorization is cookie-based, so the possibility of this attack indeed exists. However to minimize the risk, \texttt{connect} uses cryptographically signed cookies with fingerprints (e.g. client IP address, browser \texttt{User-Agent} header etc.), so the attacker would not only need to steal the cookie, but also to emulate all there parameters which is close to impossible.				
 		\end{itemize}		
@@ -461,7 +468,7 @@ abstract
 		\end{compactitem}
 		Messages are stored as a JSON object in files, e.g. \texttt{locale/en.js}.
 		
-		Because many user actions happen asychronously, client-side internationalization is also present. Messages are again stored as a JSON object (\texttt{locale/en\_client.js}) and are directly inserted in the HTML file in a \texttt{<script>} tag creating the \texttt{t} global variable. There are no parametrized messages on the client side, so this simple approach suffices. Otherwise the server-side \texttt{i18n.js} module could be easily ported to client side, since both employ JavaScript.
+		Because many user actions happen asynchronously, client-side internationalization is also present. Messages are again stored as a JSON object (\texttt{locale/en\_client.js}) and are directly inserted in the HTML file in a \texttt{<script>} tag creating the \texttt{t} global variable. There are no parametrized messages on the client side, so this simple approach suffices. Otherwise the server-side \texttt{i18n.js} module could be easily ported to client side, since both employ JavaScript.
 	\subsection{Geolocation}
 	\label{section:geo}
 		All geolocation data used in the application comes from the Yahoo! GeoPlanet project. \cite{website:geoplanet} It provides both a web service, which allows for searching of the database, and the source data tables. Here the \texttt{places} and \texttt{adjacencies} tables are used. Every place in the database has its unique constant ID called WOEID (Where On Earth ID). 
@@ -470,9 +477,9 @@ abstract
 		
 		The \texttt{geo\_fill.py} Python script is used to fill the geolocation database of the application from the provided GeoPlanet database. Complete structure of the generated database is listed in appendix \ref{appendix:scheme} under the \texttt{geo:} prefix.
 	\subsection{Performance tuning}
-		Both Node.js and Redis are single-threaded, therefore performance can be significantly improved by running multiple instances of them. With Node.js this can be easily achieved by using the \texttt{cluster} module that can manage starting, zero-downtime reloading and stopping of the instances. 
+		Both Node.js and Redis are single-threaded, therefore performance can be significantly improved by running multiple instances of them. With Node.js this can be easily achieved by using the \texttt{cluster} module that can manage starting, zero-downtime reloading and stopping of the instances. Automatic reloading is critical, since unhandled runtime errors cause the instance to crash.
 		
-		With Redis this is more complicated, because the instances have their own data. Technique called \emph{sharding} can be used to solve this. It spread keys with variable name such as \texttt{user:<ID>:email} across $n$ instances by caclutating \texttt{ID}$\mod{n}$. This is however impractical here, because set operations are heavily used and those cannot be done when the sets are stored in different instances. So at least the session data is stored in an instance separate from the rest. Redis also features simple master-slave replication that could also be employed.
+		With Redis this is more complicated, because the instances have their own data. Technique called \emph{sharding} can be used to solve this. It spread keys with variable name such as \texttt{user:<ID>:email} across $n$ instances by calculating \texttt{ID}$\mod{n}$. This is however impractical here, because set operations are heavily used and those cannot be done when the sets are stored in different instances. So at least the session data is stored in an instance separate from the rest. Redis also features simple master-slave replication that could also be employed.
 		
 		All client-side JavaScript is combined into one file and minified using \texttt{uglify-js} to improve loading speed. For the same reason Gzip compression is utilized to serve text-based static files.
 	\subsection{Graphical design and user experience}

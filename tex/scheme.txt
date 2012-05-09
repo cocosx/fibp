@@ -60,12 +60,13 @@ global:
   email_q ZSET time userId
   limit:
     signup - redback rateLimit
+  delete:<md5 signed ID> ID of user to delete
 worker:
   email:
     p1 list - ses json
     p2
 log:
-  signup ZSET t  json id,ip,email
+  signup ZSET t  json ID,ip,email
 geo:
   sets:
     countries - set woeids
