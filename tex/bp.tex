@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{color}
 \usepackage{courier}
+\usepackage{pdfpages}
 %\usepackage{natbib}
 %\usepackage[top=40mm, bottom=45mm, left=40mm, right=30mm]{geometry}
 %\usepackage[top=22mm, bottom=30mm, left=35mm, right=25mm]{geometry}
@@ -37,6 +38,7 @@
 \begin{document}
 \FrontMatter
 \ThesisTitlePage
+\includepdf{zadani.pdf}
 
 \begin{ThesisDeclaration}
 \DeclarationText
@@ -44,13 +46,17 @@
 \end{ThesisDeclaration}
 
 \begin{ThesisThanks}
-I would like to express my gratitude to doc. Ing. Michal Brandejs, CSc. for giving me a free hand in writing this thesis.
+I would like to express my gratitude to doc. Ing. Michal Brandejs, CSc. for giving me a free hand and to the open source community for creating the all the tools without which this thesis would be almost impossible to author.
 \end{ThesisThanks}
 
 \section*{Abstract}
-	The main goal of this thesis was to design and implement a new social network for making acquaintances. First a research of such networks already in existence was conducted and their pros and cons were evaluated. Principles of user data protection were presented. Based on this, a new simplistic social network was designed.
+	The main goal of this thesis was to design and implement a new social network for making acquaintances. First a research of such networks already in existence was conducted and their pros and cons were evaluated. Principles of user data protection were presented. On this ground, a new straightforward social network was designed where the need to fill out questionnaires with sensitive information is eliminated.
 	
-	Criteria for technologies usable for the implementation were determined. The combination of Node.js as a web framework and Redis as a data store was chosen. Implementation took place with focus mainly on performance and was described from both users' and programmers' point of view. The resulting prototype is fully functioning.
+	Criteria for technologies suitable for the implementation were determined, and based on them the combination of Node.js as a web framework and Redis as a data store was chosen. Implementation took place with focus mainly on performance and was described from both users' and programmers' point of view. The resulting prototype is fully functioning.
+\section*{Abstrakt}
+	Hlavním cílem této práce bylo navrhnout a implementovat novou společenskou síť pro navazování kontaktů. Nejdříve byl proveden výzkum existujících sítí a byly vyhodnoceny jejich silné a slabé stránky.  Byly popsány principy ochrany osobních údajů uživatelů. Z tohoto vzešel návrh přímočaré společenské sítě, která nevyžaduje vyplňování dotazníků s citlivými osobními údaji.
+	
+	Byla určena kritéria pro volbu technologií vhodných pro implementaci a na jejich základě byla vybrána kombinace Node.js jako webového frameworku a Redis jako úložiště dat. Implementace proběhla se zaměřením především na výkon a byla popsána z uživatelského i programátorského pohledu. Výsledný prototyp je plně funkční.
 \section*{Keywords}
 social networks, making acquaintances, user data protection, key-value storage
 
@@ -58,9 +64,9 @@ social networks, making acquaintances, user data protection, key-value storage
 \MainMatter
 \tableofcontents
 \chapter*{Introduction}
-	The main goal of this thesis is, as its name suggests, to design and implement a web-based social network for making acquaintances. Social networks in general have been gaining a lot of popularity in the last decade, and especially in this area tough competition exists, but there is still room for improvement from both user experience and programming point of view. The result of this thesis is a social network called \emph{Pickdo} (\url{http://www.pickdo.com}).
+	The main goal of this thesis is to design and implement a web-based social network for making acquaintances. Social networks in general have been gaining a lot of popularity in the last decade, and especially in this area tough competition exists, but there is still room for improvement from both user experience and programming point of view. The outcome of this thesis is a social network called \emph{Pickdo} (\url{http://www.pickdo.com}).
 	
-	The first chapter is focused on the design of the new social network. Existing social network for making acquaintances  and relevant aspects of user data protection are examined and a decision to create a very simplistic new network is made.
+	The first chapter is focused on the design of the new social network. Existing social network for making acquaintances  and relevant aspects of user data protection are examined and a decision to create a straightforward new network is made.
 	
 	The second chapter is about the implementation and is divided into two main sections. In the first one we will select the best technologies for the programming itself --- Node.js as a web framework and Redis as data store. Both have comparatively low-level APIs, are very fast and innovative.
 	
@@ -489,7 +495,7 @@ social networks, making acquaintances, user data protection, key-value storage
 		
 		To help the user out while familiarizing with the website, \emph{help mode} can be enabled. It then displays help bubbles when the user hover mouse over UI elements.
 	\section{Conclusion}
-		We have proven that a complete project can be implemented only using Node.js and Redis --- young and innovative technologies. The application is fast-performing and stable. Due to the low-level nature of Redis especially, techniques that are interesting on one hand but complicated on the other had to be used in some places. If the project was more complex, a combination of SQL and NoSQL storages would be preferable with a proper data and object model.
+		We have proven that a project in its entirety can be implemented only using Node.js and Redis --- young and innovative technologies. The application is fast-performing and stable. Due to the low-level nature of Redis especially, techniques that are interesting on one hand but complicated on the other had to be used in some places. If the project was more complex, a combination of SQL and NoSQL storages would be preferable with a proper data and object model.
 
 \appendix
 \chapter{Structure of the storage}
