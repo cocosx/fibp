@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.6.1)  13 JUN 2012 11:15
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2012/dev/Arch Linux) (format=pdflatex 2012.6.1)  17 JUN 2012 21:33
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1426,6 +1426,18 @@ Overfull \hbox (73.50984pt too wide) has occurred while \output is active
 [13
 
 ]
+Overfull \hbox (38.3469pt too wide) has occurred while \output is active
+ [][]  \IL2/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (73.50984pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[14
+
+]
 \tf@nav=\write6
 \openout6 = `obhajoba.nav'.
 
@@ -1435,11 +1447,11 @@ Overfull \hbox (73.50984pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `obhajoba.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 159.
  (./obhajoba.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 159.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 159.
 Package rerunfilecheck Info: File `obhajoba.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1449,10 +1461,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 18566 strings out of 493629
- 330934 string characters out of 3148779
+ 18572 strings out of 493629
+ 330995 string characters out of 3148779
  416294 words of memory out of 3000000
- 21377 multiletter control sequences out of 15000+200000
+ 21381 multiletter control sequences out of 15000+200000
  14210 words of font info for 44 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  49i,16n,57p,424b,522s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1461,10 +1473,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/cs/csss10.pfb></usr/share/texmf-dist/fonts/type1/public/cs/csss
 12.pfb></usr/share/texmf-dist/fonts/type1/public/cs/csss8.pfb></usr/share/texmf
 -dist/fonts/type1/public/cs/cstt10.pfb>
-Output written on obhajoba.pdf (13 pages, 731715 bytes).
+Output written on obhajoba.pdf (14 pages, 733805 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
  87 words of extra memory for PDF output out of 10000 (max. 10000000)
 

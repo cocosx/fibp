@@ -54,7 +54,7 @@ Fakulta informatiky
 			\item Nutno vyplňovat zdlouhavé dotazníky citlivými (časti i intimními) osobními údaji\\
 				$\implies$ Možnost zneužití nebo úniku těchto údajů
 			\item Matematický nebo nějak "zázračný" systém na automatické vyhledání vhodného partnera\\
-				Podle Finkel et al. (2012) tyto systémy stejně nefungují
+				Podle Finkel et al. (2012) tyto systémy nejsou úspěšné
 			\item Nutno sebrat odvahu a iniciativně kontaktovat nalezeného partnera\\
 				
 		\end{itemize}
@@ -135,6 +135,20 @@ Fakulta informatiky
 		  \caption{Stránka real-time chatu}
 		  \label{fig:screen-chat}
 	  \end{figure}
+	\end{frame}
+
+	\begin{frame}{Posudek oponenta}
+  	\begin{itemize}
+			\item Ruby a EventMachine\\
+			  Smyslem benchmarku v metodě \texttt{sleep} bylo simulovat požadavek na databázi. V Ruby jsou moduly pro asynchronní přístup k databázi buď nestabilní, nebo původním vývojářem opuštěné.
+			\item PHP vs. Ruby jako nejstabilnější jazyk\\
+				Uznávám, že by bylo přesnější zůstat v případě PHP u označení "léty prověřený". Přesto se nedomnívám, že by v PHP v budoucnu došlo k radikálním změnám, které se přeci jen v Ruby ještě plánují.
+			\item Napojení na Facebook atd.\\
+				Není implementováno záměrně, protože všechny tyto sítě poskytují při propojení jako absolutní minimum údajů skutečné jméno, které v této společenské síti vůbec není vyžadováno a z pohledu uživatele je každé takové propojení rizikem pro únik osobních údajů.
+			\item Cloud hosting
+				Hosting na Heroku by byl pohodlný, ale poněkud drahý a především zatím používá výhradně Amazon Web Services data centra v USA, kde latence z ČR dosahuje přes 200~ms, což už je znát.
+				
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
