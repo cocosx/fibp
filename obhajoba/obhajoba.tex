@@ -38,7 +38,7 @@ Fakulta informatiky
   \frame{\titlepage}
 	\begin{frame}{Cíle práce}
 		\begin{itemize}
-			\item Prozkoumat existující společenslé sítě pro vytváření známostí a vyhodnotit jejich klady a zápory
+			\item Prozkoumat existující společenské sítě pro vytváření známostí a vyhodnotit jejich klady a zápory
 			\item Shrnout relevantní aspekty ochrany osobních údajů v těchto sítích
 			\item Narhnout novou společenskou síť
 			\item Zvolit nejvhodnější technologie pro implementaci
@@ -51,7 +51,7 @@ Fakulta informatiky
 		\bigskip
 		Společné vlastnosti:
 		\begin{itemize}
-			\item Nutno vyplňovat zdlouhavé dotazníky citlivými (časti i intimními) osobními údaji\\
+			\item Nutno vyplňovat zdlouhavé dotazníky citlivými (často i intimními) osobními údaji\\
 				$\implies$ Možnost zneužití nebo úniku těchto údajů
 			\item Matematický nebo nějak "zázračný" systém na automatické vyhledání vhodného partnera\\
 				Podle Finkel et al. (2012) tyto systémy nejsou úspěšné
@@ -66,7 +66,7 @@ Fakulta informatiky
 	    \item Ostatní uživatele vyhledá podle kritérií:\\
 	      pohlaví, věkové rozpětí, relativní poloha (stejný okres, sousední okresy, stejný kraj, sousední kraje, stejný stát)
 	    \item Prohlíží si fotografie nalezených uživatelů jednu po druhé a označuje ty, kteří se mu líbí
-	    \item Pouze až se dva uživatelé označí, že se sobě vzájemně líbí, oba se o tom dozví a je jim nabídnuta možnost real-time chatu, kde se mohou dále poznat
+	    \item Pouze až dva uživatelé označí, že se sobě navzájem líbí, oba se o tom dozví a je jim nabídnuta možnost real-time chatu, kde se mohou dále poznat
 		\end{enumerate}
 	\end{frame}
 	\begin{frame}{Technologie}
@@ -103,7 +103,7 @@ Fakulta informatiky
     	\item Vzhledem ke zvolené technologii primární zaměření na výkon\\
     		Kompletní zpracování požadavku vyhledání v souboru 200~000 uživatelů trvá na starším serveru 2~ms\\
     		Drobné zápisy do databáze (např. označení líbí/nelíbí) do 1~ms
-    	\item HTML5, CSS, kompletně AJAX -- domovská stránka uživatele se načítá pouze jednou po přihlášesní, další požadavky jsou asynchronní
+    	\item HTML5 a CSS3 animace, kompletně AJAX -- domovská stránka uživatele se načítá pouze jednou po přihlášesní, další požadavky jsou asynchronní $\implies$ rychlá odezva a menší nároky na server
     	\item Možnost ořezání nahrané fotky přímo na serveru
     	\item Real-time chat pomocí socket.io (XHR long-poll i WebSocket), e-mailové upozornění na zmeškané zprávy
     	\item Geolokační databáze Yahoo! GeoPlanet
@@ -128,6 +128,7 @@ Fakulta informatiky
 		  \label{fig:screen-search}
 	  \end{figure}
 	\end{frame}
+
 	\begin{frame}{Screenshoty}
 			\begin{figure}[h]
 	  \centering
@@ -136,8 +137,14 @@ Fakulta informatiky
 		  \label{fig:screen-chat}
 	  \end{figure}
 	\end{frame}
+	
+	\begin{frame}
+		\begin{center}
+			Děkuji za pozornost
+		\end{center}
+	\end{frame}
 
-	\begin{frame}{Posudek oponenta}
+	\begin{frame}{Otázky}
   	\begin{itemize}
 			\item Ruby a EventMachine\\
 			  Smyslem benchmarku v metodě \texttt{sleep} bylo simulovat požadavek na databázi. V Ruby jsou moduly pro asynchronní přístup k databázi buď nestabilní, nebo původním vývojářem opuštěné.
@@ -145,15 +152,9 @@ Fakulta informatiky
 				Uznávám, že by bylo přesnější zůstat v případě PHP u označení "léty prověřený". Přesto se nedomnívám, že by v PHP v budoucnu došlo k radikálním změnám, které se přeci jen v Ruby ještě plánují.
 			\item Napojení na Facebook atd.\\
 				Není implementováno záměrně, protože všechny tyto sítě poskytují při propojení jako absolutní minimum údajů skutečné jméno, které v této společenské síti vůbec není vyžadováno a z pohledu uživatele je každé takové propojení rizikem pro únik osobních údajů.
-			\item Cloud hosting
-				Hosting na Heroku by byl pohodlný, ale poněkud drahý a především zatím používá výhradně Amazon Web Services data centra v USA, kde latence z ČR dosahuje přes 200~ms, což už je znát.
+			\item Cloud hosting na Heroku by byl pohodlný, ale poněkud drahý a především zatím používá výhradně Amazon Web Services data centra v USA, kde latence z ČR dosahuje přes 200~ms, což už je znát.
 				
 		\end{itemize}
 	\end{frame}
-	
-	\begin{frame}
-		\begin{center}
-			Děkuji za pozornost!
-		\end{center}
-	\end{frame}
+
 \end{document}
